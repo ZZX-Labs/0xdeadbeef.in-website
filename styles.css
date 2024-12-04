@@ -44,6 +44,10 @@ header {
     height: 100%;
 }
 
+h1, h2 {
+    color: #e6a42b;
+}
+
 /* Site Title */
 #site-title {
     position: absolute;
@@ -116,7 +120,7 @@ footer strong {
 
 footer p {
     font-size: 0.9em;
-    color: #ccc;
+    color: #c0d674;
 }
 
 /* Responsive Design */
