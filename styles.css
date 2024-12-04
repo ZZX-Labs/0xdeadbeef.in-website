@@ -1,54 +1,84 @@
-/* General Styles */
-body {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
     font-family: 'IBM Plex Mono', monospace;
     background-color: #000;
     color: #c0d674;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
+/* Landing Container Styling */
 #landing-container {
     text-align: center;
-    max-width: 800px;
-    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+/* Header Banner Styling */
+#header-banner {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+#header-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* Buttons */
+/* Title Styling */
+#site-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Tagline Styling */
+#tagline {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* CTA Buttons Styling */
+#cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
 .button {
     text-decoration: none;
-    font-size: 1rem;
-    padding: 10px 20px;
     color: #000;
     background-color: #c0d674;
-    border: 2px solid #c0d674;
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
-    margin: 5px;
-    display: inline-block;
+    font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .button:hover {
-    background-color: #000;
-    color: #c0d674;
-    cursor: pointer;
+    background-color: #a8bb5f;
+    color: #fff;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
-    margin-top: 30px;
     font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Hide the audio element controls */
+#background-audio {
+    display: none;
 }
