@@ -8,77 +8,117 @@
 /* Body Styling */
 body {
     font-family: 'IBM Plex Mono', monospace;
-    background-color: #000;
-    color: #c0d674;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 0;
     margin: 0;
 }
 
-/* Landing Container Styling */
+/* Landing Container */
 #landing-container {
-    text-align: center;
-    width: 90%;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
-/* Header Banner Styling */
-#header-banner {
-    margin-bottom: 1rem;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-#header-image {
+/* Header and Banner */
+header {
+    position: relative;
     width: 100%;
-    height: auto;
+    background-color: #222;
+    color: white;
+}
+
+#header-banner {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+}
+
+#header-banner img {
+    width: 100%;
     object-fit: cover;
+    object-position: center;
+    height: 100%;
 }
 
-/* Title Styling */
+/* Site Title */
 #site-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    text-align: center;
+    z-index: 10;
+    font-weight: bold;
 }
 
-/* Tagline Styling */
+/* Tagline */
 #tagline {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    text-align: center;
+    margin: 20px;
+    font-size: 1.2em;
+    color: #444;
 }
 
-/* CTA Buttons Styling */
+/* Call-to-Action Buttons */
 #cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .button {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 25px;
     text-decoration: none;
-    color: #000;
-    background-color: #c0d674;
-    padding: 0.8rem 1.5rem;
     border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #a8bb5f;
-    color: #fff;
+    background-color: #0056b3;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
-    font-size: 0.9rem;
-    margin-top: 2rem;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Hide the audio element controls */
-#background-audio {
-    display: none;
+footer i {
+    font-style: italic;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #site-title {
+        font-size: 2em;
+    }
+
+    #cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #tagline {
+        font-size: 1.1em;
+    }
 }
