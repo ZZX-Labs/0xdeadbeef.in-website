@@ -61,7 +61,7 @@ header {
     text-align: center;
     margin: 20px;
     font-size: 1.2em;
-    color: #444;
+    color: #e6a42b;
 }
 
 /* Call-to-Action Buttons */
@@ -73,8 +73,8 @@ header {
 }
 
 .button {
-    background-color: #007BFF;
-    color: white;
+    background-color: #c0d674;
+    color: black;
     padding: 15px 25px;
     text-decoration: none;
     border-radius: 5px;
@@ -83,13 +83,14 @@ header {
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #e6a42b;
+    color: black;
 }
 
 /* Footer */
 footer {
     background-color: #222;
-    color: white;
+    color: #c0d674;
     text-align: center;
     padding: 20px;
 }
