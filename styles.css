@@ -45,7 +45,7 @@ header {
 
 h1 {
     color: #e6a42b;
-    font-size: 5em;
+    font-size: 4.20em;
     text-align: center;
 }
 
@@ -148,7 +148,7 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     #site-title {
-        font-size: 1.65em;
+        font-size: 1.5em;
         top: 75%;
         left: 50%;
         transform: translate(-50%, -50%);
