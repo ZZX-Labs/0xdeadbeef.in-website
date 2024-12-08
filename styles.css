@@ -55,7 +55,7 @@ h2 {
     text-align: center;
 }
 
-/* Code-Like Formatting for h3, h4, and ul */
+/* Code-Like Formatting for h3 */
 h3 {
     color: #c0d674;
     font-size: 1em;
@@ -64,32 +64,42 @@ h3 {
     margin-left: -2em; /* Visually shift { and } left */
 }
 
-h3::before {
-    content: '{';
-    display: inline-block;
-    margin-right: 0.5em;
-}
-
-h3::after {
-    content: '}';
-    display: inline-block;
-    margin-left: 0.5em;
-}
-
-h4 {
-    color: #c0d674;
-    font-size: 0.8em;
-    text-align: center;
-    margin-left: 1em; /* Indent visually for nested look */
-}
-
-ul {
+/* Curly brackets only for h4 and nested ul */
+h4, ul {
     color: #c0d674;
     font-size: 0.8em;
     text-align: left; /* Align text left */
     margin: 0 auto; /* Center the block */
     padding-left: 1em; /* Add indentation for list items */
     width: fit-content; /* Adjust width to fit content */
+}
+
+h4 {
+    margin-left: 1em; /* Indent visually for nested look */
+}
+
+h4::before {
+    content: '{';
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+h4::after {
+    content: '}';
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+ul::before {
+    content: '{';
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+ul::after {
+    content: '}';
+    display: inline-block;
+    margin-left: 0.5em;
 }
 
 /* Site Title */
