@@ -67,6 +67,12 @@ h4 {
     text-align: center;
 }
 
+ul {
+    color: #c0d674;
+    font-size: 0.8em;
+    text-align: center;
+}
+
 /* Site Title */
 #site-title {
     position: absolute;
@@ -77,6 +83,7 @@ h4 {
     font-weight: bold;
 }
 
+/* Site Subtitle Unused ?? */
 #site-subtitle {
     position: absolute;
     top: 50%;
