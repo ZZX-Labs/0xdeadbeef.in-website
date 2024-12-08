@@ -67,7 +67,7 @@ h2 {
 
 #site-subtitle {
     position: relative;
-    top: 55%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
