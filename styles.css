@@ -52,7 +52,7 @@ h1 {
 h2 {
     color: #c0d674;
     font-size: 1.275em;
-    text-align: center;
+    text-align: justified;
 }
 
 /* Site Title */
@@ -66,8 +66,8 @@ h2 {
 }
 
 #site-subtitle {
-    position: justified;
-    top: 45%;
+    position: absolute;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
