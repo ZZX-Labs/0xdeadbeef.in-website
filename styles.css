@@ -76,7 +76,7 @@ ul {
 /* Site Title */
 #site-title {
     position: absolute;
-    top: 75%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -149,7 +149,7 @@ footer p {
 @media (max-width: 768px) {
     #site-title {
         font-size: 1.5em;
-        top: 75%;
+        top: 85%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
