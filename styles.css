@@ -52,31 +52,31 @@ h1 {
 h2 {
     color: #c0d674;
     font-size: 1.275em;
-    text-align: center;
+    text-align: center-left;
 }
 
 h3 {
     color: #c0d674;
     font-size: 1em;
-    text-align: center;
+    text-align: center-left;
 }
 
 h4 {
     color: #c0d674;
     font-size: 0.8em;
-    text-align: center;
+    text-align: center-left;
 }
 
 ul {
     color: #c0d674;
     font-size: 0.8em;
-    text-align: center;
+    text-align: center-left;
 }
 
 /* Site Title */
 #site-title {
     position: absolute;
-    top: 85%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
