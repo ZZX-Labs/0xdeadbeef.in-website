@@ -5,147 +5,198 @@
     box-sizing: border-box;
 }
 
-/* Body and Font Styles */
+/* Body Styling */
 body {
     font-family: 'IBM Plex Mono', monospace;
-    background-color: #f0f0f0;
+    background-color: #303030;
     color: #333;
-    text-align: center; /* Center everything horizontally */
+    padding: 0;
+    margin: 0;
 }
 
+/* Landing Container */
 #landing-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
+/* Header and Banner */
 header {
-    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    background-color: #000;
 }
 
 #header-banner {
-    margin-bottom: 10px;
-}
-
-#site-title {
-    font-size: 2.5em;
-    color: #333;
-    text-transform: uppercase;
-}
-
-#site-title a {
-    text-decoration: none;
-    color: inherit;
-}
-
-#header-image {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
     width: 100%;
-    max-height: 400px;
+}
+
+#header-banner img {
+    width: 100%;
     object-fit: cover;
+    object-position: center;
+    height: 100%;
 }
 
-/* Styling for the h3 with curly braces */
-h3 {
-    font-size: 3em;
-    color: #333;
-    margin: 10px 0;
-}
-
-h3:first-of-type {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-h3:last-of-type {
-    display: inline-block;
-    margin-left: 10px;
-}
-
-/* Styling for the h4 */
-h4 {
-    margin: 20px 0;
+h1 {
+    color: #e6a42b;
+    font-size: 4.20em;
     text-align: center;
 }
 
-/* Styling for the ul (left-aligned content but centered container) */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: left; /* Left-align the list items */
-    display: inline-block;
-    width: auto;
-    margin: 0 auto;
-    font-size: 1.2em;
+h2 {
+    color: #c0d674;
+    font-size: 1.275em;
+    text-align: center;
 }
 
-ul li {
-    margin: 10px 0;
+/* Code-Like Formatting for h3, h4, and ul */
+h3 {
+    color: #c0d674;
+    font-size: 1em;
+    text-align: center;
+    padding: 5px;
+    margin-left: -2em; /* Visually shift { and } left */
 }
 
-/* Curly Braces for h4 and ul */
-h4::before, ul::before {
+h3::before {
     content: '{';
     display: inline-block;
     margin-right: 0.5em;
 }
 
-h4::after, ul::after {
+h3::after {
     content: '}';
     display: inline-block;
     margin-left: 0.5em;
 }
 
-/* Buttons Styling */
-#cta-buttons {
-    margin-top: 30px;
+h4 {
+    color: #c0d674;
+    font-size: 0.8em;
+    text-align: center;
+    margin-left: 1em; /* Indent visually for nested look */
 }
 
-.button {
-    display: inline-block;
-    padding: 15px 25px;
-    margin: 10px;
-    background-color: #007BFF;
-    color: white;
+ul {
+    color: #c0d674;
+    font-size: 0.8em;
+    text-align: left; /* Align text left */
+    margin: 0 auto; /* Center the block */
+    padding-left: 1em; /* Add indentation for list items */
+    width: fit-content; /* Adjust width to fit content */
+}
+
+/* Site Title */
+#site-title {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-weight: bold;
+    color: #e6a42b;
+}
+
+/* Anchor Links */
+a {
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    color: #e6a42b;
 }
 
-.button:hover {
-    background-color: #0056b3;
+a:hover {
+    text-decoration: underline;
+    color: #c0d674;
 }
 
-/* Tagline Styling */
+/* Site Subtitle Unused ?? */
+#site-subtitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-weight: italic;
+}
+
+/* Tagline */
 #tagline {
-    font-size: 1.3em;
-    color: #777;
+    text-align: center;
+    margin: 20px;
+    font-size: 1.2em;
+    color: #e6a42b;
+}
+
+/* Call-to-Action Buttons */
+#cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-top: 20px;
 }
 
-/* Footer Styling */
+.button {
+    background-color: #c0d674;
+    color: black;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #e6a42b;
+    color: black;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #222;
+    color: #c0d674;
     text-align: center;
+    padding: 20px;
+}
+
+footer i {
+    font-style: italic;
+}
+
+footer strong {
+    font-weight: bold;
 }
 
 footer p {
-    font-size: 1em;
+    font-size: 0.8em;
+    color: #c0d674;
 }
 
-/* Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
-    h3 {
-        font-size: 2.5em;
+    #site-title {
+        font-size: 1.5em;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        font-weight: bold;
     }
 
-    h4 {
+    #cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #tagline {
+        font-size: 1.0em;
+    }
+
+    a {
         font-size: 1.2em;
-    }
-
-    ul {
-        font-size: 1.1em;
     }
 }
