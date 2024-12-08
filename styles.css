@@ -55,22 +55,41 @@ h2 {
     text-align: center;
 }
 
+/* Code-Like Formatting for h3, h4, and ul */
 h3 {
     color: #c0d674;
     font-size: 1em;
     text-align: center;
+    padding: 5px;
+    margin-left: -2em; /* Visually shift { and } left */
+}
+
+h3::before {
+    content: '{';
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+h3::after {
+    content: '}';
+    display: inline-block;
+    margin-left: 0.5em;
 }
 
 h4 {
     color: #c0d674;
     font-size: 0.8em;
     text-align: center;
+    margin-left: 1em; /* Indent visually for nested look */
 }
 
 ul {
     color: #c0d674;
     font-size: 0.8em;
-    text-align: center;
+    text-align: left; /* Align text left */
+    margin: 0 auto; /* Center the block */
+    padding-left: 1em; /* Add indentation for list items */
+    width: fit-content; /* Adjust width to fit content */
 }
 
 /* Site Title */
@@ -81,10 +100,17 @@ ul {
     transform: translate(-50%, -50%);
     z-index: 10;
     font-weight: bold;
+    color: #e6a42b;
 }
 
-.a {
-    style: none;
+/* Anchor Links */
+a {
+    text-decoration: none;
+    color: #e6a42b;
+}
+
+a:hover {
+    text-decoration: underline;
     color: #c0d674;
 }
 
@@ -168,5 +194,9 @@ footer p {
 
     #tagline {
         font-size: 1.0em;
+    }
+
+    a {
+        font-size: 1.2em;
     }
 }
