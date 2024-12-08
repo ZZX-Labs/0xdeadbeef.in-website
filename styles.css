@@ -45,7 +45,7 @@ header {
 
 h1 {
     color: #e6a42b;
-    font-size: 3.75em;
+    font-size: 5.75em;
     text-align: center;
 }
 
@@ -60,7 +60,6 @@ h3 {
     font-size: 1em;
     text-align: center;
 }
-
 
 h4 {
     color: #c0d674;
@@ -80,6 +79,8 @@ h4 {
 
 #site-subtitle {
     position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     font-weight: italic;
