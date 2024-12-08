@@ -58,7 +58,7 @@ h2 {
 /* Site Title */
 #site-title {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -67,7 +67,7 @@ h2 {
 
 #site-subtitle {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
