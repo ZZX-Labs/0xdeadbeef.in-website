@@ -148,7 +148,7 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     #site-title {
-        font-size: 1.86em;
+        font-size: 1.84em;
         top: 75%;
         left: 50%;
         transform: translate(-50%, -50%);
