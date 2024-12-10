@@ -71,6 +71,12 @@ h4 {
     margin-left: 1em; /* Indent visually for nested look */
 }
 
+p {
+    font-size: 0.75em;
+    color: #c0d674;
+    text-align: center;
+}
+
 ul {
     color: #c0d674;
     font-size: 0.8em;
