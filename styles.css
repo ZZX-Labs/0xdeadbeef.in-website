@@ -130,6 +130,14 @@ a:hover {
     color: #e6a42b;
 }
 
+pre {
+    text-align: inline-block;
+    justify-content: center;
+    font-size: 0.8em;
+    color: #c0d674;
+    gap: 8px;
+}
+
 /* Call-to-Action Buttons */
 #cta-buttons {
     display: flex;
