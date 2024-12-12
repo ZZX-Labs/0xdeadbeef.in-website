@@ -102,11 +102,13 @@ ul {
 /* Anchor Links */
 a {
     text-decoration: none;
+    style: none;
     color: #e6a42b;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    style: none;
     color: #c0d674;
 }
 
@@ -191,9 +193,20 @@ footer p {
 
     #tagline {
         font-size: 1.0em;
+        text-align: center;
     }
 
     a {
         font-size: 1.0em;
+        text-decoration: none;
+        style: none;
+        color: #e6a42b;
+    }
+    
+    a {
+        font-size: 1.0em;
+        text-decoration: none;
+        style: none;
+        color: #c0d674;
     }
 }
