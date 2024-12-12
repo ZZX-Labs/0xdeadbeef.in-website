@@ -16,3 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //     const audio = document.getElementById('background-audio');
 //     audio.pause();
 // });
+
+document.querySelectorAll('.button').forEach(button => {
+    button.onmouseover = () => button.style.backgroundColor = '#0056b3';
+    button.onmouseout = () => button.style.backgroundColor = '#007bff';
+});
