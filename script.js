@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 document.querySelectorAll('.button').forEach(button => {
-    button.onmouseover = () => button.style.backgroundColor = '#0056b3';
-    button.onmouseout = () => button.style.backgroundColor = '#007bff';
+    button.onmouseover = () => button.style.backgroundColor = '#c0d674';
+    button.onmouseout = () => button.style.backgroundColor = '#e6a42b';
 });
