@@ -161,6 +161,10 @@ pre {
     color: black;
 }
 
+.img {
+    align: center;
+}
+
 /* Footer */
 footer {
     background-color: #222;
