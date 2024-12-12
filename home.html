@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern and elegant portfolio website.">
+    <title>[:[0xdeadbeef]:] | Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Background Audio -->
+    <audio id="background-audio" autoplay loop muted>
+        <source src="static/audio/tabla-loop.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
+    <div id="landing-container">
+        <header>
+            <div id="header-banner">
+                <img src="static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
+            </div>
+            <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
+        </header>
+        <main>
+            <!-- <h2>[:[0xdeadbeef]:]</h2> -->
+            <!-- <h3>Specializing in:</h3> -->
+            <div class="container" style="display: block; text-align: center; margin: 0 auto;">
+              <h3>{</h3>
+              <h4>
+                  <ul>Technology</ul>
+                  <ul>Software</ul>
+                  <ul>Hardware</ul>
+                  <ul>Web</ul>
+                  <ul>Bitcoin</ul>
+                  <ul>Bitcoin Mining</ul>
+                  <ul>Bitcoin Algorithmic Trading</ul>
+                  <ul>Bitcoin Forensics</ul>
+                  <ul>Bitcoin Analytics</ul>
+                  <ul>Bitcoin Investigations</ul>
+                  <ul>AI</ul>
+                  <ul>ML</ul>
+                  <ul>Private Offline LLMs</ul>
+                  <ul>Private Offline GPT PDAs</ul>
+                  <ul>Cryptography</ul>
+                  <ul>OSINT</ul>
+                  <ul>Cyber Investigations</ul>
+                  <ul>Cyber Security</ul>
+                  <ul>Cyber Warfare</ul>
+                  <ul>Digital Music</ul>
+                  <ul>Fine Art</ul>
+                  <ul>Conceptualization</ul>
+              </h4>
+              <h3>}</h3>
+            </div>
+            <br><br>
+          
+            <div class="container">
+                <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">Showcasing innovation, creativity, and technical excellence.</p>
+            </div>
+            
+            <div id="cta-buttons">
+                <a href="about.html" class="button" aria-label="Learn more about [0xdeadbeef]">About [0xdeadbeef]</a>
+                <a href="portfolio.html" class="button" aria-label="View [0xdeadbeef]'s Portfolio">View Portfolio</a>
+                <a href="projects.html" class="button" aria-label="Explore [0xdeadbeef]'s Projects">View Projects</a>
+                <a href="contact.html" class="button" aria-label="Contact [0xdeadbeef]">Contact</a>
+            </div>
+            <br><br>
+            
+                <div class="container">
+                    <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">This page is currently under construction. We are working towards full launch.</p><br><br>
+                </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="container">
+                <hr>
+                <p>&copy; 2024 <strong>[0xdeadbeef]</strong>. All rights reserved. Licensed under the MIT Open Source Software License. Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R & D</strong> & <strong>[0xdeadbeef] Consulting</strong>.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Add JavaScript for unmuting after the page loads -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-audio');
+            // Remove mute after page load (allows autoplay if user interaction is required)
+            audio.muted = false;
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
