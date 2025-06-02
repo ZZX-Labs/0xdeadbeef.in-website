@@ -9,11 +9,45 @@
     <link rel="stylesheet" href="../static/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        #header-banner {
+            position: relative;
+        }
+
+        #header-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .icon-wrapper {
+            position: absolute;
+            top: 20%; /* Adjust vertically from top */
+            right: 2%; /* Adjust horizontally from right */
+            transform: scale(0.35); /* Scale to 35% size */
+            transform-origin: top right;
+            z-index: 10;
+            pointer-events: none;
+            max-width: 300px;
+        }
+
+        #bull-icon {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+
 </head>
 <body>
     <div id="landing-container">
         <header>
             <div id="header-banner">
+                <!-- Icon scaled and positioned inside the banner -->
+                <div class="icon-wrapper">
+                    <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Icon Logo" id="bull-icon">
+                </div>
+                <!-- Full-width banner -->
                 <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
             </div>
             <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
@@ -36,11 +70,11 @@
                     <h3>Bitcoin Donation Addresses</h3>
                     <!-- Correct P2SH Address -->
                     <p><strong>P2SH Address:</strong> <code>3BLh9rCH2CNwcyEAiCdtYX4XV4qLvDfVAc</code></p>
-                    <img src="../static/images/3BLh9rCH2CNwcyEAiCdtYX4XV4qLvDfVAc.png" alt="P2SH QR Code" style="display: block; margin: 0 auto;">
+                    <img src="../static/images/addresses/3BLh9rCH2CNwcyEAiCdtYX4XV4qLvDfVAc.png" alt="P2SH QR Code" style="display: block; margin: 0 auto;">
                     <br>
                     <!-- Correct Bech32 Address -->
                     <p><strong>Bech32 Address:</strong> <code>bc1qcfld2vv4wgrftapsq5ml6glpf8pfht2x5zsxzg</code></p>
-                    <img src="../static/images/bc1qcfld2vv4wgrftapsq5ml6glpf8pfht2x5zsxzg.png" alt="Bech32 QR Code" style="display: block; margin: 0 auto;">
+                    <img src="../static/images/addresses/bc1qcfld2vv4wgrftapsq5ml6glpf8pfht2x5zsxzg.png" alt="Bech32 QR Code" style="display: block; margin: 0 auto;">
                     <br>
                 </div>
                 <hr>
