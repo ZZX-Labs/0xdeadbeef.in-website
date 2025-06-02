@@ -13,15 +13,20 @@
         #header-banner {
             position: relative;
         }
+
         #bull-icon {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 45%; /* 25% of original image width */
-            max-width: 150px; /* optional upper limit */
+            top: 0;
+            right: 0;
+            width: 100%;                /* Full original image width */
+            height: auto;
+            transform: scale(0.25);     /* Reduce to 25% size */
+            transform-origin: top right; /* Anchor scaling to top-right corner */
             z-index: 10;
+            pointer-events: none;       /* Optional: allow clicks to pass through */
         }
     </style>
+
 </head>
 <body>
     <div id="landing-container">
