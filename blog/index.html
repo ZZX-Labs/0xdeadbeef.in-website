@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Blog updates, insights, field notes, and developer logs from [0xdeadbeef]." />
+  <title>Blog | [0xdeadbeef]</title>
+  <link rel="stylesheet" href="../static/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <style>
+    #header-banner {
+      position: relative;
+    }
 
+    #header-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .icon-wrapper {
+      position: absolute;
+      top: 20%;
+      right: 2%;
+      transform: scale(0.35);
+      transform-origin: top right;
+      z-index: 10;
+      pointer-events: none;
+      max-width: 300px;
+    }
+
+    #bull-icon {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .blog-entry {
+      max-width: 960px;
+      margin: 60px auto;
+      text-align: left;
+      line-height: 1.6em;
+    }
+
+    .blog-entry h3 {
+      margin-top: 0;
+    }
+
+    .blog-entry time {
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #e6a42b;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #c68b24;
+    }
+  </style>
+</head>
+<body>
+  <div id="landing-container">
+    <header>
+      <div id="header-banner">
+        <div class="icon-wrapper">
+          <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Icon Logo" id="bull-icon" />
+        </div>
+        <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image" />
+      </div>
+      <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
+    </header>
+
+    <main>
+      <h2 class="page-title">Lab Notes & Field Dispatches</h2>
+      <h3 class="page-subtitle" style="text-align: center;">Updates, Breakthroughs, Documentation, and Logs</h3>
+
+      <div class="container" style="max-width: 960px; margin: 0 auto;">
+        <p style="text-align: center;">
+          A stream of consciousness from across domains — cybersecurity, cryptography, hardware hacking, design systems, research logs, and direct dispatches from the field. All content is timestamped, hashed, and signed when necessary. RSS feed available soon.
+        </p>
+
+        <br><hr><br>
+
+        <div class="blog-entry">
+          <h3><a href="./blog_posts/post_0001/index.html">Post #0001 – Initializing the Broadcast</a></h3>
+          <time>June 1, 2025 @ 03:33AM EST</time>
+          <p>
+            This is the beginning of a long-form log from [0xdeadbeef]. Here we’ll detail tooling workflows, field experiments, AI prototypes, cysec monitoring systems, and internal architectural sketches across various ongoing projects. Posts will remain plaintext-first, optionally downloadable as `.txt`, `.md`, or `.pdf` per post.
+          </p>
+        </div>
+
+        <!-- Future entries listed dynamically or hardcoded -->
+        <!--
+        <div class="blog-entry">
+          <h3><a href="./blog_posts/post_0002/index.html">Post #0002 – [TITLE]</a></h3>
+          <time>[TIMESTAMP]</time>
+          <p>[SUMMARY]</p>
+        </div>
+        -->
+
+        <br>
+        <div id="cta-buttons" style="text-align: center;">
+          <a href="../" class="button">Home</a>
+          <a href="../about" class="button">About</a>
+          <a href="../portfolio" class="button">Portfolio</a>
+          <a href="../projects" class="button">Projects</a>
+          <a href="../donate" class="button">Donate</a>
+          <a href="../contact" class="button">Contact</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <hr />
+        <p>&copy; 2025 <strong>[0xdeadbeef]</strong>. All rights reserved. MIT Open Source License. Managed by ZZX-Labs R&D.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
