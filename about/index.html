@@ -9,11 +9,27 @@
     <link rel="stylesheet" href="../static/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        #header-banner {
+            position: relative;
+        }
+        #bull-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 25%; /* 25% of original image width */
+            max-width: 150px; /* optional upper limit */
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
     <div id="landing-container">
         <header>
             <div id="header-banner">
+                <!-- Bull Icon -->
+                <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Logo" id="bull-icon">
+                <!-- Header Image -->
                 <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
             </div>
             <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
