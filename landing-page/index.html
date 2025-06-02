@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="../static/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        #header-banner {
+            position: relative;
+        }
+
+        #header-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .icon-wrapper {
+            position: absolute;
+            top: 20%; /* Adjust vertically from top */
+            right: 2%; /* Adjust horizontally from right */
+            transform: scale(0.35); /* Scale to 35% size */
+            transform-origin: top right;
+            z-index: 10;
+            pointer-events: none;
+            max-width: 300px;
+        }
+
+        #bull-icon {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+
 </head>
 <body>
     <!-- Background Audio -->
@@ -16,10 +45,15 @@
         <source src="../static/audio/tabla-loop.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
+    
     <div id="landing-container">
         <header>
             <div id="header-banner">
+                <!-- Icon scaled and positioned inside the banner -->
+                <div class="icon-wrapper">
+                    <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Icon Logo" id="bull-icon">
+                </div>
+                <!-- Full-width banner -->
                 <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
             </div>
             <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
