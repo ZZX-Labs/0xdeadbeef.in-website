@@ -1,1 +1,199 @@
-
+{
+  "meta": {
+    "name": "0xdeadbeef.in Color System",
+    "version": "1.0.0",
+    "author": "0xdeadbeef",
+    "description": "Canonical color palette for the 0xdeadbeef.in website, interfaces, graphics, technical documents, and related visual systems."
+  },
+  "brand": {
+    "primary": "#c0d674",
+    "primary_hover": "#d2e68a",
+    "primary_active": "#a9c05f",
+    "primary_muted": "#78884a",
+    "primary_subtle": "#30391f",
+    "accent": "#e6a42b",
+    "accent_hover": "#f0b94d",
+    "accent_active": "#c88716",
+    "accent_muted": "#8f661c",
+    "accent_subtle": "#3a2a12"
+  },
+  "background": {
+    "black": "#000000",
+    "page": "#050705",
+    "page_alt": "#090b09",
+    "surface": "#0d100d",
+    "surface_alt": "#121612",
+    "surface_elevated": "#171c17",
+    "surface_hover": "#1c221c",
+    "overlay": "rgba(0, 0, 0, 0.72)",
+    "overlay_strong": "rgba(0, 0, 0, 0.88)",
+    "transparent": "rgba(0, 0, 0, 0)"
+  },
+  "text": {
+    "primary": "#f2f4ee",
+    "secondary": "#c5cbbf",
+    "muted": "#91998b",
+    "subtle": "#687064",
+    "inverse": "#050705",
+    "brand": "#c0d674",
+    "accent": "#e6a42b",
+    "disabled": "#51584d"
+  },
+  "border": {
+    "default": "#283026",
+    "subtle": "#1c221b",
+    "strong": "#3d4938",
+    "brand": "#c0d674",
+    "accent": "#e6a42b",
+    "focus": "#d2e68a"
+  },
+  "state": {
+    "success": "#7fd17a",
+    "success_background": "#142b15",
+    "warning": "#e6a42b",
+    "warning_background": "#33240d",
+    "error": "#e46d67",
+    "error_background": "#321312",
+    "info": "#72b7d8",
+    "info_background": "#102733",
+    "neutral": "#91998b",
+    "neutral_background": "#1a1e19"
+  },
+  "status": {
+    "active": "#7fd17a",
+    "development": "#e6a42b",
+    "research": "#72b7d8",
+    "experimental": "#bd8be0",
+    "archived": "#91998b",
+    "paused": "#d0a15d",
+    "deprecated": "#e46d67",
+    "private": "#b07adc",
+    "public": "#c0d674"
+  },
+  "bitcoin": {
+    "orange": "#f7931a",
+    "orange_hover": "#ffa63d",
+    "orange_active": "#d97800",
+    "orange_subtle": "#3b2409",
+    "lightning": "#f6c344",
+    "lightning_subtle": "#3d310e"
+  },
+  "cyber": {
+    "terminal_green": "#c0d674",
+    "matrix_green": "#6cff5f",
+    "signal_blue": "#55b8ff",
+    "warning_amber": "#e6a42b",
+    "critical_red": "#ff5c57",
+    "violet": "#bd8be0"
+  },
+  "code": {
+    "background": "#080a08",
+    "foreground": "#e7ebdf",
+    "comment": "#747d6e",
+    "keyword": "#c0d674",
+    "string": "#e6a42b",
+    "number": "#72b7d8",
+    "function": "#d2e68a",
+    "operator": "#bd8be0",
+    "variable": "#f2f4ee",
+    "error": "#e46d67",
+    "selection": "#29331e"
+  },
+  "link": {
+    "default": "#c0d674",
+    "hover": "#d2e68a",
+    "active": "#e6a42b",
+    "visited": "#9caf65",
+    "underline": "rgba(192, 214, 116, 0.45)"
+  },
+  "button": {
+    "primary_background": "#c0d674",
+    "primary_text": "#050705",
+    "primary_border": "#c0d674",
+    "primary_hover_background": "#d2e68a",
+    "primary_active_background": "#a9c05f",
+    "secondary_background": "transparent",
+    "secondary_text": "#c0d674",
+    "secondary_border": "#59684e",
+    "secondary_hover_background": "#182015",
+    "disabled_background": "#222720",
+    "disabled_text": "#687064",
+    "disabled_border": "#30362d"
+  },
+  "input": {
+    "background": "#0d100d",
+    "text": "#f2f4ee",
+    "placeholder": "#687064",
+    "border": "#3d4938",
+    "border_hover": "#59684e",
+    "border_focus": "#c0d674",
+    "selection": "#30391f",
+    "disabled_background": "#151815",
+    "disabled_text": "#687064"
+  },
+  "navigation": {
+    "background": "rgba(5, 7, 5, 0.94)",
+    "text": "#c5cbbf",
+    "text_hover": "#f2f4ee",
+    "text_active": "#c0d674",
+    "border": "#1c221b",
+    "mobile_overlay": "rgba(0, 0, 0, 0.96)"
+  },
+  "footer": {
+    "background": "#030403",
+    "text": "#91998b",
+    "heading": "#f2f4ee",
+    "link": "#c0d674",
+    "border": "#1c221b"
+  },
+  "banner": {
+    "overlay_top": "rgba(0, 0, 0, 0.12)",
+    "overlay_middle": "rgba(0, 0, 0, 0.42)",
+    "overlay_bottom": "rgba(0, 0, 0, 0.9)",
+    "text": "#f2f4ee",
+    "accent": "#c0d674"
+  },
+  "chart": {
+    "series_1": "#c0d674",
+    "series_2": "#e6a42b",
+    "series_3": "#72b7d8",
+    "series_4": "#bd8be0",
+    "series_5": "#e46d67",
+    "series_6": "#7fd17a",
+    "series_7": "#d0a15d",
+    "series_8": "#91998b",
+    "grid": "#283026",
+    "axis": "#687064",
+    "label": "#c5cbbf",
+    "background": "#090b09"
+  },
+  "social": {
+    "github": "#f2f4ee",
+    "bitcoin": "#f7931a",
+    "email": "#72b7d8",
+    "pgp": "#c0d674"
+  },
+  "focus": {
+    "outline": "#d2e68a",
+    "outline_offset": "#000000",
+    "shadow": "rgba(192, 214, 116, 0.35)"
+  },
+  "selection": {
+    "background": "#c0d674",
+    "text": "#050705"
+  },
+  "shadow": {
+    "small": "rgba(0, 0, 0, 0.24)",
+    "medium": "rgba(0, 0, 0, 0.42)",
+    "large": "rgba(0, 0, 0, 0.64)",
+    "brand_glow": "rgba(192, 214, 116, 0.18)",
+    "accent_glow": "rgba(230, 164, 43, 0.18)"
+  },
+  "gradient": {
+    "page": "linear-gradient(180deg, #050705 0%, #090b09 100%)",
+    "surface": "linear-gradient(180deg, #121612 0%, #0d100d 100%)",
+    "brand": "linear-gradient(135deg, #c0d674 0%, #91aa52 100%)",
+    "accent": "linear-gradient(135deg, #e6a42b 0%, #b97a14 100%)",
+    "banner": "linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.9) 100%)"
+  }
+}
