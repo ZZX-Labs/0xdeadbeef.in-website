@@ -1,0 +1,28 @@
+# Post Title
+
+This is the opening paragraph of the post.
+
+Use one blank line between paragraphs.
+
+## Section Heading
+
+This is another paragraph.
+
+Plain-text formatting supported by the post renderer:
+
+# Heading level 1
+## Heading level 2
+### Heading level 3
+
+- Unordered list item
+- Another unordered list item
+
+1. Ordered list item
+2. Another ordered list item
+
+> Block quotation
+
+`inline code`
+
+```text
+Preformatted code or text block.
