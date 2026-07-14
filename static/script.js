@@ -153,99 +153,116 @@ function initializeMobileNavigation(){
    Landing-Page Audio
    ========================================================================== */
 
-function initializeAudioControls(){
-    const audio=document.getElementById("background-audio");
-    const toggle=document.getElementById("audio-toggle");
-    const volume=document.getElementById("audio-volume");
-    const status=document.getElementById("audio-status");
+function initializeAudioControls() {
+    const audio = document.getElementById("background-audio");
+    const toggle = document.getElementById("audio-toggle");
+    const volume = document.getElementById("audio-volume");
+    const status = document.getElementById("audio-status");
 
-    if(!audio||!toggle)return;
-    if(initializedElements.audio.has(audio))return;
+    if (!audio || !toggle) return;
+    if (initializedElements.audio.has(audio)) return;
 
     initializedElements.audio.add(audio);
 
-    const storedVolume=readStoredNumber("site-audio-volume");
-    const defaultVolume=Number.isFinite(storedVolume)
-        ?clamp(storedVolume,0,1)
-        :0.35;
+    audio.loop = true;
+    audio.preload = "auto";
+    audio.load();
 
-    audio.volume=defaultVolume;
-    audio.muted=false;
+    const storedVolume = readStoredNumber("site-audio-volume");
+    const defaultVolume = Number.isFinite(storedVolume)
+        ? clamp(storedVolume, 0, 1)
+        : 0.35;
 
-    if(volume){
-        volume.value=String(defaultVolume);
+    audio.volume = defaultVolume;
+    audio.muted = false;
+
+    if (volume) {
+        volume.value = String(defaultVolume);
     }
 
-    const updateAudioInterface=()=>{
-        const isPlaying=!audio.paused&&!audio.ended;
+    function updateUI() {
+        const playing = !audio.paused;
 
-        toggle.setAttribute("aria-pressed",String(isPlaying));
-        toggle.textContent=isPlaying?"Disable Audio":"Enable Audio";
+        toggle.setAttribute("aria-pressed", String(playing));
+        toggle.textContent = playing ? "Disable Audio" : "Enable Audio";
 
-        if(status){
-            status.textContent=isPlaying
-                ?"Background audio is enabled."
-                :"Background audio is disabled.";
+        if (status) {
+            status.textContent = playing
+                ? "Background audio is enabled."
+                : "Background audio is disabled.";
         }
-    };
+    }
 
-    const playAudio=async()=>{
-        try{
+    async function playAudio() {
+        try {
             await audio.play();
-            updateAudioInterface();
-        }catch(error){
-            console.warn("Audio playback could not begin:",error);
+            updateUI();
+        } catch (err) {
+            console.warn(err);
 
-            if(status){
-                status.textContent=
-                    "Audio could not begin. Check browser media permissions.";
+            if (status) {
+                status.textContent =
+                    "Click Enable Audio to begin playback.";
             }
         }
-    };
+    }
 
-    const pauseAudio=()=>{
+    function stopAudio() {
         audio.pause();
-        updateAudioInterface();
-    };
+        updateUI();
+    }
 
-    toggle.addEventListener("click",()=>{
-        if(audio.paused){
+    toggle.addEventListener("click", () => {
+        if (audio.paused) {
             void playAudio();
-        }else{
-            pauseAudio();
+        } else {
+            stopAudio();
         }
     });
 
-    if(volume){
-        volume.addEventListener("input",()=>{
-            const requestedVolume=Number.parseFloat(volume.value);
-
-            if(!Number.isFinite(requestedVolume))return;
-
-            audio.volume=clamp(requestedVolume,0,1);
-            writeStoredNumber("site-audio-volume",audio.volume);
-
-            if(audio.volume===0&&!audio.paused){
-                pauseAudio();
-            }
+    if (volume) {
+        volume.addEventListener("input", () => {
+            audio.volume = Number(volume.value);
+            writeStoredNumber("site-audio-volume", audio.volume);
         });
     }
 
-    audio.addEventListener("play",updateAudioInterface);
-    audio.addEventListener("pause",updateAudioInterface);
-    audio.addEventListener("ended",updateAudioInterface);
+    audio.addEventListener("ended", () => {
+        audio.currentTime = 0;
+        void playAudio();
+    });
 
-    audio.addEventListener("error",()=>{
-        toggle.disabled=true;
-        toggle.textContent="Audio Unavailable";
+    audio.addEventListener("play", updateUI);
+    audio.addEventListener("pause", updateUI);
 
-        if(status){
-            status.textContent=
-                "The background audio file could not be loaded.";
+    audio.addEventListener("error", () => {
+        toggle.disabled = true;
+        toggle.textContent = "Audio Unavailable";
+
+        if (status) {
+            status.textContent =
+                "Unable to load /static/audio/tabla-loop.mp3";
         }
     });
 
-    updateAudioInterface();
+    const unlock = () => {
+        if (audio.paused) {
+            void playAudio();
+        }
+
+        window.removeEventListener("pointerdown", unlock);
+        window.removeEventListener("keydown", unlock);
+        window.removeEventListener("touchstart", unlock);
+    };
+
+    window.addEventListener("pointerdown", unlock, { once: true });
+    window.addEventListener("keydown", unlock, { once: true });
+    window.addEventListener("touchstart", unlock, {
+        once: true,
+        passive: true
+    });
+
+    updateUI();
 }
 
 /* ==========================================================================
