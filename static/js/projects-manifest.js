@@ -19,6 +19,22 @@ const CATEGORY_DIRS=[
     "web"
 ];
 
+const CATEGORY_LABELS={
+    adult:"Adult",
+    ai:"AI",
+    apps:"Applications",
+    bitcoin:"Bitcoin",
+    "cyber-investigation":"Cyber Investigation",
+    "cyber-security":"Cyber Security",
+    "cyber-warfare":"Cyber Warfare",
+    firmware:"Firmware",
+    hardware:"Hardware",
+    ml:"Machine Learning",
+    osint:"OSINT",
+    software:"Software",
+    web:"Web"
+};
+
 const state={
     projects:[],
     errors:[],
@@ -69,6 +85,61 @@ function projectsBaseURL(){
     }
 }
 
+function normalizeCategory(value,fallback="software"){
+    const category=txt(value,fallback)
+        .trim()
+        .toLowerCase()
+        .replaceAll("_","-")
+        .replaceAll(" ","-");
+
+    const aliases={
+        app:"apps",
+        application:"apps",
+        applications:"apps",
+        mobile:"apps",
+        artificialintelligence:"ai",
+        "artificial-intelligence":"ai",
+        machinelearning:"ml",
+        "machine-learning":"ml",
+        cybersecurity:"cyber-security",
+        security:"cyber-security",
+        investigation:"cyber-investigation",
+        cyberwarfare:"cyber-warfare",
+        "cyber-conflict":"cyber-warfare",
+        embedded:"firmware",
+        electronics:"hardware",
+        website:"web",
+        websites:"web",
+        "web-development":"web"
+    };
+
+    const normalized=aliases[category]||category;
+
+    if(CATEGORY_DIRS.includes(normalized)){
+        return normalized;
+    }
+
+    return fallback;
+}
+
+function normalizeStringArray(value){
+    return arr(value)
+        .map(item=>{
+            if(item&&typeof item==="object"){
+                return txt(
+                    item.name||
+                    item.label||
+                    item.title||
+                    item.value
+                );
+            }
+
+            return txt(item);
+        })
+        .map(item=>item.trim())
+        .filter(Boolean);
+}
+
 async function fetchJSON(url){
     const response=await fetch(url,{
         method:"GET",
@@ -95,57 +166,6 @@ async function fetchJSON(url){
     }catch(error){
         throw new Error(`Invalid JSON manifest: ${url}: ${error.message}`);
     }
-}
-
-function normalizeCategory(value,fallback="software"){
-    const category=txt(value,fallback)
-        .trim()
-        .toLowerCase()
-        .replaceAll("_","-")
-        .replaceAll(" ","-");
-
-    const aliases={
-        app:"apps",
-        application:"apps",
-        applications:"apps",
-        mobile:"apps",
-        artificialintelligence:"ai",
-        "artificial-intelligence":"ai",
-        machinelearning:"ml",
-        "machine-learning":"ml",
-        cybersecurity:"cyber-security",
-        investigation:"cyber-investigation",
-        cyberwarfare:"cyber-warfare",
-        "cyber-conflict":"cyber-warfare",
-        embedded:"firmware",
-        electronics:"hardware",
-        website:"web",
-        websites:"web"
-    };
-
-    const normalized=aliases[category]||category;
-
-    return CATEGORY_DIRS.includes(normalized)
-        ?normalized
-        :fallback;
-}
-
-function normalizeStringArray(value){
-    return arr(value)
-        .map(item=>{
-            if(typeof item==="object"&&item!==null){
-                return txt(
-                    item.name||
-                    item.label||
-                    item.title||
-                    item.value
-                );
-            }
-
-            return txt(item);
-        })
-        .map(item=>item.trim())
-        .filter(Boolean);
 }
 
 function normalizeProject(raw,context){
@@ -297,6 +317,7 @@ function extractManifestLinks(manifest,baseURL){
                 category:"",
                 url:absoluteURL(item,baseURL)
             });
+
             continue;
         }
 
@@ -329,18 +350,47 @@ function extractManifestLinks(manifest,baseURL){
 }
 
 function projectIdentity(project){
-    return(
+    const key=
+        project.slug||
+        project.id||
         project.href||
         project.github||
-        `${project.category}::${project.id}::${project.title}`
-    ).toLowerCase();
+        `${project.category}::${project.title}`;
+
+    return txt(key).trim().toLowerCase();
+}
+
+function mergeProject(existing,incoming){
+    return{
+        ...existing,
+        ...incoming,
+        tags:[
+            ...new Set([
+                ...arr(existing.tags),
+                ...arr(incoming.tags)
+            ])
+        ]
+    };
 }
 
 function addProjects(projects){
     for(const project of projects){
         const key=projectIdentity(project);
 
-        if(state.seenProjects.has(key))continue;
+        if(state.seenProjects.has(key)){
+            const index=state.projects.findIndex(
+                item=>projectIdentity(item)===key
+            );
+
+            if(index!==-1){
+                state.projects[index]=mergeProject(
+                    state.projects[index],
+                    project
+                );
+            }
+
+            continue;
+        }
 
         state.seenProjects.add(key);
         state.projects.push(project);
@@ -358,11 +408,17 @@ async function walkManifest(url,category="",depth=0){
     addProjects(
         extractProjects(manifest,{
             manifestURL:url,
-            category:normalizeCategory(category,"software")
+            category:normalizeCategory(
+                category,
+                "software"
+            )
         })
     );
 
-    const children=extractManifestLinks(manifest,url);
+    const children=extractManifestLinks(
+        manifest,
+        url
+    );
 
     const results=await Promise.allSettled(
         children.map(child=>
@@ -381,6 +437,16 @@ async function walkManifest(url,category="",depth=0){
     }
 }
 
+async function loadMasterManifest(){
+    try{
+        await walkManifest(ROOT,"",0);
+        return true;
+    }catch(error){
+        state.errors.push(error);
+        return false;
+    }
+}
+
 async function loadCategoryManifests(){
     const base=projectsBaseURL();
 
@@ -391,7 +457,11 @@ async function loadCategoryManifests(){
                 base
             ).href;
 
-            return walkManifest(url,category,0);
+            return walkManifest(
+                url,
+                category,
+                0
+            );
         })
     );
 
@@ -403,14 +473,13 @@ async function loadCategoryManifests(){
 }
 
 async function loadProjectManifests(){
-    try{
-        await walkManifest(ROOT,"",0);
-    }catch(error){
-        state.errors.push(error);
-    }
+    await loadMasterManifest();
 
-    if(state.projects.length)return;
-
+    /*
+     * Category manifests are loaded even when the master manifest succeeds.
+     * This ensures newly added category records appear immediately if the
+     * generated master manifest has not yet been rebuilt or deployed.
+     */
     await loadCategoryManifests();
 
     if(!state.projects.length){
@@ -514,34 +583,24 @@ function updateCount(id,count){
 }
 
 function displayCategory(category){
-    const names={
-        adult:"Adult",
-        ai:"AI",
-        apps:"Applications",
-        bitcoin:"Bitcoin",
-        "cyber-investigation":"Cyber Investigation",
-        "cyber-security":"Cyber Security",
-        "cyber-warfare":"Cyber Warfare",
-        firmware:"Firmware",
-        hardware:"Hardware",
-        ml:"Machine Learning",
-        osint:"OSINT",
-        software:"Software",
-        web:"Web"
-    };
-
-    return names[category]||category;
+    return CATEGORY_LABELS[category]||category;
 }
 
 function renderFilters(projects,target,grid){
     if(!target||!grid)return;
 
-    const categories=[...new Set(
-        projects
-            .map(project=>project.category)
-            .filter(category=>CATEGORY_DIRS.includes(category))
-    )].sort((a,b)=>
-        CATEGORY_DIRS.indexOf(a)-CATEGORY_DIRS.indexOf(b)
+    const categories=[
+        ...new Set(
+            projects
+                .map(project=>project.category)
+                .filter(category=>
+                    CATEGORY_DIRS.includes(category)
+                )
+        )
+    ].sort(
+        (a,b)=>
+            CATEGORY_DIRS.indexOf(a)-
+            CATEGORY_DIRS.indexOf(b)
     );
 
     target.innerHTML=
@@ -560,7 +619,9 @@ function renderFilters(projects,target,grid){
         const filter=button.dataset.projectFilter;
 
         target
-            .querySelectorAll("[data-project-filter]")
+            .querySelectorAll(
+                "[data-project-filter]"
+            )
             .forEach(item=>{
                 item.classList.toggle(
                     "is-active",
@@ -569,7 +630,9 @@ function renderFilters(projects,target,grid){
             });
 
         grid
-            .querySelectorAll("[data-project-category]")
+            .querySelectorAll(
+                "[data-project-category]"
+            )
             .forEach(card=>{
                 card.hidden=
                     filter!=="all"&&
@@ -597,11 +660,16 @@ function renderPage(mode,projects){
             </article>`;
     }else{
         grid.innerHTML=projects
-            .map(project=>createCard(project,mode))
+            .map(project=>
+                createCard(project,mode)
+            )
             .join("");
     }
 
-    grid.setAttribute("aria-busy","false");
+    grid.setAttribute(
+        "aria-busy",
+        "false"
+    );
 
     updateCount(
         isProjects
@@ -656,60 +724,76 @@ function renderFailure(error){
         if(!grid)continue;
 
         grid.innerHTML=fallback;
-        grid.setAttribute("aria-busy","false");
+        grid.setAttribute(
+            "aria-busy",
+            "false"
+        );
     }
 }
 
-document.addEventListener("DOMContentLoaded",async()=>{
-    try{
-        await loadProjectManifests();
+document.addEventListener(
+    "DOMContentLoaded",
+    async()=>{
+        try{
+            await loadProjectManifests();
 
-        state.projects.sort((a,b)=>{
-            if(a.featured!==b.featured){
-                return Number(b.featured)-Number(a.featured);
-            }
+            state.projects.sort((a,b)=>{
+                if(a.featured!==b.featured){
+                    return Number(b.featured)-
+                        Number(a.featured);
+                }
 
-            const categoryOrder=
-                CATEGORY_DIRS.indexOf(a.category)-
-                CATEGORY_DIRS.indexOf(b.category);
+                const categoryOrder=
+                    CATEGORY_DIRS.indexOf(a.category)-
+                    CATEGORY_DIRS.indexOf(b.category);
 
-            if(categoryOrder!==0){
-                return categoryOrder;
-            }
+                if(categoryOrder!==0){
+                    return categoryOrder;
+                }
 
-            return a.title.localeCompare(b.title);
-        });
+                return a.title.localeCompare(
+                    b.title
+                );
+            });
 
-        renderPage("projects",state.projects);
-        renderPage("portfolio",state.projects);
-
-        if(state.errors.length){
-            setStatus(
-                true,
-                "Manifest partially synchronized",
-                `${state.projects.length} projects loaded; ${state.errors.length} manifest request${state.errors.length===1?"":"s"} failed or were unavailable.`
+            renderPage(
+                "projects",
+                state.projects
             );
-        }else{
-            setStatus(
-                true,
-                "Manifest synchronized",
-                `${state.projects.length} projects loaded from the ZZX-Labs master manifest.`
+
+            renderPage(
+                "portfolio",
+                state.projects
             );
+
+            if(state.errors.length){
+                setStatus(
+                    true,
+                    "Manifest partially synchronized",
+                    `${state.projects.length} projects loaded; ${state.errors.length} manifest request${state.errors.length===1?"":"s"} failed or were unavailable.`
+                );
+            }else{
+                setStatus(
+                    true,
+                    "Manifest synchronized",
+                    `${state.projects.length} projects loaded from the ZZX-Labs project manifests.`
+                );
+            }
+        }catch(error){
+            console.error(
+                "Unable to load ZZX-Labs project manifests:",
+                error
+            );
+
+            setStatus(
+                false,
+                "Manifest unavailable",
+                error.message
+            );
+
+            renderFailure(error);
         }
-    }catch(error){
-        console.error(
-            "Unable to load ZZX-Labs project manifests:",
-            error
-        );
-
-        setStatus(
-            false,
-            "Manifest unavailable",
-            error.message
-        );
-
-        renderFailure(error);
     }
-});
+);
 
 })();
