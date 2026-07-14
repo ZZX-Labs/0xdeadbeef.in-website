@@ -2,124 +2,1209 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="A modern and elegant portfolio website.">
-    <title>[:[0xdeadbeef]:] | Home Page</title>
-    <link rel="stylesheet" href="../static/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        #header-banner {
-            position: relative;
-        }
 
-        #header-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        .icon-wrapper {
-            position: absolute;
-            top: 20%; /* Adjust vertically from top */
-            right: 2%; /* Adjust horizontally from right */
-            transform: scale(0.35); /* Scale to 35% size */
-            transform-origin: top right;
-            z-index: 10;
-            pointer-events: none;
-            max-width: 300px;
-        }
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
 
-        #bull-icon {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
+    <meta
+        name="description"
+        content="The primary 0xdeadbeef portfolio dashboard for technology, software, hardware, Bitcoin, artificial intelligence, cybersecurity, art, design, writing, photography, research, and business ventures."
+    >
 
+    <meta
+        name="author"
+        content="0xdeadbeef"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+    <meta
+        name="color-scheme"
+        content="dark"
+    >
+
+    <link
+        rel="canonical"
+        href="https://0xdeadbeef.in/home/"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:site_name"
+        content="0xdeadbeef.in"
+    >
+
+    <meta
+        property="og:title"
+        content="[:[0xdeadbeef]:] | Home"
+    >
+
+    <meta
+        property="og:description"
+        content="Independent technology, creative research, engineering, Bitcoin development, cybersecurity, art, writing, and systems development."
+    >
+
+    <meta
+        property="og:url"
+        content="https://0xdeadbeef.in/home/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://0xdeadbeef.in/static/images/header-image.jpg"
+    >
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="[:[0xdeadbeef]:] | Home"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Independent engineering, research, Bitcoin, cybersecurity, art, and open-source development."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://0xdeadbeef.in/static/images/header-image.jpg"
+    >
+
+    <title>[:[0xdeadbeef]:] | Home</title>
+
+    <link
+        rel="icon"
+        href="/static/images/0xdeadbeef-0.png"
+        type="image/png"
+    >
+
+    <link
+        rel="manifest"
+        href="/site.webmanifest"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/styles.css"
+    >
 </head>
-<body>
-    <div id="landing-container">
-        <header>
+
+<body class="home-page">
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
+        Skip to content
+    </a>
+
+    <header class="site-header home-header">
+        <div class="nav-shell">
+            <a
+                class="brand"
+                href="/home/"
+                aria-label="0xdeadbeef home"
+            >
+                <span class="brand-bracket" aria-hidden="true">[:[</span>
+                <span class="brand-mark">0x</span>deadbeef
+                <span class="brand-bracket" aria-hidden="true">]:]</span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-nav"
+            >
+                Menu
+            </button>
+
+            <nav
+                id="primary-nav"
+                class="primary-nav"
+                aria-label="Primary navigation"
+            >
+                <a
+                    href="/home/"
+                    aria-current="page"
+                >
+                    Home
+                </a>
+
+                <a href="/about/">
+                    About
+                </a>
+
+                <a href="/portfolio/">
+                    Portfolio
+                </a>
+
+                <a href="/projects/">
+                    Projects
+                </a>
+
+                <a href="/blog/">
+                    Writing
+                </a>
+
+                <a href="/donate/">
+                    Donate
+                </a>
+
+                <a href="/contact/">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="home-banner">
             <div id="header-banner">
-                <!-- Icon scaled and positioned inside the banner -->
+                <img
+                    src="/static/images/header-image.jpg"
+                    alt="0xdeadbeef portfolio banner"
+                    id="header-image"
+                    width="1920"
+                    height="640"
+                >
+
                 <div class="icon-wrapper">
-                    <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Icon Logo" id="bull-icon">
+                    <img
+                        src="/static/images/0xdeadbeef-0.png"
+                        alt=""
+                        id="bull-icon"
+                        width="512"
+                        height="512"
+                    >
                 </div>
-                <!-- Full-width banner -->
-                <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
-            </div>
-            <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
-        </header>
-        <main>
-            <!-- <h2>[:[0xdeadbeef]:]</h2> -->
-            <!-- <h3>Specializing in:</h3> -->
-            <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-              <h3>{</h3>
-              <h4>
-                  <ul>Technology</ul>
-                  <ul>Software</ul>
-                  <ul>Hardware</ul>
-                  <ul>Web</ul>
-                  <ul>Bitcoin</ul>
-                  <ul>Bitcoin Mining</ul>
-                  <ul>Bitcoin Algorithmic Trading</ul>
-                  <ul>Bitcoin Forensics</ul>
-                  <ul>Bitcoin Analytics</ul>
-                  <ul>Bitcoin Investigations</ul>
-                  <ul>AI</ul>
-                  <ul>ML</ul>
-                  <ul>Private Offline LLMs</ul>
-                  <ul>Private Offline GPT PDAs</ul>
-                  <ul>Cryptography</ul>
-                  <ul>OSINT</ul>
-                  <ul>Cyber Investigations</ul>
-                  <ul>Cyber Security</ul>
-                  <ul>Cyber Warfare</ul>
-                  <ul>Digital Music</ul>
-                  <ul>Fine Art</ul>
-                  <ul>Conceptualization</ul>
-              </h4>
-              <h3>}</h3>
-            </div>
-            <br><br>
-          
-            <div class="container">
-                <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">Showcasing innovation, creativity, and technical excellence.</p>
-            </div>
-            
-            <div id="cta-buttons">
-                <a href="../about" class="button" aria-label="Learn more about [0xdeadbeef]">About [0xdeadbeef]</a>
-                <a href="../portfolio" class="button" aria-label="View [0xdeadbeef]'s Portfolios">View Portfolio</a>
-                <a href="../projects" class="button" aria-label="Explore [0xdeadbeef]'s Projects">View Projects</a>
-                <a href="../donate" class="button" aria-label="Donate Toward [0xdeadbeef]'s Funding">Donate Towards Funding</a>
-                <a href="../contact" class="button" aria-label="Contact [0xdeadbeef]">Contact</a>
-            </div>
-            <br><br>
-            
-                <div class="container">
-                    <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">This page is currently under construction. We are working towards full launch.</p><br><br>
-                </div>
-        </main>
-        
-        <footer class="footer">
-            <div class="container">
-                <hr>
-                <p>&copy; 2025 <strong>[0xdeadbeef]</strong>. All rights reserved. Licensed under the MIT Open Source Software License. Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&D</strong> & <strong>[0xdeadbeef] Consulting</strong>.</p>
-            </div>
-        </footer>
-    </div>
 
-    <!-- Add JavaScript for unmuting after the page loads -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('background-audio');
-            // Remove mute after page load (allows autoplay if user interaction is required)
-            audio.muted = false;
-        });
+                <div class="banner-overlay" aria-hidden="true"></div>
+
+                <div class="home-banner-copy">
+                    <p class="eyebrow">
+                        Personal Portfolio and Research Archive
+                    </p>
+
+                    <h1>
+                        <span aria-hidden="true">[:[</span>0xdeadbeef<span aria-hidden="true">]:]</span>
+                    </h1>
+
+                    <p class="lead">
+                        Engineering systems, publishing research, creating art,
+                        developing Bitcoin infrastructure, and documenting the
+                        work in public.
+                    </p>
+
+                    <div class="button-row">
+                        <a
+                            class="button"
+                            href="/portfolio/"
+                        >
+                            Browse Portfolio
+                        </a>
+
+                        <a
+                            class="button secondary"
+                            href="/projects/"
+                        >
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section home-introduction"
+            aria-labelledby="introduction-title"
+        >
+            <div class="section-header">
+                <p class="eyebrow">
+                    Independent Practice
+                </p>
+
+                <h2 id="introduction-title">
+                    Technology, research, design, and creative systems.
+                </h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>
+                        This website is the central public archive for the work
+                        of 0xdeadbeef: an independent engineer, researcher,
+                        artist, designer, developer, writer, photographer, and
+                        systems builder.
+                    </p>
+
+                    <p>
+                        The portfolio spans software, firmware, hardware,
+                        applications, Bitcoin, artificial intelligence, machine
+                        learning, open-source intelligence, cybersecurity,
+                        geopolitics, art, music, photography, writing, cannabis
+                        botany, and business development.
+                    </p>
+                </div>
+
+                <div class="content-column">
+                    <p>
+                        Projects are documented with source code, design notes,
+                        system architecture, visual studies, technical
+                        specifications, research papers, screenshots, field
+                        reports, and development histories where appropriate.
+                    </p>
+
+                    <p>
+                        The long-term objective is to maintain a durable,
+                        searchable, privacy-respecting archive of original work
+                        across technical and creative disciplines.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section"
+            aria-labelledby="disciplines-title"
+        >
+            <div class="section-header">
+                <p class="eyebrow">
+                    Disciplines
+                </p>
+
+                <h2 id="disciplines-title">
+                    Areas of work
+                </h2>
+
+                <p>
+                    Each discipline has a dedicated portfolio section for
+                    projects, research, images, writing, technical documents,
+                    and related source repositories.
+                </p>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <p class="card-index">01</p>
+
+                    <h3>Music</h3>
+
+                    <p>
+                        Composition, production, synthesis, sound design,
+                        recording, performance, and digital audio systems.
+                    </p>
+
+                    <a href="/portfolio/music/">
+                        View music portfolio
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">02</p>
+
+                    <h3>Art</h3>
+
+                    <p>
+                        Drawing, painting, illustration, digital art, visual
+                        studies, conceptual work, and experimental media.
+                    </p>
+
+                    <a href="/portfolio/art/">
+                        View art portfolio
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">03</p>
+
+                    <h3>Design</h3>
+
+                    <p>
+                        Graphic design, branding, typography, interface design,
+                        publication systems, logos, and visual identity.
+                    </p>
+
+                    <a href="/portfolio/designs/">
+                        View design portfolio
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">04</p>
+
+                    <h3>3D Modeling</h3>
+
+                    <p>
+                        Product visualization, mechanical modeling, rendering,
+                        architecture, prototyping, and fabrication preparation.
+                    </p>
+
+                    <a href="/portfolio/3d-modeling/">
+                        View 3D portfolio
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">05</p>
+
+                    <h3>Cannabis Botany</h3>
+
+                    <p>
+                        Genetics, breeding, cultivation, morphology,
+                        preservation, extraction research, and plant science.
+                    </p>
+
+                    <a href="/portfolio/cannabis/">
+                        View botany portfolio
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">06</p>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        Static and dynamic websites, responsive interfaces,
+                        server deployment, accessibility, and web systems.
+                    </p>
+
+                    <a href="/portfolio/web-dev/">
+                        View web development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">07</p>
+
+                    <h3>Software Development</h3>
+
+                    <p>
+                        Desktop applications, command-line tools, automation,
+                        APIs, visualization, utilities, and backend systems.
+                    </p>
+
+                    <a href="/portfolio/software-dev/">
+                        View software development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">08</p>
+
+                    <h3>Firmware Development</h3>
+
+                    <p>
+                        Embedded systems, microcontrollers, device interfaces,
+                        sensors, wireless systems, and real-time software.
+                    </p>
+
+                    <a href="/portfolio/firmware-dev/">
+                        View firmware development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">09</p>
+
+                    <h3>Hardware Development</h3>
+
+                    <p>
+                        Electronics, PCB design, embedded devices, enclosures,
+                        power systems, test systems, and prototypes.
+                    </p>
+
+                    <a href="/portfolio/hardware-dev/">
+                        View hardware development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">10</p>
+
+                    <h3>Application Development</h3>
+
+                    <p>
+                        Desktop, mobile, Android, Linux, Windows, and
+                        cross-platform application design.
+                    </p>
+
+                    <a href="/portfolio/app-development/">
+                        View application development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">11</p>
+
+                    <h3>Adult Technology</h3>
+
+                    <p>
+                        Privacy-conscious, lawful, consent-based platforms,
+                        devices, creator systems, payments, and communications.
+                    </p>
+
+                    <a href="/portfolio/adult-tech/">
+                        View adult technology
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">12</p>
+
+                    <h3>Bitcoin Development</h3>
+
+                    <p>
+                        Nodes, wallets, mining, Lightning, payment systems,
+                        forensics, analytics, investigations, and infrastructure.
+                    </p>
+
+                    <a href="/portfolio/bitcoin-dev/">
+                        View Bitcoin development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">13</p>
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        Generative systems, autonomous agents, local inference,
+                        language models, retrieval, and applied AI research.
+                    </p>
+
+                    <a href="/portfolio/ai/">
+                        View AI development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">14</p>
+
+                    <h3>Machine Learning</h3>
+
+                    <p>
+                        Computer vision, classification, forecasting, dataset
+                        engineering, model evaluation, and experimentation.
+                    </p>
+
+                    <a href="/portfolio/ml/">
+                        View machine learning
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">15</p>
+
+                    <h3>OSINT</h3>
+
+                    <p>
+                        Public records, entity analysis, geospatial research,
+                        archives, timelines, mapping, and investigative tools.
+                    </p>
+
+                    <a href="/portfolio/osint/">
+                        View OSINT development
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">16</p>
+
+                    <h3>Cyber Investigations</h3>
+
+                    <p>
+                        Digital evidence, malware research, incident timelines,
+                        artifact analysis, attribution, and case systems.
+                    </p>
+
+                    <a href="/portfolio/cyber-investigations/">
+                        View cyber investigations
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">17</p>
+
+                    <h3>Cybersecurity</h3>
+
+                    <p>
+                        Secure engineering, defensive systems, hardening,
+                        cryptography, authentication, analysis, and resilience.
+                    </p>
+
+                    <a href="/portfolio/cysec/">
+                        View cybersecurity
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">18</p>
+
+                    <h3>Cyber Warfare Research</h3>
+
+                    <p>
+                        Strategy, doctrine, national resilience, infrastructure,
+                        conflict history, defensive policy, and threat research.
+                    </p>
+
+                    <a href="/portfolio/cyberwarfare/">
+                        View cyber warfare research
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">19</p>
+
+                    <h3>Geopolitics</h3>
+
+                    <p>
+                        International relations, strategic competition,
+                        security, technology policy, economics, and diplomacy.
+                    </p>
+
+                    <a href="/portfolio/geopolitics/">
+                        View geopolitics
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">20</p>
+
+                    <h3>Writing</h3>
+
+                    <p>
+                        Essays, whitepapers, technical documentation, research
+                        reports, analysis, tutorials, and project journals.
+                    </p>
+
+                    <a href="/portfolio/papers/">
+                        View writing and papers
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">21</p>
+
+                    <h3>Photography</h3>
+
+                    <p>
+                        Landscape, documentary, travel, architecture, technical,
+                        macro, studio, and field photography.
+                    </p>
+
+                    <a href="/portfolio/photography/">
+                        View photography
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">22</p>
+
+                    <h3>Adventures</h3>
+
+                    <p>
+                        Research travel, hiking, motorcycles, exploration,
+                        expeditions, field documentation, and outdoor systems.
+                    </p>
+
+                    <a href="/portfolio/adventures/">
+                        View adventures
+                    </a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">23</p>
+
+                    <h3>Business Ventures</h3>
+
+                    <p>
+                        Companies, research laboratories, consulting, products,
+                        ventures, partnerships, and experimental organizations.
+                    </p>
+
+                    <a href="/portfolio/business-ventures/">
+                        View business ventures
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section
+            class="section"
+            aria-labelledby="featured-projects-title"
+        >
+            <div class="section-header">
+                <p class="eyebrow">
+                    Selected Work
+                </p>
+
+                <h2 id="featured-projects-title">
+                    Featured projects
+                </h2>
+
+                <p>
+                    A rotating selection of active systems, open-source
+                    projects, research platforms, and long-term development
+                    programs.
+                </p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">
+                            Active
+                        </p>
+
+                        <h3>
+                            ZZX-Labs R&amp;D
+                        </h3>
+                    </div>
+
+                    <p>
+                        Independent research and development across Bitcoin,
+                        cybersecurity, artificial intelligence, embedded
+                        systems, software, hardware, firmware, and technical
+                        policy.
+                    </p>
+
+                    <ul class="tag-list">
+                        <li>R&amp;D</li>
+                        <li>Bitcoin</li>
+                        <li>Cybersecurity</li>
+                        <li>AI</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">
+                            Development
+                        </p>
+
+                        <h3>
+                            Speciedex
+                        </h3>
+                    </div>
+
+                    <p>
+                        A biodiversity research platform for documenting
+                        species, taxonomy, genetics, ecological relationships,
+                        distribution, and field observations.
+                    </p>
+
+                    <ul class="tag-list">
+                        <li>Biology</li>
+                        <li>Data</li>
+                        <li>Research</li>
+                        <li>Open Source</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">
+                            Research
+                        </p>
+
+                        <h3>
+                            Bitcoin Infrastructure
+                        </h3>
+                    </div>
+
+                    <p>
+                        Node operations, payment systems, wallets, mining,
+                        forensics, analytics, network visualization, and
+                        Bitcoin-native application development.
+                    </p>
+
+                    <ul class="tag-list">
+                        <li>Bitcoin Core</li>
+                        <li>Lightning</li>
+                        <li>Mining</li>
+                        <li>Analytics</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">
+                            Active
+                        </p>
+
+                        <h3>
+                            Private AI Systems
+                        </h3>
+                    </div>
+
+                    <p>
+                        Offline language models, local inference, personal AI
+                        devices, secure retrieval systems, autonomous research
+                        agents, and private knowledge infrastructure.
+                    </p>
+
+                    <ul class="tag-list">
+                        <li>LLM</li>
+                        <li>Offline AI</li>
+                        <li>Privacy</li>
+                        <li>Agents</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">
+                            Ongoing
+                        </p>
+
+                        <h3>
+                            Cyber Investigation Systems
+                        </h3>
+                    </div>
+
+                    <p>
+                        Defensive and authorized research tools for evidence
+                        organization, entity mapping, malware analysis, public
+                        records, timelines, and investigative workflows.
+                    </p>
+
+                    <ul class="tag-list">
+                        <li>OSINT</li>
+                        <li>Forensics</li>
+                        <li>Analysis</li>
+                        <li>Security</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">
+                            Archive
+                        </p>
+
+                        <h3>
+                            Creative Portfolio
+                        </h3>
+                    </div>
+
+                    <p>
+                        Fine art, graphic design, music, photography, visual
+                        identity, conceptual design, 3D modeling, and
+                        experimental media.
+                    </p>
+
+                    <ul class="tag-list">
+                        <li>Art</li>
+                        <li>Music</li>
+                        <li>Design</li>
+                        <li>Photography</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="section-actions">
+                <a
+                    class="button"
+                    href="/projects/"
+                >
+                    Browse All Projects
+                </a>
+            </div>
+        </section>
+
+        <section
+            class="section home-research"
+            aria-labelledby="research-title"
+        >
+            <div class="section-header">
+                <p class="eyebrow">
+                    Research and Publication
+                </p>
+
+                <h2 id="research-title">
+                    Documentation is part of the work.
+                </h2>
+            </div>
+
+            <div class="content-grid three-column">
+                <article class="info-panel">
+                    <h3>
+                        Technical Papers
+                    </h3>
+
+                    <p>
+                        Whitepapers, system designs, architecture documents,
+                        research notes, implementation plans, and engineering
+                        studies.
+                    </p>
+
+                    <a href="/portfolio/papers/">
+                        Browse papers
+                    </a>
+                </article>
+
+                <article class="info-panel">
+                    <h3>
+                        Development Logs
+                    </h3>
+
+                    <p>
+                        Project histories, experiments, failures, revisions,
+                        release notes, build records, and operational findings.
+                    </p>
+
+                    <a href="/blog/">
+                        Read development logs
+                    </a>
+                </article>
+
+                <article class="info-panel">
+                    <h3>
+                        Open Source
+                    </h3>
+
+                    <p>
+                        Source code, templates, utilities, documentation,
+                        research tools, embedded projects, and reproducible
+                        systems.
+                    </p>
+
+                    <a
+                        href="https://github.com/ZZX-Labs"
+                        rel="noopener noreferrer"
+                    >
+                        Browse GitHub
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section
+            class="section philosophy"
+            aria-labelledby="philosophy-title"
+        >
+            <div class="section-header">
+                <p class="eyebrow">
+                    Working Principles
+                </p>
+
+                <h2 id="philosophy-title">
+                    Build clearly. Document thoroughly. Preserve knowledge.
+                </h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>
+                        Engineering should remain understandable after the
+                        original implementation context has disappeared.
+                        Systems should be explicit, portable, testable, and
+                        documented well enough to reproduce.
+                    </p>
+
+                    <p>
+                        Open standards and local ownership are preferred over
+                        unnecessary dependency, opaque platforms, and
+                        centralized control.
+                    </p>
+                </div>
+
+                <div class="content-column">
+                    <p>
+                        Technical work exists within political, economic,
+                        ecological, and social systems. Research therefore
+                        requires attention not only to what can be built, but
+                        also to who controls it, who benefits, and how it may
+                        fail.
+                    </p>
+
+                    <p>
+                        Bitcoin, cryptography, privacy, open-source software,
+                        and independent infrastructure are treated as practical
+                        tools for individual and institutional resilience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="section call-to-action"
+            aria-labelledby="cta-title"
+        >
+            <div class="cta-box">
+                <p class="eyebrow">
+                    Continue
+                </p>
+
+                <h2 id="cta-title">
+                    Explore the archive.
+                </h2>
+
+                <p>
+                    Browse technical projects, creative work, research,
+                    publications, software, hardware, photography, music,
+                    business ventures, and ongoing experiments.
+                </p>
+
+                <div class="button-row">
+                    <a
+                        class="button"
+                        href="/portfolio/"
+                    >
+                        Portfolio
+                    </a>
+
+                    <a
+                        class="button secondary"
+                        href="/projects/"
+                    >
+                        Projects
+                    </a>
+
+                    <a
+                        class="button secondary"
+                        href="/blog/"
+                    >
+                        Writing
+                    </a>
+
+                    <a
+                        class="button secondary"
+                        href="/contact/"
+                    >
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <section>
+                <a
+                    class="brand"
+                    href="/home/"
+                >
+                    <span class="brand-bracket" aria-hidden="true">[:[</span>
+                    <span class="brand-mark">0x</span>deadbeef
+                    <span class="brand-bracket" aria-hidden="true">]:]</span>
+                </a>
+
+                <p>
+                    Independent engineering, research, art, Bitcoin
+                    development, cybersecurity, and open-source systems.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Navigate
+                </h2>
+
+                <ul>
+                    <li>
+                        <a href="/about/">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/portfolio/">
+                            Portfolio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/projects/">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/blog/">
+                            Writing
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>
+                    Development
+                </h2>
+
+                <ul>
+                    <li>
+                        <a href="/portfolio/software-dev/">
+                            Software
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/portfolio/hardware-dev/">
+                            Hardware
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/portfolio/bitcoin-dev/">
+                            Bitcoin
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/portfolio/cysec/">
+                            Cybersecurity
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>
+                    Connect
+                </h2>
+
+                <ul>
+                    <li>
+                        <a href="/contact/">
+                            Secure Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/donate/">
+                            Bitcoin Funding
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://github.com/ZZX-Labs"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/landing-page/">
+                            Landing Page
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-legal">
+            <p>
+                &copy; 2026
+                <strong>[0xdeadbeef]</strong>.
+                All rights reserved where applicable.
+            </p>
+
+            <p>
+                Website software is licensed under the MIT License unless
+                otherwise stated. Creative works may carry separate licenses.
+            </p>
+
+            <p>
+                Created by
+                <i>[0xdeadbeef]</i>
+                of
+                <strong>ZZX-Labs R&amp;D</strong>
+                and
+                <strong>[0xdeadbeef] Consulting</strong>.
+            </p>
+        </div>
+    </footer>
+
+    <noscript>
+        <div class="noscript-notice">
+            JavaScript is disabled. Core navigation and content remain fully
+            available.
+        </div>
+    </noscript>
+
+    <script
+        src="/static/script.js"
+        defer
+    ></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://0xdeadbeef.in/#person",
+                "name": "0xdeadbeef",
+                "url": "https://0xdeadbeef.in/",
+                "image": "https://0xdeadbeef.in/static/images/0xdeadbeef.png",
+                "jobTitle": "Independent Researcher, Engineer, Artist, and Developer",
+                "description": "Independent researcher, engineer, artist, designer, developer, writer, photographer, and systems builder working across software, firmware, hardware, Bitcoin, artificial intelligence, cybersecurity, art, design, and open-source technologies.",
+                "sameAs": [
+                    "https://github.com/ZZX-Labs"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://0xdeadbeef.in/#website",
+                "url": "https://0xdeadbeef.in/",
+                "name": "0xdeadbeef.in",
+                "publisher": {
+                    "@id": "https://0xdeadbeef.in/#person"
+                },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": "https://0xdeadbeef.in/home/#page",
+                "url": "https://0xdeadbeef.in/home/",
+                "name": "0xdeadbeef Home",
+                "description": "The primary 0xdeadbeef portfolio dashboard for engineering, research, Bitcoin, cybersecurity, art, design, software, hardware, writing, and business ventures.",
+                "isPartOf": {
+                    "@id": "https://0xdeadbeef.in/#website"
+                },
+                "about": {
+                    "@id": "https://0xdeadbeef.in/#person"
+                },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://0xdeadbeef.in/home/"
+                    }
+                ]
+            }
+        ]
+    }
     </script>
-
-    <script src="../static/script.js"></script>
 </body>
 </html>
