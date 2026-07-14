@@ -5,18 +5,41 @@
  * Shared client-side behavior
  *
  * Responsibilities:
+ * - Shared-component initialization
  * - Mobile navigation
  * - Landing-page audio controls
- * - Portfolio and project filtering
- * - Search filtering
- * - Copy-to-clipboard buttons
+ * - Static portfolio/project filtering
+ * - Local page search
+ * - Copy-to-clipboard controls
  * - Current-year rendering
  * - External-link hardening
  *
- * The site remains fully navigable without JavaScript.
+ * Manifest project loading is handled separately by:
+ * /static/js/projects-manifest.js
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+const initializedElements={
+    navigation:new WeakSet(),
+    audio:new WeakSet(),
+    filters:new WeakSet(),
+    search:new WeakSet(),
+    copy:new WeakSet()
+};
+
+document.addEventListener("DOMContentLoaded",()=>{
+    initializeSite();
+    observeIncludedContent();
+});
+
+document.addEventListener("site:include-loaded",()=>{
+    initializeSite();
+});
+
+document.addEventListener("include:loaded",()=>{
+    initializeSite();
+});
+
+function initializeSite(){
     initializeMobileNavigation();
     initializeAudioControls();
     initializeFilters();
@@ -24,64 +47,105 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeCopyButtons();
     initializeCurrentYear();
     hardenExternalLinks();
-});
+}
+
+function observeIncludedContent(){
+    if(!document.body||typeof MutationObserver==="undefined")return;
+
+    let scheduled=false;
+
+    const observer=new MutationObserver(mutations=>{
+        const hasAddedNodes=mutations.some(mutation=>mutation.addedNodes.length>0);
+        if(!hasAddedNodes||scheduled)return;
+
+        scheduled=true;
+
+        window.requestAnimationFrame(()=>{
+            scheduled=false;
+            initializeSite();
+        });
+    });
+
+    observer.observe(document.body,{
+        childList:true,
+        subtree:true
+    });
+}
 
 /* ==========================================================================
    Mobile Navigation
    ========================================================================== */
 
-/**
- * Enables the responsive navigation menu.
- */
-function initializeMobileNavigation() {
-    const toggle = document.querySelector(".nav-toggle");
-    const navigation = document.getElementById("primary-nav");
+function initializeMobileNavigation(){
+    const toggles=document.querySelectorAll(".nav-toggle");
 
-    if (!toggle || !navigation) {
-        return;
-    }
+    toggles.forEach(toggle=>{
+        if(initializedElements.navigation.has(toggle))return;
 
-    const closeNavigation = () => {
-        navigation.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("nav-open");
-    };
+        const navigationId=toggle.getAttribute("aria-controls")||"primary-nav";
+        const navigation=document.getElementById(navigationId);
 
-    const openNavigation = () => {
-        navigation.classList.add("is-open");
-        toggle.setAttribute("aria-expanded", "true");
-        document.body.classList.add("nav-open");
-    };
+        if(!navigation)return;
 
-    toggle.addEventListener("click", () => {
-        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        initializedElements.navigation.add(toggle);
 
-        if (isOpen) {
-            closeNavigation();
-        } else {
-            openNavigation();
-        }
-    });
+        const closeNavigation=({restoreFocus=false}={})=>{
+            navigation.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded","false");
+            document.body.classList.remove("nav-open");
 
-    navigation.addEventListener("click", (event) => {
-        const link = event.target.closest("a");
+            if(restoreFocus){
+                toggle.focus();
+            }
+        };
 
-        if (link) {
-            closeNavigation();
-        }
-    });
+        const openNavigation=()=>{
+            navigation.classList.add("is-open");
+            toggle.setAttribute("aria-expanded","true");
+            document.body.classList.add("nav-open");
+        };
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            closeNavigation();
-            toggle.focus();
-        }
-    });
+        toggle.addEventListener("click",()=>{
+            const isOpen=toggle.getAttribute("aria-expanded")==="true";
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 900) {
-            closeNavigation();
-        }
+            if(isOpen){
+                closeNavigation();
+            }else{
+                openNavigation();
+            }
+        });
+
+        navigation.addEventListener("click",event=>{
+            const link=event.target.closest("a");
+
+            if(link){
+                closeNavigation();
+            }
+        });
+
+        document.addEventListener("click",event=>{
+            const isOpen=toggle.getAttribute("aria-expanded")==="true";
+            if(!isOpen)return;
+
+            const clickedInsideNavigation=navigation.contains(event.target);
+            const clickedToggle=toggle.contains(event.target);
+
+            if(!clickedInsideNavigation&&!clickedToggle){
+                closeNavigation();
+            }
+        });
+
+        document.addEventListener("keydown",event=>{
+            if(event.key==="Escape"&&toggle.getAttribute("aria-expanded")==="true"){
+                closeNavigation({restoreFocus:true});
+            }
+        });
+
+        window.addEventListener("resize",()=>{
+            if(window.innerWidth>900){
+                closeNavigation();
+            }
+        });
     });
 }
 
@@ -89,101 +153,94 @@ function initializeMobileNavigation() {
    Landing-Page Audio
    ========================================================================== */
 
-/**
- * Creates explicit user-controlled audio behavior.
- *
- * Modern browsers generally block audible autoplay. Audio therefore begins
- * only after the visitor activates the control.
- */
-function initializeAudioControls() {
-    const audio = document.getElementById("background-audio");
-    const toggle = document.getElementById("audio-toggle");
-    const volume = document.getElementById("audio-volume");
-    const status = document.getElementById("audio-status");
+function initializeAudioControls(){
+    const audio=document.getElementById("background-audio");
+    const toggle=document.getElementById("audio-toggle");
+    const volume=document.getElementById("audio-volume");
+    const status=document.getElementById("audio-status");
 
-    if (!audio || !toggle) {
-        return;
+    if(!audio||!toggle)return;
+    if(initializedElements.audio.has(audio))return;
+
+    initializedElements.audio.add(audio);
+
+    const storedVolume=readStoredNumber("site-audio-volume");
+    const defaultVolume=Number.isFinite(storedVolume)
+        ?clamp(storedVolume,0,1)
+        :0.35;
+
+    audio.volume=defaultVolume;
+    audio.muted=false;
+
+    if(volume){
+        volume.value=String(defaultVolume);
     }
 
-    const defaultVolume = 0.35;
+    const updateAudioInterface=()=>{
+        const isPlaying=!audio.paused&&!audio.ended;
 
-    audio.volume = defaultVolume;
-    audio.muted = false;
+        toggle.setAttribute("aria-pressed",String(isPlaying));
+        toggle.textContent=isPlaying?"Disable Audio":"Enable Audio";
 
-    if (volume) {
-        const parsedVolume = Number.parseFloat(volume.value);
-
-        if (Number.isFinite(parsedVolume)) {
-            audio.volume = clamp(parsedVolume, 0, 1);
-        }
-    }
-
-    const updateAudioInterface = () => {
-        const isPlaying = !audio.paused;
-
-        toggle.setAttribute("aria-pressed", String(isPlaying));
-        toggle.textContent = isPlaying ? "Disable Audio" : "Enable Audio";
-
-        if (status) {
-            status.textContent = isPlaying
-                ? "Background audio is enabled."
-                : "Background audio is disabled.";
+        if(status){
+            status.textContent=isPlaying
+                ?"Background audio is enabled."
+                :"Background audio is disabled.";
         }
     };
 
-    const playAudio = async () => {
-        try {
+    const playAudio=async()=>{
+        try{
             await audio.play();
             updateAudioInterface();
-        } catch (error) {
-            console.warn("Audio playback could not begin:", error);
+        }catch(error){
+            console.warn("Audio playback could not begin:",error);
 
-            if (status) {
-                status.textContent =
+            if(status){
+                status.textContent=
                     "Audio could not begin. Check browser media permissions.";
             }
         }
     };
 
-    const pauseAudio = () => {
+    const pauseAudio=()=>{
         audio.pause();
         updateAudioInterface();
     };
 
-    toggle.addEventListener("click", () => {
-        if (audio.paused) {
+    toggle.addEventListener("click",()=>{
+        if(audio.paused){
             void playAudio();
-        } else {
+        }else{
             pauseAudio();
         }
     });
 
-    if (volume) {
-        volume.addEventListener("input", () => {
-            const requestedVolume = Number.parseFloat(volume.value);
+    if(volume){
+        volume.addEventListener("input",()=>{
+            const requestedVolume=Number.parseFloat(volume.value);
 
-            if (!Number.isFinite(requestedVolume)) {
-                return;
-            }
+            if(!Number.isFinite(requestedVolume))return;
 
-            audio.volume = clamp(requestedVolume, 0, 1);
+            audio.volume=clamp(requestedVolume,0,1);
+            writeStoredNumber("site-audio-volume",audio.volume);
 
-            if (audio.volume === 0 && !audio.paused) {
+            if(audio.volume===0&&!audio.paused){
                 pauseAudio();
             }
         });
     }
 
-    audio.addEventListener("play", updateAudioInterface);
-    audio.addEventListener("pause", updateAudioInterface);
-    audio.addEventListener("ended", updateAudioInterface);
+    audio.addEventListener("play",updateAudioInterface);
+    audio.addEventListener("pause",updateAudioInterface);
+    audio.addEventListener("ended",updateAudioInterface);
 
-    audio.addEventListener("error", () => {
-        toggle.disabled = true;
-        toggle.textContent = "Audio Unavailable";
+    audio.addEventListener("error",()=>{
+        toggle.disabled=true;
+        toggle.textContent="Audio Unavailable";
 
-        if (status) {
-            status.textContent =
+        if(status){
+            status.textContent=
                 "The background audio file could not be loaded.";
         }
     });
@@ -192,188 +249,198 @@ function initializeAudioControls() {
 }
 
 /* ==========================================================================
-   Portfolio and Project Filters
+   Static Portfolio and Project Filters
    ========================================================================== */
 
-/**
- * Enables category filtering for elements marked with:
- *
- * data-filter-button="category"
- * data-filter-item
- * data-category="category-one category-two"
- */
-function initializeFilters() {
-    const filterGroups = document.querySelectorAll("[data-filter-group]");
+function initializeFilters(){
+    const filterGroups=document.querySelectorAll("[data-filter-group]");
 
-    filterGroups.forEach((group) => {
-        const buttons = group.querySelectorAll("[data-filter-button]");
-        const targetSelector = group.dataset.filterTarget;
+    filterGroups.forEach(group=>{
+        if(initializedElements.filters.has(group))return;
 
-        if (!targetSelector || buttons.length === 0) {
+        const buttons=group.querySelectorAll("[data-filter-button]");
+        const targetSelector=group.dataset.filterTarget;
+
+        if(!targetSelector||buttons.length===0)return;
+
+        let items;
+
+        try{
+            items=document.querySelectorAll(targetSelector);
+        }catch(error){
+            console.warn("Invalid filter target selector:",targetSelector,error);
             return;
         }
 
-        const items = document.querySelectorAll(targetSelector);
+        if(items.length===0)return;
 
-        if (items.length === 0) {
-            return;
-        }
+        initializedElements.filters.add(group);
 
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const requestedCategory =
-                    button.dataset.filterButton || "all";
+        buttons.forEach(button=>{
+            button.addEventListener("click",()=>{
+                const requestedCategory=normalizeCategoryName(
+                    button.dataset.filterButton||"all"
+                );
 
-                buttons.forEach((candidate) => {
-                    const isActive = candidate === button;
+                buttons.forEach(candidate=>{
+                    const isActive=candidate===button;
 
-                    candidate.classList.toggle("is-active", isActive);
-                    candidate.setAttribute(
-                        "aria-pressed",
-                        String(isActive)
-                    );
+                    candidate.classList.toggle("is-active",isActive);
+                    candidate.setAttribute("aria-pressed",String(isActive));
                 });
 
-                items.forEach((item) => {
-                    const categories = normalizeCategoryList(
-                        item.dataset.category || ""
+                items.forEach(item=>{
+                    const categories=normalizeCategoryList(
+                        item.dataset.category||""
                     );
 
-                    const shouldShow =
-                        requestedCategory === "all" ||
+                    const shouldShow=
+                        requestedCategory==="all"||
                         categories.includes(requestedCategory);
 
-                    item.hidden = !shouldShow;
+                    item.hidden=!shouldShow;
                 });
 
-                announceFilterResult(items);
+                announceFilterResult(group,items);
             });
         });
     });
 }
 
-/**
- * Announces the number of visible filtered entries where an aria-live element
- * marked with data-filter-status exists.
- *
- * @param {NodeListOf<Element>} items
- */
-function announceFilterResult(items) {
-    const status = document.querySelector("[data-filter-status]");
+function announceFilterResult(group,items){
+    const statusSelector=group.dataset.filterStatus;
+    let status=null;
 
-    if (!status) {
-        return;
+    if(statusSelector){
+        try{
+            status=document.querySelector(statusSelector);
+        }catch(error){
+            console.warn("Invalid filter status selector:",statusSelector,error);
+        }
     }
 
-    const visibleCount = Array.from(items).filter(
-        (item) => !item.hidden
-    ).length;
+    if(!status){
+        status=group.querySelector("[data-filter-status]")||
+            document.querySelector("[data-filter-status]");
+    }
 
-    status.textContent =
-        `${visibleCount} ${visibleCount === 1 ? "item" : "items"} displayed.`;
+    if(!status)return;
+
+    const visibleCount=Array.from(items).filter(item=>!item.hidden).length;
+
+    status.textContent=
+        `${visibleCount} ${visibleCount===1?"item":"items"} displayed.`;
 }
 
 /* ==========================================================================
    Search
    ========================================================================== */
 
-/**
- * Enables local page filtering for inputs marked with:
- *
- * data-search-input
- * data-search-target="[data-search-item]"
- */
-function initializeSearch() {
-    const inputs = document.querySelectorAll("[data-search-input]");
+function initializeSearch(){
+    const inputs=document.querySelectorAll("[data-search-input]");
 
-    inputs.forEach((input) => {
-        const targetSelector = input.dataset.searchTarget;
+    inputs.forEach(input=>{
+        if(initializedElements.search.has(input))return;
 
-        if (!targetSelector) {
+        const targetSelector=input.dataset.searchTarget;
+
+        if(!targetSelector)return;
+
+        let items;
+
+        try{
+            items=document.querySelectorAll(targetSelector);
+        }catch(error){
+            console.warn("Invalid search target selector:",targetSelector,error);
             return;
         }
 
-        const items = document.querySelectorAll(targetSelector);
+        if(items.length===0)return;
 
-        if (items.length === 0) {
-            return;
-        }
+        initializedElements.search.add(input);
 
-        const updateResults = () => {
-            const query = normalizeSearchText(input.value);
+        const updateResults=()=>{
+            const query=normalizeSearchText(input.value);
 
-            items.forEach((item) => {
-                const explicitSearchText =
-                    item.dataset.searchText || "";
-
-                const searchableText = normalizeSearchText(
-                    `${explicitSearchText} ${item.textContent || ""}`
+            items.forEach(item=>{
+                const explicitSearchText=item.dataset.searchText||"";
+                const searchableText=normalizeSearchText(
+                    `${explicitSearchText} ${item.textContent||""}`
                 );
 
-                item.hidden =
-                    query.length > 0 &&
+                item.hidden=
+                    query.length>0&&
                     !searchableText.includes(query);
             });
 
-            const statusSelector = input.dataset.searchStatus;
-            const status = statusSelector
-                ? document.querySelector(statusSelector)
-                : document.querySelector("[data-search-status]");
-
-            if (status) {
-                const visibleCount = Array.from(items).filter(
-                    (item) => !item.hidden
-                ).length;
-
-                status.textContent =
-                    `${visibleCount} ` +
-                    `${visibleCount === 1 ? "result" : "results"} found.`;
-            }
+            updateSearchStatus(input,items);
         };
 
-        input.addEventListener("input", updateResults);
-        input.addEventListener("search", updateResults);
+        input.addEventListener("input",updateResults);
+        input.addEventListener("search",updateResults);
+
+        if(input.value){
+            updateResults();
+        }
     });
+}
+
+function updateSearchStatus(input,items){
+    const statusSelector=input.dataset.searchStatus;
+    let status=null;
+
+    if(statusSelector){
+        try{
+            status=document.querySelector(statusSelector);
+        }catch(error){
+            console.warn("Invalid search status selector:",statusSelector,error);
+        }
+    }
+
+    if(!status){
+        status=document.querySelector("[data-search-status]");
+    }
+
+    if(!status)return;
+
+    const visibleCount=Array.from(items).filter(item=>!item.hidden).length;
+
+    status.textContent=
+        `${visibleCount} ${visibleCount===1?"result":"results"} found.`;
 }
 
 /* ==========================================================================
    Copy-to-Clipboard
    ========================================================================== */
 
-/**
- * Enables clipboard buttons marked with:
- *
- * data-copy-text="literal value"
- *
- * or:
- *
- * data-copy-target="#element-id"
- */
-function initializeCopyButtons() {
-    const buttons = document.querySelectorAll(
+function initializeCopyButtons(){
+    const buttons=document.querySelectorAll(
         "[data-copy-text], [data-copy-target]"
     );
 
-    buttons.forEach((button) => {
-        const originalLabel =
-            button.dataset.copyLabel ||
-            button.textContent.trim() ||
+    buttons.forEach(button=>{
+        if(initializedElements.copy.has(button))return;
+
+        initializedElements.copy.add(button);
+
+        const originalLabel=
+            button.dataset.copyLabel||
+            button.textContent.trim()||
             "Copy";
 
-        button.addEventListener("click", async () => {
-            const copyValue = resolveCopyValue(button);
+        button.addEventListener("click",async()=>{
+            const copyValue=resolveCopyValue(button);
 
-            if (!copyValue) {
+            if(!copyValue){
                 setTemporaryButtonLabel(
                     button,
                     "Nothing to Copy",
                     originalLabel
                 );
-
                 return;
             }
 
-            try {
+            try{
                 await copyText(copyValue);
 
                 setTemporaryButtonLabel(
@@ -381,8 +448,8 @@ function initializeCopyButtons() {
                     "Copied",
                     originalLabel
                 );
-            } catch (error) {
-                console.error("Clipboard operation failed:", error);
+            }catch(error){
+                console.error("Clipboard operation failed:",error);
 
                 setTemporaryButtonLabel(
                     button,
@@ -394,112 +461,95 @@ function initializeCopyButtons() {
     });
 }
 
-/**
- * Resolves the text associated with a copy button.
- *
- * @param {HTMLElement} button
- * @returns {string}
- */
-function resolveCopyValue(button) {
-    if (button.dataset.copyText) {
+function resolveCopyValue(button){
+    if(button.dataset.copyText){
         return button.dataset.copyText.trim();
     }
 
-    const selector = button.dataset.copyTarget;
+    const selector=button.dataset.copyTarget;
 
-    if (!selector) {
-        return "";
+    if(!selector)return"";
+
+    let target;
+
+    try{
+        target=document.querySelector(selector);
+    }catch(error){
+        console.warn("Invalid copy target selector:",selector,error);
+        return"";
     }
 
-    const target = document.querySelector(selector);
+    if(!target)return"";
 
-    if (!target) {
-        return "";
-    }
-
-    if (
-        target instanceof HTMLInputElement ||
+    if(
+        target instanceof HTMLInputElement||
         target instanceof HTMLTextAreaElement
-    ) {
+    ){
         return target.value.trim();
     }
 
-    return (target.textContent || "").trim();
+    return(target.textContent||"").trim();
 }
 
-/**
- * Copies text using the Clipboard API with a legacy fallback.
- *
- * @param {string} value
- * @returns {Promise<void>}
- */
-async function copyText(value) {
-    if (
-        navigator.clipboard &&
-        typeof navigator.clipboard.writeText === "function" &&
+async function copyText(value){
+    if(
+        navigator.clipboard&&
+        typeof navigator.clipboard.writeText==="function"&&
         window.isSecureContext
-    ) {
+    ){
         await navigator.clipboard.writeText(value);
         return;
     }
 
-    const textarea = document.createElement("textarea");
+    const textarea=document.createElement("textarea");
 
-    textarea.value = value;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "fixed";
-    textarea.style.top = "-9999px";
-    textarea.style.left = "-9999px";
+    textarea.value=value;
+    textarea.setAttribute("readonly","");
+    textarea.style.position="fixed";
+    textarea.style.top="-9999px";
+    textarea.style.left="-9999px";
+    textarea.style.opacity="0";
 
     document.body.appendChild(textarea);
 
+    textarea.focus();
     textarea.select();
-    textarea.setSelectionRange(0, textarea.value.length);
+    textarea.setSelectionRange(0,textarea.value.length);
 
-    const successful = document.execCommand("copy");
+    const successful=document.execCommand("copy");
 
     textarea.remove();
 
-    if (!successful) {
+    if(!successful){
         throw new Error("Legacy clipboard copy failed.");
     }
 }
 
-/**
- * Temporarily changes a button label before restoring the original label.
- *
- * @param {HTMLElement} button
- * @param {string} temporaryLabel
- * @param {string} originalLabel
- */
 function setTemporaryButtonLabel(
     button,
     temporaryLabel,
     originalLabel
-) {
+){
     window.clearTimeout(button.copyResetTimer);
 
-    button.textContent = temporaryLabel;
+    button.textContent=temporaryLabel;
 
-    button.copyResetTimer = window.setTimeout(() => {
-        button.textContent = originalLabel;
-    }, 1800);
+    button.copyResetTimer=window.setTimeout(()=>{
+        button.textContent=originalLabel;
+    },1800);
 }
 
 /* ==========================================================================
    Current Year
    ========================================================================== */
 
-/**
- * Populates elements marked with data-current-year.
- */
-function initializeCurrentYear() {
-    const currentYear = String(new Date().getFullYear());
+function initializeCurrentYear(){
+    const currentYear=String(new Date().getFullYear());
 
     document
         .querySelectorAll("[data-current-year]")
-        .forEach((element) => {
-            element.textContent = currentYear;
+        .forEach(element=>{
+            element.textContent=currentYear;
         });
 }
 
@@ -507,29 +557,22 @@ function initializeCurrentYear() {
    External Links
    ========================================================================== */
 
-/**
- * Adds safe rel attributes to external links.
- *
- * Existing author-defined rel values are retained.
- */
-function hardenExternalLinks() {
-    const links = document.querySelectorAll('a[href^="http"]');
+function hardenExternalLinks(){
+    const links=document.querySelectorAll('a[href^="http"]');
 
-    links.forEach((link) => {
+    links.forEach(link=>{
         let destination;
 
-        try {
-            destination = new URL(link.href, window.location.href);
-        } catch {
+        try{
+            destination=new URL(link.href,window.location.href);
+        }catch{
             return;
         }
 
-        if (destination.origin === window.location.origin) {
-            return;
-        }
+        if(destination.origin===window.location.origin)return;
 
-        const relValues = new Set(
-            (link.getAttribute("rel") || "")
+        const relValues=new Set(
+            (link.getAttribute("rel")||"")
                 .split(/\s+/)
                 .filter(Boolean)
         );
@@ -537,10 +580,10 @@ function hardenExternalLinks() {
         relValues.add("noopener");
         relValues.add("noreferrer");
 
-        link.setAttribute("rel", Array.from(relValues).join(" "));
+        link.setAttribute("rel",Array.from(relValues).join(" "));
 
-        if (!link.hasAttribute("target")) {
-            link.setAttribute("target", "_blank");
+        if(!link.hasAttribute("target")){
+            link.setAttribute("target","_blank");
         }
     });
 }
@@ -549,43 +592,99 @@ function hardenExternalLinks() {
    Helpers
    ========================================================================== */
 
-/**
- * Restricts a number to the supplied range.
- *
- * @param {number} value
- * @param {number} minimum
- * @param {number} maximum
- * @returns {number}
- */
-function clamp(value, minimum, maximum) {
-    return Math.min(Math.max(value, minimum), maximum);
+function clamp(value,minimum,maximum){
+    return Math.min(Math.max(value,minimum),maximum);
 }
 
-/**
- * Converts a category string to a normalized array.
- *
- * @param {string} value
- * @returns {string[]}
- */
-function normalizeCategoryList(value) {
-    return value
+function normalizeCategoryName(value){
+    const normalized=String(value||"")
         .toLowerCase()
+        .trim()
+        .replace(/_/g,"-")
+        .replace(/\s+/g,"-");
+
+    const aliases={
+        app:"apps",
+        application:"apps",
+        applications:"apps",
+        artificialintelligence:"ai",
+        "artificial-intelligence":"ai",
+        machinelearning:"ml",
+        "machine-learning":"ml",
+        cybersecurity:"cyber-security",
+        investigation:"cyber-investigation",
+        cyberwarfare:"cyber-warfare",
+        "cyber-conflict":"cyber-warfare",
+        engineer:"engineering",
+        drone:"engineering",
+        drones:"engineering",
+        uav:"engineering",
+        uas:"engineering",
+        ugv:"engineering",
+        umv:"engineering",
+        usv:"engineering",
+        rov:"engineering",
+        uuv:"engineering",
+        auv:"engineering",
+        robot:"engineering",
+        robots:"engineering",
+        robotic:"engineering",
+        robotics:"engineering",
+        autonomous:"engineering",
+        autonomy:"engineering",
+        interceptor:"engineering",
+        interceptors:"engineering",
+        detector:"engineering",
+        detectors:"engineering",
+        deterrent:"engineering",
+        deterrents:"engineering",
+        jammer:"engineering",
+        jammers:"engineering",
+        embedded:"firmware",
+        electronics:"hardware",
+        website:"web",
+        websites:"web",
+        "web-development":"web"
+    };
+
+    return aliases[normalized]||normalized;
+}
+
+function normalizeCategoryList(value){
+    return String(value||"")
         .split(/[\s,]+/)
-        .map((entry) => entry.trim())
+        .map(entry=>normalizeCategoryName(entry))
         .filter(Boolean);
 }
 
-/**
- * Normalizes text for case-insensitive local search.
- *
- * @param {string} value
- * @returns {string}
- */
-function normalizeSearchText(value) {
-    return value
+function normalizeSearchText(value){
+    return String(value||"")
         .toLowerCase()
         .normalize("NFKD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/\s+/g, " ")
+        .replace(/[\u0300-\u036f]/g,"")
+        .replace(/\s+/g," ")
         .trim();
+}
+
+function readStoredNumber(key){
+    try{
+        const value=window.localStorage.getItem(key);
+        if(value===null)return Number.NaN;
+
+        const parsed=Number.parseFloat(value);
+
+        return Number.isFinite(parsed)
+            ?parsed
+            :Number.NaN;
+    }catch{
+        return Number.NaN;
+    }
+}
+
+function writeStoredNumber(key,value){
+    try{
+        window.localStorage.setItem(key,String(value));
+    }catch{
+        return;
+    }
 }
