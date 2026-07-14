@@ -1,140 +1,340 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090b09">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="The requested page was not found.">
-  <meta name="author" content="0xdeadbeef">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="The requested page could not be found on 0xdeadbeef.in.">
+    <meta name="author" content="0xdeadbeef">
+    <meta name="theme-color" content="#050705">
+    <meta name="color-scheme" content="dark">
 
-  <link rel="canonical" href="https://0xdeadbeef.in/404.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="0xdeadbeef.in">
+    <meta property="og:title" content="404 Not Found | 0xdeadbeef">
+    <meta property="og:description" content="The requested route could not be found on 0xdeadbeef.in.">
+    <meta property="og:url" content="https://0xdeadbeef.in/404.html">
+    <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="0xdeadbeef.in">
-  <meta property="og:title" content="Not Found | 0xdeadbeef">
-  <meta property="og:description" content="The requested page was not found.">
-  <meta property="og:url" content="https://0xdeadbeef.in/404.html">
-  <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="404 Not Found | 0xdeadbeef">
+    <meta name="twitter:description" content="The requested route could not be found on 0xdeadbeef.in.">
+    <meta name="twitter:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
 
-  <meta name="twitter:card" content="summary_large_image">
+    <title>[:[0xdeadbeef]:] | 404 Not Found</title>
 
-  <title>Not Found | 0xdeadbeef</title>
-
-  <link
-    rel="icon"
-    href="/static/images/0xdeadbeef-0.png"
-    type="image/png"
-  >
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/static/styles.css">
+    <link rel="canonical" href="https://0xdeadbeef.in/404.html">
+    <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<body class="error-page error-404-page">
+    <div data-include="/static/html/header.html"></div>
 
-  <header class="site-header">
-    <div class="nav-shell">
-      <a
-        class="brand"
-        href="/"
-        aria-label="0xdeadbeef home"
-      >
-        <span class="brand-mark">0x</span>deadbeef
-      </a>
+    <main id="main-content">
+        <section class="home-banner" aria-labelledby="error-title">
+            <div id="header-banner">
+                <img
+                    id="header-image"
+                    src="/static/images/header-image.jpg"
+                    alt="0xdeadbeef error page banner"
+                    width="1920"
+                    height="640"
+                >
 
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-      >
-        Menu
-      </button>
+                <div class="icon-wrapper">
+                    <img
+                        id="bull-icon"
+                        src="/static/images/0xdeadbeef-0.png"
+                        alt=""
+                        width="512"
+                        height="512"
+                    >
+                </div>
 
-      <nav
-        id="primary-nav"
-        class="primary-nav"
-        aria-label="Primary navigation"
-      >
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/portfolio/">Portfolio</a>
-        <a href="/projects/">Projects</a>
-        <a href="/blog/">Writing</a>
-        <a href="/donate/">Donate</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
+                <div class="banner-overlay" aria-hidden="true"></div>
 
-  <main id="main">
-    <section class="page-hero">
-      <p class="eyebrow">Error 404</p>
+                <div class="home-banner-copy">
+                    <p class="eyebrow">Error 404</p>
 
-      <h1>Signal not found.</h1>
+                    <h1 id="error-title">Signal not found.</h1>
 
-      <p>
-        The requested route does not exist or has moved.
-      </p>
+                    <p class="lead">
+                        The requested route does not exist, has moved, was renamed,
+                        or is not currently available.
+                    </p>
 
-      <div class="button-row">
-        <a class="button" href="/">
-          Return home
-        </a>
+                    <div class="button-row">
+                        <a class="button" href="/">Return Home</a>
+                        <a class="button secondary" href="/portfolio/">Portfolio</a>
+                        <a class="button secondary" href="/projects/">Projects</a>
+                        <a class="button secondary" href="/research/">Research</a>
+                        <a class="button secondary" href="/contact/">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <a class="button secondary" href="/portfolio/">
-          Browse portfolio
-        </a>
-      </div>
-    </section>
-  </main>
+        <section class="section" aria-labelledby="route-title">
+            <div class="section-header">
+                <p class="eyebrow">Route Failure</p>
 
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <a class="brand" href="/">
-          <span class="brand-mark">0x</span>deadbeef
-        </a>
+                <h2 id="route-title">
+                    The requested location could not be resolved.
+                </h2>
+            </div>
 
-        <p>
-          Independent art, research, engineering, and systems development.
-        </p>
-      </div>
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>
+                        The address may contain a typing error, an outdated path,
+                        a removed file, an incomplete directory, or a link to content
+                        that has not yet been published.
+                    </p>
 
-      <div>
-        <h2>Navigate</h2>
+                    <p>
+                        Return to the main site or continue through one of the primary
+                        public sections below.
+                    </p>
+                </div>
 
-        <a href="/portfolio/">Portfolio</a>
-        <a href="/projects/">Projects</a>
-        <a href="/blog/">Writing</a>
-      </div>
+                <div class="content-column">
+                    <p>
+                        If this error was reached through an internal site link,
+                        report the broken route through the contact page and include
+                        the full requested URL.
+                    </p>
 
-      <div>
-        <h2>Connect</h2>
+                    <p>
+                        Archived, private, experimental, restricted, or unfinished
+                        materials may intentionally remain unavailable.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <a href="/contact/">Secure contact</a>
-        <a href="/donate/">Bitcoin funding</a>
-        <a
-          href="https://github.com/ZZX-Labs"
-          rel="me noopener"
+        <section class="section" aria-labelledby="navigation-title">
+            <div class="section-header">
+                <p class="eyebrow">Continue</p>
+
+                <h2 id="navigation-title">
+                    Navigate to an active section.
+                </h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <p class="card-index">01</p>
+                    <h3>Home</h3>
+                    <p>
+                        Return to the main 0xdeadbeef.in homepage and primary site navigation.
+                    </p>
+                    <a href="/">Open Home</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">02</p>
+                    <h3>About</h3>
+                    <p>
+                        Read the overview, biography, history, mission, philosophy, and principles.
+                    </p>
+                    <a href="/about/">Open About</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">03</p>
+                    <h3>Portfolio</h3>
+                    <p>
+                        Browse multidisciplinary technical, creative, scientific, and professional work.
+                    </p>
+                    <a href="/portfolio/">Open Portfolio</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">04</p>
+                    <h3>Projects</h3>
+                    <p>
+                        Explore the manifest-driven public catalog of software, hardware,
+                        firmware, Bitcoin, AI, cybersecurity, OSINT, engineering, and web projects.
+                    </p>
+                    <a href="/projects/">Open Projects</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">05</p>
+                    <h3>Research</h3>
+                    <p>
+                        Review active and planned technical, scientific, investigative,
+                        engineering, and institutional research programs.
+                    </p>
+                    <a href="/research/">Open Research</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">06</p>
+                    <h3>Writing</h3>
+                    <p>
+                        Read technical documentation, essays, reports, whitepapers,
+                        notes, publications, and long-form writing.
+                    </p>
+                    <a href="/writing/">Open Writing</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">07</p>
+                    <h3>Consulting</h3>
+                    <p>
+                        Review independent technical consulting, advisory, architecture,
+                        research, and analysis services.
+                    </p>
+                    <a href="/consulting/">Open Consulting</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">08</p>
+                    <h3>Contracting</h3>
+                    <p>
+                        Review defined technical implementation, development,
+                        documentation, prototyping, and delivery services.
+                    </p>
+                    <a href="/contracting/">Open Contracting</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">09</p>
+                    <h3>Ventures</h3>
+                    <p>
+                        Explore laboratories, organizations, products, services,
+                        technical programs, and institutional development.
+                    </p>
+                    <a href="/ventures/">Open Ventures</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">10</p>
+                    <h3>Bitcoin Funding</h3>
+                    <p>
+                        View published Bitcoin addresses, funding policy,
+                        verification guidance, and supported work.
+                    </p>
+                    <a href="/donate/">Open Bitcoin Funding</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">11</p>
+                    <h3>Contact</h3>
+                    <p>
+                        Use official contact channels for consulting, contracting,
+                        research, disclosure, collaboration, and funding inquiries.
+                    </p>
+                    <a href="/contact/">Open Contact</a>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">12</p>
+                    <h3>Legal and Licensing</h3>
+                    <p>
+                        Review legal notices, licensing terms, credits,
+                        attribution, rights, and use restrictions.
+                    </p>
+                    <a href="/legal/">Open Legal Notices</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="error-guidance-title">
+            <div class="section-header">
+                <p class="eyebrow">Troubleshooting</p>
+
+                <h2 id="error-guidance-title">
+                    Check the route before reporting the error.
+                </h2>
+            </div>
+
+            <div class="principle-list">
+                <article class="principle">
+                    <div>
+                        <h3>Check spelling</h3>
+                        <p>
+                            Verify capitalization, punctuation, directory names,
+                            file extensions, and trailing slashes.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Remove obsolete paths</h3>
+                        <p>
+                            Old links may refer to directories or filenames that were
+                            replaced during the website redesign.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Use the root domain</h3>
+                        <p>
+                            Begin again from <code>https://0xdeadbeef.in/</code>
+                            and navigate through the current shared menu.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Report internal failures</h3>
+                        <p>
+                            If an active site page links here unexpectedly, include the
+                            source page, broken link, destination URL, browser, and timestamp.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section
+            class="section call-to-action"
+            aria-labelledby="error-cta-title"
         >
-          GitHub
-        </a>
-      </div>
-    </div>
+            <div class="cta-box">
+                <p class="eyebrow">Reestablish Signal</p>
 
-    <div class="footer-legal">
-      <span>© 2026 0xdeadbeef.</span>
+                <h2 id="error-cta-title">
+                    Return to a known route.
+                </h2>
 
-      <span>
-        Software: MIT. Writing and artwork: CC BY-NC-SA 4.0 unless otherwise
-        marked.
-      </span>
-    </div>
-  </footer>
+                <p>
+                    Continue through the main site, project archive, research pages,
+                    portfolio, professional services, or official contact channels.
+                </p>
 
-  <script src="/static/script.js" defer></script>
+                <div class="button-row">
+                    <a class="button" href="/">Return Home</a>
+                    <a class="button secondary" href="/projects/">Projects</a>
+                    <a class="button secondary" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/research/">Research</a>
+                    <a class="button secondary" href="/contact/">Report Broken Link</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="/static/html/footer.html"></div>
+
+    <noscript>
+        <div class="noscript-notice">
+            JavaScript is required to load the shared navigation and footer components.
+            The error message and direct navigation links remain available.
+        </div>
+    </noscript>
+
+    <script src="/static/js/include.js" defer></script>
+    <script src="/static/script.js" defer></script>
 </body>
 </html>
