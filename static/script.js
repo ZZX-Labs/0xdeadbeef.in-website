@@ -7,7 +7,7 @@
  * Responsibilities:
  * - Shared-component initialization
  * - Mobile navigation
- * - Landing-page audio controls
+ * - Landing-page looping audio controls
  * - Static portfolio/project filtering
  * - Local page search
  * - Copy-to-clipboard controls
@@ -31,13 +31,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     observeIncludedContent();
 });
 
-document.addEventListener("site:include-loaded",()=>{
-    initializeSite();
-});
-
-document.addEventListener("include:loaded",()=>{
-    initializeSite();
-});
+document.addEventListener("site:include-loaded",initializeSite);
+document.addEventListener("include:loaded",initializeSite);
 
 function initializeSite(){
     initializeMobileNavigation();
@@ -56,6 +51,7 @@ function observeIncludedContent(){
 
     const observer=new MutationObserver(mutations=>{
         const hasAddedNodes=mutations.some(mutation=>mutation.addedNodes.length>0);
+
         if(!hasAddedNodes||scheduled)return;
 
         scheduled=true;
@@ -125,6 +121,7 @@ function initializeMobileNavigation(){
 
         document.addEventListener("click",event=>{
             const isOpen=toggle.getAttribute("aria-expanded")==="true";
+
             if(!isOpen)return;
 
             const clickedInsideNavigation=navigation.contains(event.target);
@@ -136,7 +133,10 @@ function initializeMobileNavigation(){
         });
 
         document.addEventListener("keydown",event=>{
-            if(event.key==="Escape"&&toggle.getAttribute("aria-expanded")==="true"){
+            if(
+                event.key==="Escape"&&
+                toggle.getAttribute("aria-expanded")==="true"
+            ){
                 closeNavigation({restoreFocus:true});
             }
         });
@@ -153,116 +153,234 @@ function initializeMobileNavigation(){
    Landing-Page Audio
    ========================================================================== */
 
-function initializeAudioControls() {
-    const audio = document.getElementById("background-audio");
-    const toggle = document.getElementById("audio-toggle");
-    const volume = document.getElementById("audio-volume");
-    const status = document.getElementById("audio-status");
+function initializeAudioControls(){
+    const audio=document.getElementById("background-audio");
+    const toggle=document.getElementById("audio-toggle");
+    const volume=document.getElementById("audio-volume");
+    const status=document.getElementById("audio-status");
 
-    if (!audio || !toggle) return;
-    if (initializedElements.audio.has(audio)) return;
+    if(!audio||!toggle)return;
+    if(initializedElements.audio.has(audio))return;
 
     initializedElements.audio.add(audio);
 
-    audio.loop = true;
-    audio.preload = "auto";
-    audio.load();
+    const storedVolume=readStoredNumber("site-audio-volume");
+    const storedEnabled=readStoredBoolean("site-audio-enabled");
+    const defaultVolume=Number.isFinite(storedVolume)
+        ?clamp(storedVolume,0,1)
+        :0.35;
 
-    const storedVolume = readStoredNumber("site-audio-volume");
-    const defaultVolume = Number.isFinite(storedVolume)
-        ? clamp(storedVolume, 0, 1)
-        : 0.35;
+    audio.loop=true;
+    audio.preload="auto";
+    audio.volume=defaultVolume;
+    audio.muted=false;
 
-    audio.volume = defaultVolume;
-    audio.muted = false;
-
-    if (volume) {
-        volume.value = String(defaultVolume);
+    if(volume){
+        volume.value=String(defaultVolume);
     }
 
-    function updateUI() {
-        const playing = !audio.paused;
-
-        toggle.setAttribute("aria-pressed", String(playing));
-        toggle.textContent = playing ? "Disable Audio" : "Enable Audio";
-
-        if (status) {
-            status.textContent = playing
-                ? "Background audio is enabled."
-                : "Background audio is disabled.";
+    const setStatus=message=>{
+        if(status){
+            status.textContent=message;
         }
-    }
+    };
 
-    async function playAudio() {
-        try {
-            await audio.play();
-            updateUI();
-        } catch (err) {
-            console.warn(err);
+    const updateAudioInterface=()=>{
+        const isPlaying=!audio.paused&&!audio.ended;
 
-            if (status) {
-                status.textContent =
-                    "Click Enable Audio to begin playback.";
+        toggle.setAttribute("aria-pressed",String(isPlaying));
+        toggle.textContent=isPlaying?"Disable Audio":"Enable Audio";
+
+        if(isPlaying){
+            setStatus(
+                `Background audio is playing at ${Math.round(audio.volume*100)}% volume.`
+            );
+        }else{
+            setStatus("Background audio is disabled.");
+        }
+    };
+
+    const playAudio=async({remember=true}={})=>{
+        try{
+            audio.loop=true;
+            audio.muted=false;
+
+            if(audio.ended){
+                audio.currentTime=0;
             }
+
+            await audio.play();
+
+            if(remember){
+                writeStoredBoolean("site-audio-enabled",true);
+            }
+
+            updateAudioInterface();
+            return true;
+        }catch(error){
+            console.warn("Audio playback could not begin:",error);
+
+            if(error&&error.name==="NotAllowedError"){
+                setStatus("Select Enable Audio to begin playback.");
+            }else if(error&&error.name==="NotSupportedError"){
+                setStatus("The background audio format could not be played.");
+            }else{
+                setStatus("Background audio could not begin.");
+            }
+
+            updateAudioInterface();
+            return false;
         }
-    }
+    };
 
-    function stopAudio() {
+    const pauseAudio=({remember=true}={})=>{
         audio.pause();
-        updateUI();
-    }
 
-    toggle.addEventListener("click", () => {
-        if (audio.paused) {
+        if(remember){
+            writeStoredBoolean("site-audio-enabled",false);
+        }
+
+        updateAudioInterface();
+    };
+
+    toggle.addEventListener("click",()=>{
+        if(audio.paused||audio.ended){
             void playAudio();
-        } else {
-            stopAudio();
+        }else{
+            pauseAudio();
         }
     });
 
-    if (volume) {
-        volume.addEventListener("input", () => {
-            audio.volume = Number(volume.value);
-            writeStoredNumber("site-audio-volume", audio.volume);
+    if(volume){
+        volume.addEventListener("input",()=>{
+            const requestedVolume=Number.parseFloat(volume.value);
+
+            if(!Number.isFinite(requestedVolume))return;
+
+            audio.volume=clamp(requestedVolume,0,1);
+            writeStoredNumber("site-audio-volume",audio.volume);
+
+            if(audio.volume===0){
+                setStatus("Background audio volume is muted.");
+            }else if(!audio.paused){
+                setStatus(
+                    `Background audio is playing at ${Math.round(audio.volume*100)}% volume.`
+                );
+            }else{
+                setStatus(
+                    `Background audio volume is set to ${Math.round(audio.volume*100)}%.`
+                );
+            }
+        });
+
+        volume.addEventListener("change",()=>{
+            const requestedVolume=Number.parseFloat(volume.value);
+
+            if(!Number.isFinite(requestedVolume))return;
+
+            audio.volume=clamp(requestedVolume,0,1);
+            writeStoredNumber("site-audio-volume",audio.volume);
+            updateAudioInterface();
         });
     }
 
-    audio.addEventListener("ended", () => {
-        audio.currentTime = 0;
-        void playAudio();
-    });
-
-    audio.addEventListener("play", updateUI);
-    audio.addEventListener("pause", updateUI);
-
-    audio.addEventListener("error", () => {
-        toggle.disabled = true;
-        toggle.textContent = "Audio Unavailable";
-
-        if (status) {
-            status.textContent =
-                "Unable to load /static/audio/tabla-loop.mp3";
+    audio.addEventListener("play",updateAudioInterface);
+    audio.addEventListener("playing",updateAudioInterface);
+    audio.addEventListener("pause",updateAudioInterface);
+    audio.addEventListener("volumechange",()=>{
+        if(volume&&document.activeElement!==volume){
+            volume.value=String(audio.volume);
         }
     });
 
-    const unlock = () => {
-        if (audio.paused) {
-            void playAudio();
+    audio.addEventListener("ended",()=>{
+        /*
+         * The loop property should restart playback automatically. This is a
+         * fallback for browsers or media conditions that still emit "ended".
+         */
+        if(readStoredBoolean("site-audio-enabled")===true){
+            audio.currentTime=0;
+            void playAudio({remember:false});
+        }else{
+            updateAudioInterface();
         }
-
-        window.removeEventListener("pointerdown", unlock);
-        window.removeEventListener("keydown", unlock);
-        window.removeEventListener("touchstart", unlock);
-    };
-
-    window.addEventListener("pointerdown", unlock, { once: true });
-    window.addEventListener("keydown", unlock, { once: true });
-    window.addEventListener("touchstart", unlock, {
-        once: true,
-        passive: true
     });
 
-    updateUI();
+    audio.addEventListener("stalled",()=>{
+        setStatus("Background audio is buffering.");
+    });
+
+    audio.addEventListener("waiting",()=>{
+        setStatus("Background audio is buffering.");
+    });
+
+    audio.addEventListener("canplay",()=>{
+        if(audio.paused){
+            updateAudioInterface();
+        }
+    });
+
+    audio.addEventListener("error",()=>{
+        const mediaError=audio.error;
+        let message="The background audio file could not be loaded.";
+
+        if(mediaError){
+            switch(mediaError.code){
+                case MediaError.MEDIA_ERR_ABORTED:
+                    message="Background audio loading was interrupted.";
+                    break;
+                case MediaError.MEDIA_ERR_NETWORK:
+                    message="A network error prevented background audio from loading.";
+                    break;
+                case MediaError.MEDIA_ERR_DECODE:
+                    message="The browser could not decode the background audio.";
+                    break;
+                case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                    message="The background audio source or format is unsupported.";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        toggle.disabled=true;
+        toggle.textContent="Audio Unavailable";
+        toggle.setAttribute("aria-pressed","false");
+        setStatus(message);
+    });
+
+    /*
+     * Restore playback after navigation/reload only when the visitor had
+     * previously enabled audio. Browsers may require a new user gesture.
+     */
+    if(storedEnabled===true){
+        const resumeStoredAudio=()=>{
+            if(audio.paused){
+                void playAudio({remember:false});
+            }
+
+            document.removeEventListener("pointerdown",resumeStoredAudio);
+            document.removeEventListener("keydown",resumeStoredAudio);
+            document.removeEventListener("touchstart",resumeStoredAudio);
+        };
+
+        document.addEventListener("pointerdown",resumeStoredAudio,{once:true});
+        document.addEventListener("keydown",resumeStoredAudio,{once:true});
+        document.addEventListener(
+            "touchstart",
+            resumeStoredAudio,
+            {once:true,passive:true}
+        );
+
+        /*
+         * Attempt immediately for browsers that allow remembered autoplay.
+         * If blocked, the first user interaction above retries playback.
+         */
+        void playAudio({remember:false});
+    }
+
+    audio.load();
+    updateAudioInterface();
 }
 
 /* ==========================================================================
@@ -337,13 +455,16 @@ function announceFilterResult(group,items){
     }
 
     if(!status){
-        status=group.querySelector("[data-filter-status]")||
+        status=
+            group.querySelector("[data-filter-status]")||
             document.querySelector("[data-filter-status]");
     }
 
     if(!status)return;
 
-    const visibleCount=Array.from(items).filter(item=>!item.hidden).length;
+    const visibleCount=Array.from(items)
+        .filter(item=>!item.hidden)
+        .length;
 
     status.textContent=
         `${visibleCount} ${visibleCount===1?"item":"items"} displayed.`;
@@ -420,7 +541,9 @@ function updateSearchStatus(input,items){
 
     if(!status)return;
 
-    const visibleCount=Array.from(items).filter(item=>!item.hidden).length;
+    const visibleCount=Array.from(items)
+        .filter(item=>!item.hidden)
+        .length;
 
     status.textContent=
         `${visibleCount} ${visibleCount===1?"result":"results"} found.`;
@@ -657,6 +780,7 @@ function normalizeCategoryName(value){
         deterrents:"engineering",
         jammer:"engineering",
         jammers:"engineering",
+        "counter-uas":"engineering",
         embedded:"firmware",
         electronics:"hardware",
         website:"web",
@@ -686,6 +810,7 @@ function normalizeSearchText(value){
 function readStoredNumber(key){
     try{
         const value=window.localStorage.getItem(key);
+
         if(value===null)return Number.NaN;
 
         const parsed=Number.parseFloat(value);
@@ -701,6 +826,30 @@ function readStoredNumber(key){
 function writeStoredNumber(key,value){
     try{
         window.localStorage.setItem(key,String(value));
+    }catch{
+        return;
+    }
+}
+
+function readStoredBoolean(key){
+    try{
+        const value=window.localStorage.getItem(key);
+
+        if(value==="true")return true;
+        if(value==="false")return false;
+
+        return null;
+    }catch{
+        return null;
+    }
+}
+
+function writeStoredBoolean(key,value){
+    try{
+        window.localStorage.setItem(
+            key,
+            value?"true":"false"
+        );
     }catch{
         return;
     }
