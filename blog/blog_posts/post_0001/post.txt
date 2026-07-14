@@ -1,0 +1,71 @@
+# Initializing the Broadcast
+
+This blog serves as the living field manual and chronological record of ongoing work, research, design, and development by 0xdeadbeef.
+
+It documents work associated with ZZX-Labs R&D, 0xdeadbeef Consulting, independent research programs, public projects, technical experiments, and long-term development.
+
+## Subjects
+
+Future dispatches may examine:
+
+- Systems architecture
+- Bitcoin infrastructure
+- Bitcoin Core
+- Lightning applications
+- Wallets and payment systems
+- Python and PyQt software
+- Web applications
+- Embedded systems
+- Firmware
+- Hardware
+- Artificial intelligence
+- Machine learning
+- Cybersecurity
+- Operational security
+- Malware analysis
+- OSINT
+- Digital investigations
+- Geopolitics
+- Art
+- Music
+- Photography
+- Cannabis botany
+- Field research
+- Organizational development
+
+## Publication Format
+
+The publication format is plaintext-first.
+
+Each post is stored as a `post.txt` file and rendered into a shared HTML layout by the post page.
+
+Posts may also be distributed in additional formats, including:
+
+- Markdown
+- PDF
+- EPUB
+- JSON
+- Source archives
+- Checksums
+- OpenPGP signatures
+- Bitcoin timestamp records
+
+Those formats should only be advertised when the corresponding files actually exist.
+
+## Purpose
+
+The purpose of this archive is to preserve more than final products.
+
+It records the reasoning, failures, revisions, experiments, architecture decisions, constraints, and discoveries behind the work.
+
+A finished system may show what was built.
+
+A development record shows why it was built, how it changed, what failed, and what remains unresolved.
+
+You are reading dispatch 0001.
+
+More will follow.
+
+Signed:
+
+0xdeadbeef
