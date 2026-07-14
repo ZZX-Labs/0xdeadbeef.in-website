@@ -1,148 +1,809 @@
-# 0xdeadbeef.in-website
-[0xdeadbeef]: A portfolio website of all work.
 
-# [0xdeadbeef] — Portfolios & Research Collections
-**Public GitHub Pages Repository for [https://0xdeadbeef.in](https://0xdeadbeef.in)**
 
-Welcome to the official repository for [0xdeadbeef.in](https://0xdeadbeef.in), a living portfolio, active project lab, and digital R&D workspace for experimental technologies, creative consulting, and boundary-pushing software/hardware initiatives.
+# 0xdeadbeef.in
 
-This site serves as a public-facing archive and knowledge base for the ongoing and completed work of [0xdeadbeef], encompassing decades of cross-disciplinary practice in both open-source development and high-stakes, stealth-mode experimentation.
+
+> Personal portfolio, research laboratory, engineering notebook, creative archive,
+> and open-source development hub.
 
 
 ---
 
-## Website Structure
+## Overview
 
-The site consists of six primary sections:
+0xdeadbeef.in serves as the primary public portfolio for independent research,
+engineering, software development, hardware design, creative work, technical
+writing, and long-term experimental projects.
+
+Rather than functioning as a traditional résumé, this website documents an
+evolving body of work spanning numerous technical and creative disciplines.
+
+The objective is to provide a permanent, publicly accessible archive of projects,
+research, publications, artwork, software, and engineering efforts while
+maintaining a lightweight, privacy-respecting, static website.
 
 
-### Home / Landing Page
-A brief, high-level introduction to [0xdeadbeef], our mission, creative philosophies, and technical orientation. Serves as the starting point for navigation into deeper domains.
+---
 
+## Primary Disciplines
 
-### About
-A philosophical and contextual background on [0xdeadbeef], including our motivations, values (decentralization, autonomy, open systems), and influences (Turing, Diffie, Satoshi, Chomsky, etc.).
+The portfolio currently encompasses the following areas:
 
-
-### Portfolio
-Organized by domain-specific disciplines. These curated portfolios highlight applied and theoretical work in:
-
+- Music
+- Art
+- Graphic Design
+- 3D Modeling
+- Photography
+- Writing
+- Cannabis Botany
 - Web Development
 - Software Development
 - Firmware Development
 - Hardware Development
-- Bitcoin & LN Development
-- AI
+- Mobile Application Development
+- Adult Technology Development
+- Bitcoin Development
+- Artificial Intelligence
 - Machine Learning
-- OSINT
+- Open Source Intelligence (OSINT)
+- Cyber Investigation
 - Cybersecurity
-- Cyberwarfare
-- Graphic Design & Fine Art
-- Digital Music Production & Sound Design
-- 3D Design & Graphical Rendering
-- Creative & Technical Consulting
-
-Each portfolio documents selected highlights, contributions, and experiments, many of which have seeded or evolved into larger standalone projects.
-
-
-### Projects
-An active feed of exploratory builds, prototypes, and long-term systems under development. These include proof-of-concepts, theoretical designs, CLI/GUI tools, self-hosted services, encryption utilities, Bitcoin-centric applications, and open hardware schematics.
-
-Projects range from alpha stage to production-ready and are published in the spirit of transparency and community advancement.
-
-
-### Donate
-A dedicated page for supporters and collaborators who wish to fund our ongoing research, development, and creative output. We accept **Bitcoin only** (Bech32 and P2SH formats). Donations help maintain autonomy and accelerate critical R&D efforts.
-
-
-### Contact
-Secure channels for direct communication, proposal submissions, and collaboration requests. Preferred contact method is via GPG-encrypted email, or through our private email server.
+- Cyber Warfare Research
+- Geopolitics
+- Adventures
+- Business Ventures
 
 
 ---
 
-## Ethos
+## Design Goals
 
-> *“The frontier is not a place, but a principle.”*  
-> — [0xdeadbeef]
+The site intentionally emphasizes simplicity.
 
-We operate on the edge of applied cryptography, machine intelligence, systems design, and creative expression. Our approach is deeply self-funded, experimental, and open to collaboration with ethical technologists, cyber artists, and independent researchers worldwide.
+Objectives include:
+
+- Static deployment
+- No external frameworks
+- Minimal JavaScript
+- Local assets only
+- Fast loading
+- Search-engine friendly
+- Accessible
+- Mobile-first
+- Keyboard navigable
+- Long-term maintainable
+- Git-friendly
+
+
+---
+
+## Technology Stack
+
+Frontend
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+Infrastructure
+
+- nginx
+- Git
+- GitHub Pages
+- Static Hosting
+- Onion Service compatible
+
+Media
+
+- PNG
+- JPG
+- WebP
+- MP4
+- MP3
+- Markdown
+
+Typography
+
+- IBM Plex Mono
+- Adult Swim Font
+- Realtime Test Font Family
+
+
+---
+
+## Repository Layout
+
+```
+.
+├── about/
+├── blog/
+├── contact/
+├── donate/
+├── home/
+├── landing-page/
+├── portfolio/
+├── projects/
+├── static/
+├── README.md
+├── LICENSE
+├── nginx.conf
+├── sitemap.xml
+├── robots.txt
+└── site.webmanifest
+```
+
+
+---
+
+## Portfolio Structure
+
+Each discipline receives its own dedicated section containing:
+
+- Overview
+- Featured projects
+- Gallery
+- Research
+- Downloads
+- External repositories
+- Publications
+- Development status
+
+This organization allows each subject area to grow independently while remaining
+part of a unified portfolio.
+
+
+---
+
+## Projects
+
+Projects range from small experiments through complete software systems.
+
+Typical project pages include:
+
+- Description
+- Screenshots
+- Architecture
+- Technologies
+- Documentation
+- Repository links
+- License
+- Development roadmap
+- Changelog
+- Future work
+
+
+---
+
+## Writing
+
+The writing section contains:
+
+- Essays
+- Technical articles
+- Whitepapers
+- Research journals
+- Notes
+- Development logs
+- Tutorials
+- Documentation
+
+Articles are written in Markdown before publication.
+
+
+---
+
+## Portfolio Categories
+
+### Music
+
+Music production, composition, sound design, recording, synthesis,
+mastering, performance systems, and studio engineering.
+
+Topics include:
+
+- Ableton Live
+- Hardware synthesizers
+- MIDI systems
+- Audio DSP
+- Modular workflows
+- Recording infrastructure
+
+
+---
+
+### Art
+
+Traditional and digital artwork.
+
+Includes:
+
+- Drawing
+- Painting
+- Illustration
+- Concept Art
+- Digital Painting
+- Experimental media
+
+
+---
+
+### Graphic Design
+
+Professional design work including:
+
+- Identity systems
+- Branding
+- Typography
+- Print
+- Publication
+- Interface Design
+- Iconography
+
+
+---
+
+### 3D Modeling
+
+Research and production involving:
+
+- Mechanical CAD
+- Product Design
+- Rendering
+- Animation
+- Simulation
+- Manufacturing preparation
+- Parametric modeling
+
+
+---
+
+### Photography
+
+Photography archive including:
+
+- Landscape
+- Urban
+- Documentary
+- Nature
+- Architecture
+- Travel
+- Macro
+- Technical documentation
+
+
+---
+
+### Cannabis Botany
+
+Research covering:
+
+- Genetics
+- Breeding
+- Cultivation
+- Extraction
+- Preservation
+- Plant morphology
+- Laboratory workflows
+
+
+---
+
+### Web Development
+
+Topics include:
+
+- HTML5
+- CSS
+- JavaScript
+- PHP
+- nginx
+- Accessibility
+- Static websites
+- Progressive enhancement
+
+
+---
+
+### Software Development
+
+Projects developed in:
+
+- Python
+- C
+- C++
+- Go
+- Rust
+- Java
+- Kotlin
+- JavaScript
+- Bash
+- Perl
+
+Areas include:
+
+- Desktop applications
+- CLI tools
+- Servers
+- Automation
+- APIs
+- Visualization
+- Utilities
+
+
+---
+
+### Firmware Development
+
+Embedded development involving:
+
+- ESP32
+- ESP8266
+- STM32
+- AVR
+- RP2040
+- Arduino
+- FreeRTOS
+- USB devices
+- Sensors
+- Wireless systems
+
+
+---
+
+### Hardware Development
+
+Hardware engineering including:
+
+- PCB design
+- Enclosures
+- Embedded electronics
+- Test equipment
+- Power systems
+- RF
+- IoT devices
+- Laboratory tools
+
+
+---
+
+### Application Development
+
+Cross-platform application development for:
+
+- Windows
+- Linux
+- Android
+- Web
+
+Primary focus:
+
+- PyQt
+- Qt
+- Native interfaces
+- Responsive design
+- Offline-first applications
+
+
+---
+
+### Adult Technology Development
+
+Research and engineering focused on lawful, consent-based adult technology,
+privacy-preserving platforms, secure communications, hardware interfaces,
+payment systems, and creator infrastructure.
+
+Research areas include:
+
+- Payment infrastructure
+- Identity protection
+- Privacy engineering
+- Hardware devices
+- Secure communications
+- Media delivery
+- Digital rights
+- Platform architecture
+
+
+---
+
+### Bitcoin Development
+
+Bitcoin serves as the primary financial and technical ecosystem throughout
+many projects published here.
+
+Areas of development include:
+
+- Bitcoin Core
+- Lightning Network
+- Wallet development
+- Payment infrastructure
+- Mining
+- Node operations
+- Block explorers
+- Open-source tooling
+- Hardware wallets
+- Educational software
+
+
+---
+
+### Artificial Intelligence
+
+Artificial intelligence research spans practical engineering, experimentation,
+and applied software development.
+
+Current interests include:
+
+- Generative AI
+- Natural language processing
+- Autonomous agents
+- Image generation
+- Retrieval systems
+- Knowledge management
+- Local inference
+- AI-assisted development
+
+
+---
+
+### Machine Learning
+
+Machine learning projects include:
+
+- Computer vision
+- Classification
+- Clustering
+- Recommendation systems
+- Reinforcement learning
+- Forecasting
+- Data visualization
+- Model evaluation
+- Dataset engineering
+
+
+---
+
+### Open Source Intelligence (OSINT)
+
+Development of lawful OSINT tooling and research including:
+
+- Public record analysis
+- Entity resolution
+- Geospatial intelligence
+- Timeline analysis
+- Archive collection
+- Visualization
+- Automation
+- Research tooling
+
+
+---
+
+### Cyber Investigation
+
+Engineering tools for:
+
+- Digital investigations
+- Malware analysis
+- Attribution research
+- Evidence management
+- Case organization
+- Timeline reconstruction
+- Network analysis
+- Artifact collection
+
+Projects are intended for defensive, research, educational, incident response,
+and authorized investigative environments.
+
+
+---
+
+### Cybersecurity
+
+Research topics include:
+
+- Secure software engineering
+- Network security
+- Operating system security
+- Cryptography
+- Authentication
+- Vulnerability research
+- Threat modeling
+- Infrastructure hardening
+
+
+---
+
+### Cyber Warfare Research
+
+Research into the technical, historical, strategic, and defensive aspects of
+cyber conflict.
+
+Content is published for educational, historical, policy, defensive, and
+research purposes.
+
+Topics include:
+
+- Strategic doctrine
+- Defensive architecture
+- Historical analysis
+- National resilience
+- Critical infrastructure
+- Threat intelligence
+- Operational history
+
+
+---
+
+### Geopolitics
+
+Long-form research covering:
+
+- International relations
+- Strategic competition
+- Economics
+- Technology policy
+- Regional security
+- Diplomacy
+- Energy
+- Infrastructure
+
+
+---
+
+### Writing
+
+The writing archive contains:
+
+- Essays
+- Whitepapers
+- Research reports
+- Tutorials
+- Technical documentation
+- Design notes
+- Engineering journals
+- Personal observations
+
+
+---
+
+## Adventures
+
+Beyond engineering and software development, the portfolio documents personal
+expeditions, field work, and technical travel.
+
+Subjects include:
+
+- Hiking
+- Backpacking
+- Mountaineering
+- Surfing
+- Camping
+- Motorcycle travel
+- Photography expeditions
+- Technical conferences
+- Research travel
+- International field studies
+
+Where appropriate, trips include maps, equipment lists, technical notes,
+photographs, route planning, and post-expedition reports.
+
+
+---
+
+## Business Ventures
+
+The business section documents both active and experimental ventures.
+
+Typical entries include:
+
+- Company overview
+- Mission
+- Timeline
+- Technology
+- Products
+- Services
+- Research
+- Open-source contributions
+- Publications
+- Current status
+
+Business ventures remain separated from personal work while sharing a common
+design language throughout the site.
+
+
+---
+
+## Performance
+
+Design priorities include:
+
+- Extremely fast loading
+- Minimal network requests
+- Local assets
+- Zero tracking scripts
+- No external analytics
+- Long browser cache lifetimes
+- Progressive enhancement
+- Graceful degradation
+
+The website should remain usable with JavaScript disabled.
+
+
+---
+
+## Accessibility
+
+Accessibility goals include:
+
+- Semantic HTML
+- Keyboard navigation
+- Skip links
+- High contrast
+- Proper heading hierarchy
+- Visible focus indicators
+- Screen-reader friendly markup
+- Responsive typography
+- Reduced-motion support
+
+Accessibility is treated as a first-class engineering requirement rather than
+an afterthought.
+
+---
+
+## Privacy
+
+No advertising networks.
+
+No tracking pixels.
+
+No third-party analytics.
+
+No fingerprinting scripts.
+
+No hidden telemetry.
+
+Visitors should be able to browse the site with minimal disclosure of personal
+information.
+
+
+---
+
+## Security
+
+Recommended deployment includes:
+
+- HTTPS only
+- HTTP Strict Transport Security (HSTS)
+- Content Security Policy (CSP)
+- X-Content-Type-Options
+- Referrer-Policy
+- Permissions-Policy
+- X-Frame-Options
+
+Static hosting significantly reduces attack surface compared to dynamic content
+management systems.
 
 
 ---
 
 ## Deployment
 
-This site is deployed using **GitHub Pages** from the `main` branch.  
-To update:  
-1. Modify content within the `/pages`, `/partials`, or root `.html` files.  
-2. Push changes to the repository.  
-3. GitHub Pages will automatically redeploy to [https://0xdeadbeef.in](https://0xdeadbeef.in).
+Example deployment targets include:
+
+- nginx
+- GitHub Pages
+- Cloudflare Pages
+- Netlify
+- Self-hosted Linux servers
+- Tor Onion Services
+- Local archival mirrors
+
+The site is intentionally portable and does not require a database.
 
 
 ---
 
-## Licensing
+## Contributing
 
-Unless otherwise stated, all content on this site is released under the **MIT License** for software and **Creative Commons BY-NC-SA 4.0** for art and written content. See `LICENSE.md` for details.
+Bug reports and constructive feedback are welcome.
 
+Large contributions should be discussed before implementation to preserve the
+overall architectural direction and visual consistency.
 
----
-
-## Contribute / Collaborate
-
-While this is not an open-contribution repo in the traditional sense, serious collaborators, researchers, and aligned minds are welcome to reach out via secure contact.
-
-Pull requests for content improvements, typo fixes, or minor UI tweaks may be considered on a case-by-case basis.
+Unless explicitly stated, contributions are submitted under the same license as
+the repository.
 
 
 ---
 
-## Meta
+## Roadmap
 
-- Domain: [https://0xdeadbeef.in](https://0xdeadbeef.in)
-- Hosting: GitHub Pages
-- Maintained by: [0xdeadbeef]
-- Repo Status: Public Mirror (Frontend only)
-- Backend services: Self-hosted via Flask + nginx stack
+The portfolio is intended to remain active for many years.
 
+Current priorities include:
 
----
+- Expanding technical documentation
+- Publishing additional whitepapers
+- Completing project galleries
+- Improving search capabilities
+- Building richer project timelines
+- Expanding interactive demonstrations
+- Increasing accessibility testing
+- Continuing open-source releases
 
-## Related Entities & Subprojects
-
-This public site reflects just one surface layer of a broader constellation of projects, including:
-
-- ZZXL Holdings
-- ZZX-Labs
-- [0xdeadbeef] Consulting
-- BitTechIn
-- SatoTech (Satoshi Technologies)
-- BlackKey Consulting Group (BKCG)
-- greybit
-- Bit-Tick
-- SatoCo
-- Digital Infinity CySec
-- Cipher Intel R&D Labs
-- Squared Cube
-- GP-AI (GPTPDAIAs)
-- CGAI (CyberGeisha AI)
-- GGAI (GeishaGallery AI)
-- Archemedean Laboratories
-- DELTREE Studios
-- Mr.Balaclava Studios
-- Redwood Creative Consulting
-- CyberArmsBazaar
-- Speciedex
-
-For deeper access, encrypted research APIs, consulting, or infrastructure collaborations — please reach out directly.
+The repository is treated as a living document rather than a finished product.
 
 
 ---
 
-## Thank You
+## Contact
 
-If you’ve arrived here, you are already part of the solution.  
-To support our mission directly: visit the [Donate](https://0xdeadbeef.in/donate) page.
+For professional enquiries, responsible disclosure, collaboration, consulting,
+or research opportunities, visit:
 
+https://0xdeadbeef.in/contact/
+
+For project-specific repositories and source code, see the public GitHub
+organization referenced throughout the website.
+
+
+---
+
+## Funding
+
+Independent research is supported through voluntary Bitcoin contributions.
+
+Information is available on:
+
+/donate/
+
+Funding directly supports:
+
+- Open-source software
+- Independent engineering
+- Hardware development
+- Research publications
+- Technical infrastructure
+- Educational resources
+- Long-term archival efforts
+
+
+---
+
+## License
+
+Source code contained within this repository is licensed under the MIT License.
+
+Documentation, essays, photographs, artwork, music, and other creative works
+may be licensed independently. Refer to each work for its governing license.
+
+
+---
+
+## Philosophy
+
+Technology should empower individuals, encourage curiosity, preserve knowledge,
+and remain understandable.
+
+Good engineering favors simplicity, transparency, portability, reproducibility,
+and long-term maintainability over unnecessary complexity.
+
+This website reflects those principles by serving as both a public portfolio
+and a long-lived archive of ongoing work.
+
+
+---
+
+**Website**
+
+https://0xdeadbeef.in
+
+**Repository**
+
+https://github.com/ZZX-Labs/0xdeadbeef.in
+
+**Copyright**
+
+© 2026 0xdeadbeef. All rights reserved where applicable.
 
