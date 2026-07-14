@@ -1,0 +1,25 @@
+{
+    "number": "0001",
+    "title": "Post 0001 — Initializing the Broadcast",
+    "subtitle": "Beginning the public technical record",
+    "summary": "The first public field dispatch establishing the blog as a long-form record for systems architecture, Bitcoin, software, firmware, hardware, artificial intelligence, cybersecurity, OSINT, research, and development.",
+    "published": "2025-06-01T03:33:00-04:00",
+    "updated": "2025-06-01T03:33:00-04:00",
+    "author": "0xdeadbeef",
+    "category": "Development",
+    "tags": [
+        "Development",
+        "Research",
+        "Bitcoin",
+        "Artificial Intelligence",
+        "Cybersecurity",
+        "ZZX-Labs"
+    ],
+    "status": "Published",
+    "license": "All rights reserved unless otherwise stated.",
+    "hash_algorithm": "",
+    "hash": "",
+    "signature_url": "",
+    "source_url": "",
+    "revision": "1.0"
+}
