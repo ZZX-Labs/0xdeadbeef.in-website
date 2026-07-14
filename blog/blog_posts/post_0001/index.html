@@ -1,103 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Post #0001 – Initializing the Broadcast | Field Log by [0xdeadbeef]" />
-  <title>Post #0001 – Initializing the Broadcast | [0xdeadbeef]</title>
-  <link rel="stylesheet" href="../../../static/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
-  <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
-  <style>
-    .post-container {
-      max-width: 960px;
-      margin: 80px auto;
-      text-align: left;
-      line-height: 1.65em;
-    }
-
-    .post-container h1 {
-      margin-bottom: 0;
-    }
-
-    .post-meta {
-      font-size: 0.9em;
-      color: #aaa;
-      margin-top: 0;
-    }
-
-    .button {
-      display: inline-block;
-      margin: 40px 10px 0 0;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #e6a42b;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #c68b24;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Post 0001 — Initializing the Broadcast. Field log and technical journal entry by 0xdeadbeef.">
+    <meta name="author" content="0xdeadbeef">
+    <meta name="theme-color" content="#050705">
+    <meta name="color-scheme" content="dark">
+    <title>Post 0001 — Initializing the Broadcast | 0xdeadbeef</title>
+    <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
-  <div class="post-container">
-    <h1>Post #0001 – Initializing the Broadcast</h1>
-    <p class="post-meta">Filed: June 1, 2025 @ 03:33 AM EST</p>
-    <hr />
+<body class="blog-post-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <p>
-      This blog will serve as the living field manual and chronicle of ongoing work, research, and design at [0xdeadbeef] across domains. This includes our R&D at ZZX-Labs, field operations, consulting work, and stealth projects behind cryptographic curtains.
-    </p>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="/home/" aria-label="0xdeadbeef home"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
 
-    <p>
-      Expect deep dives into systems architecture, Bitcoin infrastructure, Lightning-enabled applications, PyQt5-based GUI software, secure firmware design, as well as esoteric intersections between OSINT, CySec, AI/ML tooling, and darknet automation.
-    </p>
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+                <a href="/home/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/bio/">Bio</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/projects/">Projects</a>
+                <a href="/research/">Research</a>
+                <a href="/blog/" aria-current="page">Blog</a>
+                <a href="/writing/">Writing</a>
+                <a href="/donate/">Donate</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <p>
-      This space is plaintext-first. Posts are formatted in raw HTML for now, optionally available as `.md`, `.txt`, and `.pdf`. All posts are manually signed and optionally timestamped to the Bitcoin blockchain in future iterations of the tooling.
-    </p>
+    <main id="main-content">
+        <header class="page-hero blog-post-hero">
+            <p id="post-category" class="eyebrow">Development Log</p>
+            <h1 id="post-title">Post 0001 — Initializing the Broadcast</h1>
+            <p id="post-subtitle" class="lead">Beginning the public technical record.</p>
 
-    <p>
-      You are reading dispatch #0001. More will follow.
-    </p>
-
-    <p>
-      Signed: [0xdeadbeef] — operator / architect / sovereign technician
-    </p>
-
-    <hr />
-    
-  </div>
-<div id="cta-buttons">
-    <a href="../../" class="button">← Back to Blog</a>
-    <a href="../../.." class="button" aria-label="[0xdeadbeef]">Home</a>
-    <a href="../../../about" class="button" aria-label="Learn more about [0xdeadbeef]">About [0xdeadbeef]</a>
-    <a href="../../../portfolio" class="button" aria-label="Explore [0xdeadbeef]'s Portfolios">View Portfolios</a>
-    <a href="../../../projects" class="button" aria-label="Explore [0xdeadbeef]'s Projects">View Projects</a>
-    <a href="../../../donate" class="button" aria-label="Donate Toward [0xdeadbeef]'s Funding">Donate Towards Funding</a>
-    <a href="../../../contact" class="button" aria-label="Contact [0xdeadbeef]">Contact</a>
-</div>
-<br><br>
-
-            <div class="container">
-                <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">This page is currently under construction. We are working towards full launch.</p><br><br>
-            </div>    
-        </main>
-
-        <footer class="footer">
-            <div class="container">
-                <hr>
-                <p>&copy; 2025 <strong>[0xdeadbeef]</strong>. All rights reserved. Licensed under the MIT Open Source Software License. Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&D</strong> & <strong>[0xdeadbeef] Consulting</strong>.</p>
+            <div class="article-meta">
+                <span><strong>Post:</strong> <span id="post-number">0001</span></span>
+                <span><strong>Published:</strong> <time id="post-published" datetime="2025-06-01T03:33:00-04:00">June 1, 2025 at 03:33 EDT</time></span>
+                <span><strong>Updated:</strong> <time id="post-updated" datetime="2025-06-01T03:33:00-04:00">June 1, 2025 at 03:33 EDT</time></span>
+                <span><strong>Author:</strong> <span id="post-author">0xdeadbeef</span></span>
+                <span><strong>Revision:</strong> <span id="post-revision">1.0</span></span>
             </div>
-        </footer>
-    </div>
-    <script src="../static/script.js"></script>
+
+            <ul id="post-tags" class="tag-list">
+                <li>Development</li>
+                <li>Research</li>
+                <li>Bitcoin</li>
+                <li>Artificial Intelligence</li>
+                <li>Cybersecurity</li>
+                <li>ZZX-Labs</li>
+            </ul>
+
+            <div class="button-row">
+                <a class="button" href="/blog/">Back to Blog</a>
+                <a class="button secondary" href="./post.txt">Plain Text</a>
+                <a id="post-source-link" class="button secondary" href="#" hidden>Source</a>
+                <a id="post-signature-link" class="button secondary" href="#" hidden>Signature</a>
+            </div>
+        </header>
+
+        <section class="section" aria-labelledby="article-title">
+            <div class="article-layout">
+                <article id="post-content" class="article-content" aria-labelledby="article-title">
+                    <h2 id="article-title" class="visually-hidden">Article</h2>
+
+                    <noscript>
+                        <div class="notice warning">
+                            <strong>JavaScript is disabled</strong>
+                            <p>The article body is stored in <a href="./post.txt">post.txt</a>. Open the plaintext file directly to read the post.</p>
+                        </div>
+                    </noscript>
+
+                    <p id="post-loading-message">Loading article text...</p>
+                </article>
+
+                <aside class="article-sidebar" aria-label="Publication information">
+                    <section class="sidebar-panel">
+                        <h2>Publication Record</h2>
+
+                        <dl>
+                            <dt>Status</dt>
+                            <dd id="post-status">Published</dd>
+
+                            <dt>Category</dt>
+                            <dd id="post-category-sidebar">Development</dd>
+
+                            <dt>License</dt>
+                            <dd id="post-license">All rights reserved unless otherwise stated.</dd>
+
+                            <dt>Hash Algorithm</dt>
+                            <dd id="post-hash-algorithm">Not published</dd>
+
+                            <dt>Hash</dt>
+                            <dd><code id="post-hash">Not published</code></dd>
+                        </dl>
+                    </section>
+
+                    <section class="sidebar-panel">
+                        <h2>Post Files</h2>
+
+                        <ul>
+                            <li><a href="./index.html">index.html</a></li>
+                            <li><a href="./post.txt">post.txt</a></li>
+                            <li><a href="./metadata.json">metadata.json</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="sidebar-panel">
+                        <h2>Archive</h2>
+
+                        <ul>
+                            <li><a href="/blog/">Blog Archive</a></li>
+                            <li><a href="/writing/">Writing Archive</a></li>
+                            <li><a href="/research/">Research Programs</a></li>
+                            <li><a href="/projects/">Project Archive</a></li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="publication-format-title">
+            <div class="section-header">
+                <p class="eyebrow">Publication Format</p>
+                <h2 id="publication-format-title">Plaintext-first and independently readable.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>The canonical article body is stored in <code>post.txt</code>. This page loads that file and renders supported plaintext formatting into the shared website layout.</p>
+                    <p>The article remains directly accessible even if the rendering script fails, because the source text can always be opened independently.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Metadata is stored separately in <code>metadata.json</code>, allowing the title, publication date, category, tags, revision, license, hashes, signatures, and source links to be updated without editing the page structure.</p>
+                    <p>This same <code>index.html</code> may be reused for future post directories without changing its internal code.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section call-to-action" aria-labelledby="post-cta-title">
+            <div class="cta-box">
+                <p class="eyebrow">Continue</p>
+                <h2 id="post-cta-title">Explore the wider archive.</h2>
+                <p>Continue through the blog, writing archive, technical papers, research programs, project documentation, and portfolio.</p>
+
+                <div class="button-row">
+                    <a class="button" href="/blog/">Blog Archive</a>
+                    <a class="button secondary" href="/writing/">Writing</a>
+                    <a class="button secondary" href="/portfolio/papers/">Technical Papers</a>
+                    <a class="button secondary" href="/research/">Research</a>
+                    <a class="button secondary" href="/projects/">Projects</a>
+                    <a class="button secondary" href="/portfolio/">Portfolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <section>
+                <a class="brand" href="/home/"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
+                <p>Independent engineering, research, art, Bitcoin development, cybersecurity, and open-source systems.</p>
+            </section>
+
+            <section>
+                <h2>Publications</h2>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/writing/">Writing</a></li>
+                    <li><a href="/portfolio/papers/">Papers</a></li>
+                    <li><a href="/projects/">Documentation</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Research</h2>
+                <ul>
+                    <li><a href="/research/">Programs</a></li>
+                    <li><a href="/portfolio/bitcoin-development/">Bitcoin</a></li>
+                    <li><a href="/portfolio/cyber-security/">Cybersecurity</a></li>
+                    <li><a href="/portfolio/ai-development/">Artificial Intelligence</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Connect</h2>
+                <ul>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/consulting/">Consulting</a></li>
+                    <li><a href="/donate/">Bitcoin Funding</a></li>
+                    <li><a href="https://github.com/ZZX-Labs" rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-legal">
+            <p>&copy; <span data-current-year>2026</span> <strong>[0xdeadbeef]</strong>. All rights reserved where applicable.</p>
+            <p>Website software is licensed under the MIT License unless otherwise stated. Individual publications may carry separate licenses.</p>
+            <p>Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&amp;D</strong> and <strong>[0xdeadbeef] Consulting</strong>.</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js" defer></script>
+
+    <script>
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const content = document.getElementById("post-content");
+        const loadingMessage = document.getElementById("post-loading-message");
+
+        function escapeHTML(value) {
+            return String(value || "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function formatInline(value) {
+            let output = escapeHTML(value);
+            output = output.replace(/`([^`]+)`/g, "<code>$1</code>");
+            output = output.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+            output = output.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+            output = output.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" rel="noopener noreferrer">$1</a>');
+            return output;
+        }
+
+        function renderPlainText(source) {
+            const lines = String(source || "").replace(/\r\n?/g, "\n").split("\n");
+            const html = [];
+            let paragraph = [];
+            let unorderedList = false;
+            let orderedList = false;
+            let codeBlock = false;
+            let codeLanguage = "";
+            let codeLines = [];
+
+            function flushParagraph() {
+                if (paragraph.length > 0) {
+                    html.push("<p>" + formatInline(paragraph.join(" ")) + "</p>");
+                    paragraph = [];
+                }
+            }
+
+            function closeUnorderedList() {
+                if (unorderedList) {
+                    html.push("</ul>");
+                    unorderedList = false;
+                }
+            }
+
+            function closeOrderedList() {
+                if (orderedList) {
+                    html.push("</ol>");
+                    orderedList = false;
+                }
+            }
+
+            function closeLists() {
+                closeUnorderedList();
+                closeOrderedList();
+            }
+
+            lines.forEach(function (line) {
+                if (line.startsWith("```")) {
+                    flushParagraph();
+                    closeLists();
+
+                    if (!codeBlock) {
+                        codeBlock = true;
+                        codeLanguage = line.slice(3).trim();
+                        codeLines = [];
+                    } else {
+                        const languageClass = codeLanguage ? ' class="language-' + escapeHTML(codeLanguage) + '"' : "";
+                        html.push("<pre><code" + languageClass + ">" + escapeHTML(codeLines.join("\n")) + "</code></pre>");
+                        codeBlock = false;
+                        codeLanguage = "";
+                        codeLines = [];
+                    }
+
+                    return;
+                }
+
+                if (codeBlock) {
+                    codeLines.push(line);
+                    return;
+                }
+
+                if (/^####\s+/.test(line)) {
+                    flushParagraph();
+                    closeLists();
+                    html.push("<h4>" + formatInline(line.replace(/^####\s+/, "")) + "</h4>");
+                    return;
+                }
+
+                if (/^###\s+/.test(line)) {
+                    flushParagraph();
+                    closeLists();
+                    html.push("<h3>" + formatInline(line.replace(/^###\s+/, "")) + "</h3>");
+                    return;
+                }
+
+                if (/^##\s+/.test(line)) {
+                    flushParagraph();
+                    closeLists();
+                    html.push("<h2>" + formatInline(line.replace(/^##\s+/, "")) + "</h2>");
+                    return;
+                }
+
+                if (/^#\s+/.test(line)) {
+                    flushParagraph();
+                    closeLists();
+                    html.push("<h2>" + formatInline(line.replace(/^#\s+/, "")) + "</h2>");
+                    return;
+                }
+
+                if (/^>\s?/.test(line)) {
+                    flushParagraph();
+                    closeLists();
+                    html.push("<blockquote><p>" + formatInline(line.replace(/^>\s?/, "")) + "</p></blockquote>");
+                    return;
+                }
+
+                if (/^[-*]\s+/.test(line)) {
+                    flushParagraph();
+                    closeOrderedList();
+
+                    if (!unorderedList) {
+                        html.push("<ul>");
+                        unorderedList = true;
+                    }
+
+                    html.push("<li>" + formatInline(line.replace(/^[-*]\s+/, "")) + "</li>");
+                    return;
+                }
+
+                if (/^\d+\.\s+/.test(line)) {
+                    flushParagraph();
+                    closeUnorderedList();
+
+                    if (!orderedList) {
+                        html.push("<ol>");
+                        orderedList = true;
+                    }
+
+                    html.push("<li>" + formatInline(line.replace(/^\d+\.\s+/, "")) + "</li>");
+                    return;
+                }
+
+                if (/^---+$/.test(line.trim())) {
+                    flushParagraph();
+                    closeLists();
+                    html.push("<hr>");
+                    return;
+                }
+
+                if (line.trim() === "") {
+                    flushParagraph();
+                    closeLists();
+                    return;
+                }
+
+                closeLists();
+                paragraph.push(line.trim());
+            });
+
+            if (codeBlock) {
+                const languageClass = codeLanguage ? ' class="language-' + escapeHTML(codeLanguage) + '"' : "";
+                html.push("<pre><code" + languageClass + ">" + escapeHTML(codeLines.join("\n")) + "</code></pre>");
+            }
+
+            flushParagraph();
+            closeLists();
+
+            return html.join("\n");
+        }
+
+        function formatDate(value) {
+            const date = new Date(value);
+
+            if (Number.isNaN(date.getTime())) {
+                return value || "—";
+            }
+
+            return new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZoneName: "short"
+            }).format(date);
+        }
+
+        function setText(id, value, fallback) {
+            const element = document.getElementById(id);
+
+            if (element) {
+                element.textContent = value || fallback || "—";
+            }
+        }
+
+        function setDate(id, value) {
+            const element = document.getElementById(id);
+
+            if (!element) {
+                return;
+            }
+
+            element.textContent = formatDate(value);
+            element.dateTime = value || "";
+        }
+
+        function setOptionalLink(id, url) {
+            const element = document.getElementById(id);
+
+            if (!element || !url) {
+                return;
+            }
+
+            element.href = url;
+            element.hidden = false;
+        }
+
+        function applyMetadata(metadata) {
+            document.title = (metadata.title || "Blog Post") + " | 0xdeadbeef";
+
+            const description = document.querySelector('meta[name="description"]');
+
+            if (description && metadata.summary) {
+                description.content = metadata.summary;
+            }
+
+            setText("post-category", metadata.category, "Blog");
+            setText("post-category-sidebar", metadata.category, "Uncategorized");
+            setText("post-title", metadata.title, "Untitled Post");
+            setText("post-subtitle", metadata.subtitle, "");
+            setText("post-number", metadata.number, "—");
+            setText("post-author", metadata.author, "0xdeadbeef");
+            setText("post-revision", metadata.revision, "1.0");
+            setText("post-status", metadata.status, "Published");
+            setText("post-license", metadata.license, "All rights reserved unless otherwise stated.");
+            setText("post-hash-algorithm", metadata.hash_algorithm, "Not published");
+            setText("post-hash", metadata.hash, "Not published");
+
+            setDate("post-published", metadata.published);
+            setDate("post-updated", metadata.updated || metadata.published);
+
+            const tags = document.getElementById("post-tags");
+
+            if (tags && Array.isArray(metadata.tags)) {
+                tags.replaceChildren();
+
+                metadata.tags.forEach(function (tag) {
+                    const item = document.createElement("li");
+                    item.textContent = tag;
+                    tags.appendChild(item);
+                });
+            }
+
+            setOptionalLink("post-source-link", metadata.source_url);
+            setOptionalLink("post-signature-link", metadata.signature_url);
+        }
+
+        Promise.all([
+            fetch("./metadata.json", { cache: "no-store" }).then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Unable to load metadata.json: HTTP " + response.status);
+                }
+
+                return response.json();
+            }),
+            fetch("./post.txt", { cache: "no-store" }).then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Unable to load post.txt: HTTP " + response.status);
+                }
+
+                return response.text();
+            })
+        ])
+            .then(function (results) {
+                const metadata = results[0];
+                const source = results[1];
+
+                applyMetadata(metadata);
+
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+
+                content.insertAdjacentHTML("beforeend", renderPlainText(source));
+            })
+            .catch(function (error) {
+                console.error(error);
+
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+
+                const notice = document.createElement("div");
+                notice.className = "notice danger";
+                notice.innerHTML = "<strong>Post unavailable</strong><p>The article could not be loaded. Verify that <code>metadata.json</code> and <code>post.txt</code> exist and that the site is being served through HTTP or HTTPS.</p><p><a href=\"./post.txt\">Open the plaintext source directly</a>.</p>";
+                content.appendChild(notice);
+            });
+    });
+    </script>
 </body>
 </html>
