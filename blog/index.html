@@ -2,60 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
     <meta name="referrer" content="no-referrer">
     <meta name="description" content="Blog updates, research notes, technical writing, field dispatches, and development logs from 0xdeadbeef.">
     <meta name="author" content="0xdeadbeef">
     <meta name="theme-color" content="#050705">
     <meta name="color-scheme" content="dark">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="0xdeadbeef.in">
+    <meta property="og:title" content="Blog | 0xdeadbeef">
+    <meta property="og:description" content="Research updates, development logs, technical documentation, project journals, essays, and field dispatches from 0xdeadbeef.">
+    <meta property="og:url" content="https://0xdeadbeef.in/blog/">
+    <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | 0xdeadbeef">
+    <meta name="twitter:description" content="Research updates, development logs, technical writing, and field dispatches.">
+    <meta name="twitter:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+
     <title>[:[0xdeadbeef]:] | Blog</title>
+
+    <link rel="canonical" href="https://0xdeadbeef.in/blog/">
     <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 
 <body class="blog-index-page">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header">
-        <div class="nav-shell">
-            <a class="brand" href="/home/" aria-label="0xdeadbeef home"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-
-            <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-                <a href="/home/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/bio/">Bio</a>
-                <a href="/portfolio/">Portfolio</a>
-                <a href="/projects/">Projects</a>
-                <a href="/research/">Research</a>
-                <a href="/blog/" aria-current="page">Blog</a>
-                <a href="/writing/">Writing</a>
-                <a href="/donate/">Donate</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <div data-include="/static/html/header.html"></div>
 
     <main id="main-content">
-        <section class="home-banner">
+        <section class="home-banner" aria-labelledby="blog-title">
             <div id="header-banner">
-                <img id="header-image" src="/static/images/header-image.jpg" alt="0xdeadbeef site banner">
-                <div class="icon-wrapper"><img id="bull-icon" src="/static/images/0xdeadbeef-0.png" alt=""></div>
+                <img
+                    id="header-image"
+                    src="/static/images/header-image.jpg"
+                    alt="0xdeadbeef blog and field dispatch banner"
+                    width="1920"
+                    height="640"
+                >
+
+                <div class="icon-wrapper">
+                    <img
+                        id="bull-icon"
+                        src="/static/images/0xdeadbeef-0.png"
+                        alt=""
+                        width="512"
+                        height="512"
+                    >
+                </div>
+
                 <div class="banner-overlay" aria-hidden="true"></div>
 
                 <div class="home-banner-copy">
                     <p class="eyebrow">Blog</p>
-                    <h1>Lab Notes and Field Dispatches</h1>
-                    <p class="lead">Research updates, development logs, technical documentation, project journals, essays, field observations, release notes, architecture sketches, and direct dispatches from ongoing work.</p>
+
+                    <h1 id="blog-title">Lab Notes and Field Dispatches.</h1>
+
+                    <p class="lead">
+                        Research updates, development logs, technical documentation,
+                        project journals, essays, field observations, release notes,
+                        architecture sketches, and direct dispatches from ongoing work.
+                    </p>
 
                     <div class="button-row">
                         <a class="button" href="#blog-archive">Browse Posts</a>
                         <a class="button secondary" href="/writing/">Writing Archive</a>
                         <a class="button secondary" href="/research/">Research Programs</a>
+                        <a class="button secondary" href="/projects/">Projects</a>
                     </div>
                 </div>
             </div>
@@ -64,118 +82,266 @@
         <section class="section" aria-labelledby="blog-overview-title">
             <div class="section-header">
                 <p class="eyebrow">Publication Archive</p>
-                <h2 id="blog-overview-title">Writing, research, and field documentation.</h2>
+                <h2 id="blog-overview-title">
+                    Writing, research, and field documentation.
+                </h2>
             </div>
 
             <div class="content-grid two-column">
                 <div class="content-column">
-                    <p>This blog serves as the public journal for ongoing work by 0xdeadbeef. It combines development logs, technical articles, research notes, whitepapers, project updates, release announcements, travel journals, field observations, and long-form commentary.</p>
-                    <p>Posts are stored as plain-text files whenever possible so the archive remains portable, inspectable, versionable, and easy to preserve.</p>
+                    <p>
+                        This blog serves as the public journal for ongoing work by
+                        0xdeadbeef. It combines development logs, technical articles,
+                        research notes, whitepapers, project updates, release announcements,
+                        travel journals, field observations, and long-form commentary.
+                    </p>
+
+                    <p>
+                        Posts are stored as plaintext files whenever possible so the archive
+                        remains portable, inspectable, versionable, and easy to preserve.
+                    </p>
                 </div>
 
                 <div class="content-column">
-                    <p>Each post directory contains its own page, metadata record, and plaintext source. The post page loads the text file locally and renders it into the shared publication layout.</p>
-                    <p>Cryptographic signatures, hashes, downloadable formats, and revision records may be added to individual posts when those verification materials exist.</p>
+                    <p>
+                        Each post directory contains its own page, metadata record, and
+                        plaintext source. The post page loads the local text file and renders
+                        it into the shared publication layout.
+                    </p>
+
+                    <p>
+                        Cryptographic signatures, hashes, downloadable formats, source
+                        records, and revision history may be added to individual posts
+                        when those verification materials exist.
+                    </p>
                 </div>
             </div>
 
             <div class="notice info margin-top-large">
                 <strong>Plaintext-first publishing</strong>
-                <p>The canonical article body is stored in <code>post.txt</code>. Metadata is stored separately in <code>metadata.json</code>. The page remains usable without a server-side application.</p>
+
+                <p>
+                    The canonical article body is stored in <code>post.txt</code>.
+                    Post metadata is stored in <code>metadata.json</code>, while the
+                    public archive index is maintained in <code>/blog/blog.json</code>.
+                </p>
             </div>
         </section>
 
         <section class="section" aria-labelledby="categories-title">
             <div class="section-header">
-                <p class="eyebrow">Categories</p>
-                <h2 id="categories-title">Browse by subject.</h2>
+                <p class="eyebrow">Subjects</p>
+                <h2 id="categories-title">Research and publication areas.</h2>
             </div>
 
             <div class="card-grid">
                 <article class="card">
+                    <p class="card-index">01</p>
                     <h3>Development Logs</h3>
-                    <p>Software, firmware, hardware, debugging, architecture, releases, testing, and deployment.</p>
+                    <p>
+                        Software, firmware, hardware, engineering, debugging,
+                        architecture, releases, testing, and deployment.
+                    </p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">02</p>
                     <h3>Research</h3>
-                    <p>Experiments, technical investigations, whitepapers, datasets, findings, and field studies.</p>
+                    <p>
+                        Experiments, investigations, whitepapers, datasets,
+                        findings, literature, and field studies.
+                    </p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">03</p>
                     <h3>Bitcoin</h3>
-                    <p>Bitcoin Core, Lightning, mining, wallets, payments, analytics, nodes, and infrastructure.</p>
+                    <p>
+                        Bitcoin Core, Lightning, mining, wallets, payments,
+                        analytics, nodes, privacy, and infrastructure.
+                    </p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">04</p>
                     <h3>Artificial Intelligence</h3>
-                    <p>Local inference, language models, machine learning, autonomous agents, vision, and retrieval.</p>
+                    <p>
+                        Local inference, language models, machine learning,
+                        agents, computer vision, retrieval, and evaluation.
+                    </p>
                 </article>
 
                 <article class="card">
-                    <h3>Cybersecurity</h3>
-                    <p>OSINT, investigations, malware, operational security, hardening, and defensive engineering.</p>
+                    <p class="card-index">05</p>
+                    <h3>Cybersecurity and OSINT</h3>
+                    <p>
+                        Investigations, malware analysis, defensive engineering,
+                        operational security, public records, and source verification.
+                    </p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">06</p>
                     <h3>Art and Design</h3>
-                    <p>Visual art, music, photography, identity systems, interfaces, 3D design, and creative technology.</p>
+                    <p>
+                        Visual art, music, photography, identity systems,
+                        interfaces, 3D design, and creative technology.
+                    </p>
                 </article>
             </div>
         </section>
 
-        <section id="blog-archive" class="section" aria-labelledby="blog-archive-title">
+        <section
+            id="blog-archive"
+            class="section"
+            aria-labelledby="blog-archive-title"
+        >
             <div class="section-header">
                 <p class="eyebrow">Archive</p>
-                <h2 id="blog-archive-title">Published posts</h2>
-                <p>The post index below is loaded from <code>/blog/blog.json</code>.</p>
+                <h2 id="blog-archive-title">Published posts.</h2>
+
+                <p>
+                    The archive is generated from
+                    <code>/blog/blog.json</code>.
+                </p>
+
+                <p id="blog-manifest-meta" class="page-meta">
+                    Loading publication manifest...
+                </p>
             </div>
 
             <div class="filter-toolbar">
-                <button class="filter-button is-active" type="button" data-blog-filter="all" aria-pressed="true">All</button>
-                <button class="filter-button" type="button" data-blog-filter="development" aria-pressed="false">Development</button>
-                <button class="filter-button" type="button" data-blog-filter="research" aria-pressed="false">Research</button>
-                <button class="filter-button" type="button" data-blog-filter="bitcoin" aria-pressed="false">Bitcoin</button>
-                <button class="filter-button" type="button" data-blog-filter="ai" aria-pressed="false">AI</button>
-                <button class="filter-button" type="button" data-blog-filter="security" aria-pressed="false">Security</button>
-                <button class="filter-button" type="button" data-blog-filter="creative" aria-pressed="false">Creative</button>
+                <div
+                    id="blog-filter-buttons"
+                    class="button-row"
+                    aria-label="Blog category filters"
+                >
+                    <button
+                        class="button small blog-filter is-active"
+                        type="button"
+                        data-blog-filter="all"
+                        aria-pressed="true"
+                    >
+                        All
+                    </button>
+                </div>
 
                 <div class="search-field">
-                    <label class="visually-hidden" for="blog-search">Search blog posts</label>
-                    <input id="blog-search" type="search" placeholder="Search posts..." autocomplete="off" spellcheck="false">
+                    <label class="visually-hidden" for="blog-search">
+                        Search blog posts
+                    </label>
+
+                    <input
+                        id="blog-search"
+                        type="search"
+                        placeholder="Search posts..."
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
                 </div>
             </div>
 
-            <p id="blog-status" class="page-meta" aria-live="polite">Loading posts...</p>
+            <p
+                id="blog-status"
+                class="page-meta"
+                aria-live="polite"
+            >
+                Loading posts...
+            </p>
 
-            <div id="blog-post-grid" class="article-grid margin-top-medium" aria-live="polite"></div>
+            <div
+                id="blog-post-grid"
+                class="article-grid margin-top-medium"
+                aria-live="polite"
+                aria-busy="true"
+            >
+                <article class="info-panel">
+                    <h3>Loading publication archive</h3>
+                    <p>
+                        Retrieving published post records from
+                        <code>/blog/blog.json</code>.
+                    </p>
+                </article>
+            </div>
 
             <template id="blog-card-template">
-                <article class="article-card blog-card">
+                <article
+                    class="article-card blog-card"
+                    data-blog-category=""
+                    data-blog-search=""
+                >
                     <p class="project-status blog-card-status"></p>
-                    <h3><a class="blog-card-title" href=""></a></h3>
+
+                    <h3>
+                        <a class="blog-card-title" href=""></a>
+                    </h3>
+
+                    <p class="blog-card-subtitle"></p>
 
                     <div class="article-meta">
-                        <span><strong>Post:</strong> <span class="blog-card-number"></span></span>
-                        <span><strong>Published:</strong> <time class="blog-card-date"></time></span>
-                        <span><strong>Category:</strong> <span class="blog-card-category"></span></span>
+                        <span>
+                            <strong>Post:</strong>
+                            <span class="blog-card-number"></span>
+                        </span>
+
+                        <span>
+                            <strong>Published:</strong>
+                            <time class="blog-card-date"></time>
+                        </span>
+
+                        <span>
+                            <strong>Category:</strong>
+                            <span class="blog-card-category"></span>
+                        </span>
+
+                        <span class="blog-card-author-wrapper">
+                            <strong>Author:</strong>
+                            <span class="blog-card-author"></span>
+                        </span>
                     </div>
 
                     <p class="blog-card-summary"></p>
+
                     <ul class="tag-list blog-card-tags"></ul>
 
                     <div class="button-row">
-                        <a class="button small blog-card-read" href="">Read Article</a>
-                        <a class="button small secondary blog-card-text" href="">Plain Text</a>
+                        <a class="button small blog-card-read" href="">
+                            Read Article
+                        </a>
+
+                        <a
+                            class="button small secondary blog-card-text"
+                            href=""
+                            type="text/plain"
+                        >
+                            Plain Text
+                        </a>
+
+                        <a
+                            class="button small secondary blog-card-metadata"
+                            href=""
+                            type="application/json"
+                        >
+                            Metadata
+                        </a>
                     </div>
                 </article>
             </template>
 
             <noscript>
                 <div class="notice warning">
-                    <strong>JavaScript required for the dynamic post index</strong>
-                    <p>The blog index is generated from <code>blog.json</code>. Individual post pages remain directly accessible without using this index.</p>
-                    <p><a href="/blog/blog_posts/post_0001/">Open Post 0001</a></p>
+                    <strong>JavaScript required for the dynamic post archive</strong>
+
+                    <p>
+                        The blog index is generated from <code>blog.json</code>.
+                        Individual post pages remain directly accessible.
+                    </p>
+
+                    <p>
+                        <a href="/blog/blog_posts/post_0001/">
+                            Open Post 0001
+                        </a>
+                    </p>
                 </div>
             </noscript>
         </section>
@@ -189,41 +355,86 @@
             <div class="timeline">
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 01</p>
+
                     <div class="timeline-content">
-                        <h3>Create the directory</h3>
-                        <p>Copy <code>post_template/</code> to a new directory named <code>post_0002/</code>, <code>post_0003/</code>, or the next sequential post number.</p>
+                        <h3>Create the post directory</h3>
+
+                        <p>
+                            Create the next sequential directory under
+                            <code>/blog/blog_posts/</code>, such as
+                            <code>post_0002/</code>.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 02</p>
+
                     <div class="timeline-content">
-                        <h3>Edit metadata.json</h3>
-                        <p>Set the post number, title, subtitle, date, category, tags, summary, status, author, and optional verification details.</p>
+                        <h3>Create metadata.json</h3>
+
+                        <p>
+                            Define the post number, title, subtitle, summary,
+                            publication date, update date, author, category,
+                            tags, status, URLs, and publication state.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 03</p>
+
                     <div class="timeline-content">
                         <h3>Write post.txt</h3>
-                        <p>Place the complete article body in the plaintext file. Separate paragraphs with blank lines. Lightweight headings and lists are supported.</p>
+
+                        <p>
+                            Place the canonical article body in the plaintext file.
+                            Separate paragraphs with blank lines and preserve the
+                            original textual record.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 04</p>
+
                     <div class="timeline-content">
-                        <h3>Add the post to blog.json</h3>
-                        <p>Add one metadata object to the blog index. The main blog page will generate the post card automatically.</p>
+                        <h3>Create the post page</h3>
+
+                        <p>
+                            Use the shared post layout to load
+                            <code>metadata.json</code> and <code>post.txt</code>
+                            from the same directory.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 05</p>
+
                     <div class="timeline-content">
-                        <h3>Test over HTTP</h3>
-                        <p>Use a local web server because browsers normally block <code>fetch()</code> when HTML is opened directly through <code>file://</code>.</p>
+                        <h3>Add the record to blog.json</h3>
+
+                        <p>
+                            Add one post object to the master publication index.
+                            The blog page will generate the card, filters, links,
+                            and search data automatically.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-entry">
+                    <p class="timeline-date">Stage 06</p>
+
+                    <div class="timeline-content">
+                        <h3>Validate over HTTP or HTTPS</h3>
+
+                        <p>
+                            Test the page through the web server because browser
+                            security policies generally prevent local
+                            <code>fetch()</code> requests from working through
+                            <code>file://</code>.
+                        </p>
                     </div>
                 </article>
             </div>
@@ -232,8 +443,15 @@
         <section class="section call-to-action" aria-labelledby="blog-cta-title">
             <div class="cta-box">
                 <p class="eyebrow">Continue</p>
-                <h2 id="blog-cta-title">Follow the work from idea to implementation.</h2>
-                <p>Browse the wider writing archive, technical papers, research programs, project documentation, and complete portfolio.</p>
+
+                <h2 id="blog-cta-title">
+                    Follow the work from idea to implementation.
+                </h2>
+
+                <p>
+                    Browse the wider writing archive, technical papers,
+                    research programs, project documentation, and complete portfolio.
+                </p>
 
                 <div class="button-row">
                     <a class="button" href="/writing/">Writing Archive</a>
@@ -241,212 +459,23 @@
                     <a class="button secondary" href="/research/">Research</a>
                     <a class="button secondary" href="/projects/">Projects</a>
                     <a class="button secondary" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/contact/">Contact</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <section>
-                <a class="brand" href="/home/"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-                <p>Independent engineering, research, art, Bitcoin development, cybersecurity, and open-source systems.</p>
-            </section>
+    <div data-include="/static/html/footer.html"></div>
 
-            <section>
-                <h2>Publications</h2>
-                <ul>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/writing/">Writing</a></li>
-                    <li><a href="/portfolio/papers/">Papers</a></li>
-                    <li><a href="/projects/">Documentation</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Research</h2>
-                <ul>
-                    <li><a href="/research/">Programs</a></li>
-                    <li><a href="/portfolio/bitcoin-development/">Bitcoin</a></li>
-                    <li><a href="/portfolio/cyber-security/">Cybersecurity</a></li>
-                    <li><a href="/portfolio/ai-development/">Artificial Intelligence</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Connect</h2>
-                <ul>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/consulting/">Consulting</a></li>
-                    <li><a href="/donate/">Bitcoin Funding</a></li>
-                    <li><a href="https://github.com/ZZX-Labs" rel="noopener noreferrer">GitHub</a></li>
-                </ul>
-            </section>
+    <noscript>
+        <div class="noscript-notice">
+            JavaScript is required to load the shared navigation, footer,
+            and manifest-driven blog archive. Direct post URLs remain available.
         </div>
+    </noscript>
 
-        <div class="footer-legal">
-            <p>&copy; <span data-current-year>2026</span> <strong>[0xdeadbeef]</strong>. All rights reserved where applicable.</p>
-            <p>Website software is licensed under the MIT License unless otherwise stated. Writing, research, media, and individual projects may carry separate licenses.</p>
-            <p>Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&amp;D</strong> and <strong>[0xdeadbeef] Consulting</strong>.</p>
-        </div>
-    </footer>
-
+    <script src="/static/js/include.js" defer></script>
     <script src="/static/script.js" defer></script>
-
-    <script>
-    "use strict";
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const grid = document.getElementById("blog-post-grid");
-        const template = document.getElementById("blog-card-template");
-        const status = document.getElementById("blog-status");
-        const search = document.getElementById("blog-search");
-        const filterButtons = document.querySelectorAll("[data-blog-filter]");
-
-        let posts = [];
-        let activeFilter = "all";
-
-        function normalize(value) {
-            return String(value || "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim();
-        }
-
-        function formatDate(value) {
-            const date = new Date(value);
-
-            if (Number.isNaN(date.getTime())) {
-                return value;
-            }
-
-            return new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                timeZoneName: "short"
-            }).format(date);
-        }
-
-        function buildSearchText(post) {
-            return normalize([
-                post.number,
-                post.title,
-                post.subtitle,
-                post.summary,
-                post.category,
-                ...(Array.isArray(post.tags) ? post.tags : [])
-            ].join(" "));
-        }
-
-        function renderPosts() {
-            const query = normalize(search.value);
-
-            const visiblePosts = posts.filter(function (post) {
-                const category = normalize(post.category);
-                const tags = Array.isArray(post.tags) ? post.tags.map(normalize) : [];
-                const filterMatches = activeFilter === "all" || category.includes(activeFilter) || tags.includes(activeFilter);
-                const searchMatches = !query || buildSearchText(post).includes(query);
-                return filterMatches && searchMatches;
-            });
-
-            grid.replaceChildren();
-
-            visiblePosts.forEach(function (post) {
-                const fragment = template.content.cloneNode(true);
-                const article = fragment.querySelector(".blog-card");
-                const title = fragment.querySelector(".blog-card-title");
-                const read = fragment.querySelector(".blog-card-read");
-                const text = fragment.querySelector(".blog-card-text");
-                const date = fragment.querySelector(".blog-card-date");
-                const tags = fragment.querySelector(".blog-card-tags");
-
-                article.dataset.category = normalize(post.category);
-                article.dataset.searchText = buildSearchText(post);
-
-                fragment.querySelector(".blog-card-status").textContent = post.status || "Published";
-                fragment.querySelector(".blog-card-number").textContent = post.number || "";
-                fragment.querySelector(".blog-card-category").textContent = post.category || "Uncategorized";
-                fragment.querySelector(".blog-card-summary").textContent = post.summary || "";
-
-                title.textContent = post.title || "Untitled Post";
-                title.href = post.url;
-
-                read.href = post.url;
-                text.href = post.text_url;
-
-                date.textContent = formatDate(post.published);
-                date.dateTime = post.published;
-
-                if (Array.isArray(post.tags)) {
-                    post.tags.forEach(function (tag) {
-                        const item = document.createElement("li");
-                        item.textContent = tag;
-                        tags.appendChild(item);
-                    });
-                }
-
-                grid.appendChild(fragment);
-            });
-
-            status.textContent = visiblePosts.length + " " + (visiblePosts.length === 1 ? "post" : "posts") + " displayed.";
-
-            if (visiblePosts.length === 0) {
-                const empty = document.createElement("div");
-                empty.className = "notice warning";
-                empty.innerHTML = "<strong>No posts found</strong><p>Change the active category or search query.</p>";
-                grid.appendChild(empty);
-            }
-        }
-
-        filterButtons.forEach(function (button) {
-            button.addEventListener("click", function () {
-                activeFilter = button.dataset.blogFilter || "all";
-
-                filterButtons.forEach(function (candidate) {
-                    const active = candidate === button;
-                    candidate.classList.toggle("is-active", active);
-                    candidate.setAttribute("aria-pressed", String(active));
-                });
-
-                renderPosts();
-            });
-        });
-
-        search.addEventListener("input", renderPosts);
-
-        fetch("/blog/blog.json", { cache: "no-store" })
-            .then(function (response) {
-                if (!response.ok) {
-                    throw new Error("Unable to load blog.json: HTTP " + response.status);
-                }
-
-                return response.json();
-            })
-            .then(function (data) {
-                if (!data || !Array.isArray(data.posts)) {
-                    throw new Error("blog.json does not contain a posts array.");
-                }
-
-                posts = data.posts
-                    .filter(function (post) {
-                        return post && post.published !== false;
-                    })
-                    .sort(function (a, b) {
-                        return new Date(b.published).getTime() - new Date(a.published).getTime();
-                    });
-
-                renderPosts();
-            })
-            .catch(function (error) {
-                console.error(error);
-                status.textContent = "The blog index could not be loaded.";
-
-                const notice = document.createElement("div");
-                notice.className = "notice danger";
-                notice.innerHTML = "<strong>Blog index unavailable</strong><p>Verify that <code>/blog/blog.json</code> exists, contains valid JSON, and the site is being served over HTTP or HTTPS.</p>";
-                grid.appendChild(notice);
-            });
-    });
-    </script>
+    <script src="/static/js/blog.js" defer></script>
 </body>
 </html>
