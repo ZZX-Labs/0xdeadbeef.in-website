@@ -2,54 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
     <meta name="referrer" content="no-referrer">
     <meta name="description" content="Support 0xdeadbeef and ZZX-Labs R&D through Bitcoin funding for independent research, open-source software, hardware, AI, cybersecurity, art, writing, and technical development.">
     <meta name="author" content="0xdeadbeef">
     <meta name="theme-color" content="#050705">
     <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="0xdeadbeef.in">
+    <meta property="og:title" content="Donate | 0xdeadbeef">
+    <meta property="og:description" content="Support independent Bitcoin, software, firmware, hardware, AI, cybersecurity, research, art, writing, and engineering development.">
+    <meta property="og:url" content="https://0xdeadbeef.in/donate/">
+    <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Donate | 0xdeadbeef">
+    <meta name="twitter:description" content="Bitcoin funding for independent research, technology, engineering, art, and open-source development.">
+    <meta name="twitter:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
     <title>[:[0xdeadbeef]:] | Donate</title>
+    <link rel="canonical" href="https://0xdeadbeef.in/donate/">
     <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body class="donate-page">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header">
-        <div class="nav-shell">
-            <a class="brand" href="/home/" aria-label="0xdeadbeef home"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-
-            <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-                <a href="/home/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/bio/">Bio</a>
-                <a href="/portfolio/">Portfolio</a>
-                <a href="/projects/">Projects</a>
-                <a href="/research/">Research</a>
-                <a href="/blog/">Blog</a>
-                <a href="/writing/">Writing</a>
-                <a href="/donate/" aria-current="page">Donate</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <div data-include="/static/html/header.html"></div>
 
     <main id="main-content">
-        <section class="home-banner">
+        <section class="home-banner" aria-labelledby="donate-title">
             <div id="header-banner">
-                <img id="header-image" src="/static/images/header-image.jpg" alt="0xdeadbeef site banner">
-                <div class="icon-wrapper"><img id="bull-icon" src="/static/images/0xdeadbeef-0.png" alt=""></div>
+                <img id="header-image" src="/static/images/header-image.jpg" alt="0xdeadbeef Bitcoin funding banner" width="1920" height="640">
+                <div class="icon-wrapper">
+                    <img id="bull-icon" src="/static/images/0xdeadbeef-0.png" alt="" width="512" height="512">
+                </div>
                 <div class="banner-overlay" aria-hidden="true"></div>
 
                 <div class="home-banner-copy">
-                    <p class="eyebrow">Donate</p>
-                    <h1>Support independent research, engineering, art, and open technical development.</h1>
-                    <p class="lead">Bitcoin funding supports the continued development of software, firmware, hardware, AI, cybersecurity, scientific tools, open-source projects, technical writing, documentation, visual art, music, photography, laboratories, and long-term research infrastructure.</p>
+                    <p class="eyebrow">Bitcoin Funding</p>
+                    <h1 id="donate-title">Support independent research, engineering, art, and open technical development.</h1>
+                    <p class="lead">Bitcoin funding supports software, firmware, hardware, artificial intelligence, cybersecurity, scientific tools, open-source projects, technical writing, documentation, visual art, music, photography, laboratories, and long-term research infrastructure.</p>
 
                     <div class="button-row">
                         <a class="button" href="#bitcoin-addresses">Bitcoin Addresses</a>
@@ -93,32 +86,38 @@
             </div>
 
             <div class="content-grid two-column">
-                <article class="info-panel">
-                    <p class="project-status">P2SH</p>
-                    <h3>Compatibility Address</h3>
-                    <p><code id="p2sh-address">32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw</code></p>
-                    <img src="/static/images/addresses/32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw.png" alt="QR code for Bitcoin P2SH address 32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw" loading="eager" decoding="async">
+                <article class="address-card">
+                    <img src="/static/images/addresses/32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw.png" alt="QR code for Bitcoin P2SH address 32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw" width="512" height="512" loading="eager" decoding="async">
 
-                    <div class="button-row">
-                        <button class="button small" type="button" data-copy-text="32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw">Copy Address</button>
-                        <a class="button small secondary" href="bitcoin:32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw">Open Wallet</a>
+                    <div class="address-details">
+                        <p class="project-status">P2SH</p>
+                        <h3>Compatibility Address</h3>
+                        <p id="p2sh-address" class="address-value">32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw</p>
+
+                        <div class="copy-row">
+                            <button class="button small" type="button" data-copy-text="32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw">Copy Address</button>
+                            <a class="button small secondary" href="bitcoin:32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw">Open Wallet</a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="info-panel">
-                    <p class="project-status">Native SegWit</p>
-                    <h3>Bech32 Address</h3>
-                    <p><code id="bech32-address">bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z</code></p>
-                    <img src="/static/images/addresses/bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z.png" alt="QR code for Bitcoin native SegWit address bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z" loading="eager" decoding="async">
+                <article class="address-card">
+                    <img src="/static/images/addresses/bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z.png" alt="QR code for Bitcoin native SegWit address bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z" width="512" height="512" loading="eager" decoding="async">
 
-                    <div class="button-row">
-                        <button class="button small" type="button" data-copy-text="bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z">Copy Address</button>
-                        <a class="button small secondary" href="bitcoin:bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z">Open Wallet</a>
+                    <div class="address-details">
+                        <p class="project-status">Native SegWit</p>
+                        <h3>Bech32 Address</h3>
+                        <p id="bech32-address" class="address-value">bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z</p>
+
+                        <div class="copy-row">
+                            <button class="button small" type="button" data-copy-text="bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z">Copy Address</button>
+                            <a class="button small secondary" href="bitcoin:bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z">Open Wallet</a>
+                        </div>
                     </div>
                 </article>
             </div>
 
-            <div class="notice danger margin-top-large">
+            <div class="notice error margin-top-large">
                 <strong>Verify independently</strong>
                 <p>For substantial transfers, compare the complete address against this page, the contact page, and a separately verified communication channel. Do not trust an address received only through email, messaging, screenshots, social media, browser extensions, or copied third-party content.</p>
             </div>
@@ -169,7 +168,7 @@
                 <article class="principle">
                     <div>
                         <h3>Protect your own wallet</h3>
-                        <p>Never disclose your seed phrase, private keys, wallet password, signing device PIN, or backup data to make a donation.</p>
+                        <p>Never disclose your seed phrase, private keys, wallet password, signing-device PIN, or backup data to make a donation.</p>
                     </div>
                 </article>
             </div>
@@ -183,63 +182,75 @@
 
             <div class="card-grid">
                 <article class="card">
+                    <p class="card-index">01</p>
                     <h3>Software Development</h3>
                     <p>Applications, command-line tools, libraries, APIs, services, automation, data systems, visualization, testing, packaging, hosting, and maintenance.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">02</p>
                     <h3>Firmware Development</h3>
                     <p>Embedded software, microcontroller platforms, device control, storage, sensors, displays, Bluetooth, USB, security, testing, and field deployment.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">03</p>
                     <h3>Hardware Prototyping</h3>
                     <p>Components, microcontrollers, displays, sensors, secure elements, PCB fabrication, enclosures, tools, instrumentation, batteries, power systems, and revisions.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">04</p>
+                    <h3>Engineering Systems</h3>
+                    <p>Civilian robotics, autonomous platforms, communications, sensing, navigation, environmental systems, controls, field equipment, prototyping, and integrated engineering.</p>
+                </article>
+
+                <article class="card">
+                    <p class="card-index">05</p>
                     <h3>Bitcoin Infrastructure</h3>
                     <p>Nodes, Lightning, mining, wallets, payment systems, storage, networking, hardware, monitoring, research, and Bitcoin-native applications.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">06</p>
                     <h3>Artificial Intelligence</h3>
                     <p>Local models, GPU infrastructure, datasets, storage, private inference, retrieval systems, assistants, evaluation, computer vision, and multimodal tools.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">07</p>
                     <h3>Cybersecurity</h3>
                     <p>Defensive tooling, malware analysis, secure development, hardening, isolated test systems, evidence storage, operational security, and documentation.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">08</p>
                     <h3>OSINT and Research</h3>
                     <p>Public records, archives, datasets, mapping, entity analysis, source verification, investigative software, field research, and research publications.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">09</p>
                     <h3>Scientific Tools</h3>
                     <p>Botanical research, environmental sensors, microscopy, chemistry equipment, data collection, taxonomy, genetics, and laboratory documentation.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">10</p>
                     <h3>Creative Work</h3>
                     <p>Art materials, photography equipment, audio systems, music production, visual design, 3D modeling, printing, archival work, and exhibitions.</p>
                 </article>
 
                 <article class="card">
+                    <p class="card-index">11</p>
                     <h3>Publishing</h3>
                     <p>Technical papers, books, manuals, documentation, hosting, printing, editing, archiving, signatures, reproducibility, and long-term preservation.</p>
                 </article>
 
                 <article class="card">
-                    <h3>Infrastructure</h3>
-                    <p>Servers, storage, networking, backups, power systems, laboratory equipment, workstations, test environments, and secure facilities.</p>
-                </article>
-
-                <article class="card">
-                    <h3>Operations</h3>
-                    <p>Domains, hosting, equipment maintenance, replacement parts, travel, shipping, research subscriptions, legal review, accounting, and organizational overhead.</p>
+                    <p class="card-index">12</p>
+                    <h3>Infrastructure and Operations</h3>
+                    <p>Servers, storage, networking, backups, power, laboratory equipment, workstations, secure facilities, domains, hosting, shipping, travel, maintenance, and professional services.</p>
                 </article>
             </div>
         </section>
@@ -315,6 +326,12 @@
 
                 <article class="card">
                     <p class="project-status">Priority</p>
+                    <h3>Engineering Development</h3>
+                    <p>Civilian robotics, field systems, sensors, communications, controls, navigation, prototyping equipment, fabrication, and integrated testing.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
                     <h3>Cybersecurity Research</h3>
                     <p>Isolated analysis systems, malware laboratories, forensic storage, defensive tools, network instrumentation, evidence workflows, and reporting.</p>
                 </article>
@@ -329,6 +346,18 @@
                     <p class="project-status">Priority</p>
                     <h3>Scientific and Botanical Research</h3>
                     <p>Environmental controls, sensors, microscopy, chemistry tools, genetics records, preservation systems, databases, and field documentation.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Archives and Infrastructure</h3>
+                    <p>Storage, servers, backups, datasets, source archives, laboratory records, workstations, power systems, equipment maintenance, and long-term preservation.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Creative Production</h3>
+                    <p>Art materials, photography, audio production, music, design, printing, 3D modeling, exhibitions, publishing, and preservation of creative work.</p>
                 </article>
             </div>
         </section>
@@ -384,10 +413,10 @@
         <section class="section" aria-labelledby="refund-title">
             <div class="section-header">
                 <p class="eyebrow">Finality and Refunds</p>
-                <h2 id="refund-title">Bitcoin payments are generally final.</h2>
+                <h2 id="refund-title">Bitcoin transactions are generally final.</h2>
             </div>
 
-            <div class="notice danger">
+            <div class="notice error">
                 <strong>No guaranteed reversal</strong>
                 <p>Bitcoin transactions cannot be reversed by the website, a payment processor, a bank, or a card network. Verify the amount, network, address, and transaction fee before signing and broadcasting.</p>
             </div>
@@ -415,7 +444,7 @@
                 <article class="principle">
                     <div>
                         <h3>Use only official domains</h3>
-                        <p>The canonical portfolio domain is <code>https://0xdeadbeef.in/</code>. Do not trust lookalike domains, added subdomains, alternate spelling, or a prefixed <code>www</code> host.</p>
+                        <p>The canonical portfolio domain is <code>https://0xdeadbeef.in/</code>. Do not trust lookalike domains, added subdomains, alternate spellings, or an unexpected prefixed host.</p>
                     </div>
                 </article>
 
@@ -496,13 +525,13 @@
                 <article class="card">
                     <h3>Equipment</h3>
                     <p>Workstations, GPUs, storage, servers, networking, embedded hardware, laboratory instruments, cameras, audio equipment, and test tools.</p>
-                    <a href="/contact/">Discuss equipment support</a>
+                    <a href="/contact/">Discuss Equipment Support</a>
                 </article>
 
                 <article class="card">
                     <h3>Research Collaboration</h3>
                     <p>Datasets, source material, peer review, experiments, field access, technical expertise, archives, laboratories, and institutional cooperation.</p>
-                    <a href="/research/">Research programs</a>
+                    <a href="/research/">Research Programs</a>
                 </article>
 
                 <article class="card">
@@ -514,7 +543,7 @@
                 <article class="card">
                     <h3>Publication and Distribution</h3>
                     <p>Editing, review, printing, archiving, hosting, mirrors, libraries, translations, accessibility, and long-term preservation.</p>
-                    <a href="/writing/">Writing archive</a>
+                    <a href="/writing/">Writing Archive</a>
                 </article>
 
                 <article class="card">
@@ -571,7 +600,7 @@
 
             <div class="button-row">
                 <a class="button secondary" href="/legal/">Legal Notices</a>
-                <a class="button secondary" href="/licenses/">Licenses</a>
+                <a class="button secondary" href="/license/">Licenses</a>
                 <a class="button secondary" href="/credits/">Credits</a>
             </div>
         </section>
@@ -588,135 +617,20 @@
                     <a class="button secondary" href="/research/">Research</a>
                     <a class="button secondary" href="/writing/">Writing</a>
                     <a class="button secondary" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/ventures/">Ventures</a>
                     <a class="button secondary" href="/contact/">Contact</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <section>
-                <a class="brand" href="/home/"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-                <p>Independent engineering, research, art, Bitcoin development, cybersecurity, and open-source systems.</p>
-            </section>
-
-            <section>
-                <h2>Identity</h2>
-                <ul>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/bio/">Biography</a></li>
-                    <li><a href="/history/">History</a></li>
-                    <li><a href="/cv/">Curriculum Vitae</a></li>
-                    <li><a href="/resume/">Résumé</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Direction</h2>
-                <ul>
-                    <li><a href="/mission/">Mission</a></li>
-                    <li><a href="/motto/">Motto</a></li>
-                    <li><a href="/philosophy/">Philosophy</a></li>
-                    <li><a href="/principles/">Principles</a></li>
-                    <li><a href="/ventures/">Ventures</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Connect</h2>
-                <ul>
-                    <li><a href="/consulting/">Consulting</a></li>
-                    <li><a href="/contracting/">Contracting</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/donate/" aria-current="page">Bitcoin Funding</a></li>
-                    <li><a href="https://github.com/ZZX-Labs" rel="noopener noreferrer">GitHub</a></li>
-                </ul>
-            </section>
-        </div>
-
-        <div class="footer-legal">
-            <p>&copy; <span data-current-year>2026</span> <strong>[0xdeadbeef]</strong>. All rights reserved where applicable.</p>
-            <p>Website software is licensed under the MIT License unless otherwise stated. Writing, research, artwork, photography, music, data, trademarks, and individual projects may carry separate licenses.</p>
-            <p>Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&amp;D</strong> and <strong>[0xdeadbeef] Consulting</strong>.</p>
-        </div>
-    </footer>
-
-    <div id="copy-status" class="copy-status" role="status" aria-live="polite" hidden></div>
+    <div data-include="/static/html/footer.html"></div>
 
     <noscript>
-        <div class="noscript-notice">JavaScript is disabled. The Bitcoin addresses, QR codes, legal notices, and essential navigation remain available.</div>
+        <div class="noscript-notice">JavaScript is required to load the shared navigation and footer components. The Bitcoin addresses, QR codes, legal notices, and direct links remain available.</div>
     </noscript>
 
+    <script src="/static/js/include.js" defer></script>
     <script src="/static/script.js" defer></script>
-    <script>
-    "use strict";
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const status = document.getElementById("copy-status");
-
-        function showStatus(message) {
-            if (!status) {
-                return;
-            }
-
-            status.textContent = message;
-            status.hidden = false;
-
-            window.clearTimeout(showStatus.timeoutId);
-            showStatus.timeoutId = window.setTimeout(function () {
-                status.hidden = true;
-                status.textContent = "";
-            }, 2500);
-        }
-
-        function copyText(value) {
-            if (navigator.clipboard && window.isSecureContext) {
-                return navigator.clipboard.writeText(value);
-            }
-
-            return new Promise(function (resolve, reject) {
-                const textarea = document.createElement("textarea");
-
-                textarea.value = value;
-                textarea.setAttribute("readonly", "");
-                textarea.style.position = "fixed";
-                textarea.style.opacity = "0";
-                textarea.style.pointerEvents = "none";
-
-                document.body.appendChild(textarea);
-                textarea.select();
-
-                try {
-                    const copied = document.execCommand("copy");
-                    textarea.remove();
-
-                    if (copied) {
-                        resolve();
-                    } else {
-                        reject(new Error("Copy command failed."));
-                    }
-                } catch (error) {
-                    textarea.remove();
-                    reject(error);
-                }
-            });
-        }
-
-        document.querySelectorAll("[data-copy-text]").forEach(function (button) {
-            button.addEventListener("click", function () {
-                const value = button.dataset.copyText || "";
-
-                copyText(value)
-                    .then(function () {
-                        showStatus("Bitcoin address copied.");
-                    })
-                    .catch(function () {
-                        showStatus("Copy failed. Select and copy the address manually.");
-                    });
-            });
-        });
-    });
-    </script>
 </body>
 </html>
