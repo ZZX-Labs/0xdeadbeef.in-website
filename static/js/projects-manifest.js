@@ -2,12 +2,29 @@
 "use strict";
 
 const ROOT=document.documentElement.dataset.projectsManifest||"https://zzx-labs.io/projects/manifest.json";
-const DEFAULT_CATEGORIES=[
-    "software","web","applications","firmware","hardware","bitcoin","ai","ml","cryptography",
-    "osint","cyber-investigation","cyber-security","cyber-warfare","design","3d-modeling","writing",
-    "music","art","photography","cannabis","geopolitics","adventures","business","conceptualization"
+
+const CATEGORY_DIRS=[
+    "adult",
+    "ai",
+    "apps",
+    "bitcoin",
+    "cyber-investigation",
+    "cyber-security",
+    "cyber-warfare",
+    "firmware",
+    "hardware",
+    "ml",
+    "osint",
+    "software",
+    "web"
 ];
-const state={projects:[],errors:[],seen:new Set(),visited:new Set()};
+
+const state={
+    projects:[],
+    errors:[],
+    seenProjects:new Set(),
+    visitedManifests:new Set()
+};
 
 const arr=value=>{
     if(value===null||value===undefined||value==="")return[];
@@ -16,7 +33,10 @@ const arr=value=>{
     return[value];
 };
 
-const txt=(value,fallback="")=>value===null||value===undefined?fallback:String(value);
+const txt=(value,fallback="")=>{
+    if(value===null||value===undefined)return fallback;
+    return String(value);
+};
 
 const esc=value=>txt(value)
     .replaceAll("&","&amp;")
@@ -33,13 +53,20 @@ const slug=value=>txt(value,"project")
 
 function absoluteURL(value,base){
     if(!value)return"";
-    try{return new URL(value,base).href;}
-    catch{return String(value);}
+
+    try{
+        return new URL(value,base).href;
+    }catch{
+        return String(value);
+    }
 }
 
-function rootBaseURL(){
-    try{return new URL("./",ROOT);}
-    catch{return new URL("https://zzx-labs.io/projects/");}
+function projectsBaseURL(){
+    try{
+        return new URL("./",ROOT);
+    }catch{
+        return new URL("https://zzx-labs.io/projects/");
+    }
 }
 
 async function fetchJSON(url){
@@ -48,7 +75,9 @@ async function fetchJSON(url){
         mode:"cors",
         credentials:"omit",
         cache:"no-store",
-        headers:{Accept:"application/json"}
+        headers:{
+            Accept:"application/json"
+        }
     });
 
     if(!response.ok){
@@ -68,29 +97,98 @@ async function fetchJSON(url){
     }
 }
 
+function normalizeCategory(value,fallback="software"){
+    const category=txt(value,fallback)
+        .trim()
+        .toLowerCase()
+        .replaceAll("_","-")
+        .replaceAll(" ","-");
+
+    const aliases={
+        app:"apps",
+        application:"apps",
+        applications:"apps",
+        mobile:"apps",
+        artificialintelligence:"ai",
+        "artificial-intelligence":"ai",
+        machinelearning:"ml",
+        "machine-learning":"ml",
+        cybersecurity:"cyber-security",
+        investigation:"cyber-investigation",
+        cyberwarfare:"cyber-warfare",
+        "cyber-conflict":"cyber-warfare",
+        embedded:"firmware",
+        electronics:"hardware",
+        website:"web",
+        websites:"web"
+    };
+
+    const normalized=aliases[category]||category;
+
+    return CATEGORY_DIRS.includes(normalized)
+        ?normalized
+        :fallback;
+}
+
+function normalizeStringArray(value){
+    return arr(value)
+        .map(item=>{
+            if(typeof item==="object"&&item!==null){
+                return txt(
+                    item.name||
+                    item.label||
+                    item.title||
+                    item.value
+                );
+            }
+
+            return txt(item);
+        })
+        .map(item=>item.trim())
+        .filter(Boolean);
+}
+
 function normalizeProject(raw,context){
-    const title=txt(raw.title||raw.name||raw.project_name||raw.label,"Untitled Project");
-    const id=txt(raw.slug||raw.id||raw.key,slug(title));
-    const category=txt(raw.category||raw.category_name||raw.group||context.category,"Uncategorized");
+    const title=txt(
+        raw.title||
+        raw.name||
+        raw.project_name||
+        raw.label,
+        "Untitled Project"
+    );
+
+    const id=txt(
+        raw.slug||
+        raw.id||
+        raw.key,
+        slug(title)
+    );
+
+    const category=normalizeCategory(
+        raw.category||
+        raw.category_name||
+        raw.group||
+        context.category,
+        context.category||"software"
+    );
 
     const href=absoluteURL(
-        raw.href||raw.url||raw.page||raw.path||`/projects/${category}/${id}/`,
-        context.url
+        raw.href||
+        raw.url||
+        raw.page||
+        raw.path||
+        `/projects/${category}/${id}/`,
+        context.manifestURL
     );
 
     const tags=[
-        ...arr(raw.tags),
-        ...arr(raw.keywords),
-        ...arr(raw.technologies),
-        ...arr(raw.stack),
-        ...arr(raw.platforms),
-        ...arr(raw.frameworks)
-    ].map(tag=>{
-        if(typeof tag==="object"){
-            return txt(tag.name||tag.label||tag.title);
-        }
-        return txt(tag);
-    }).filter(Boolean);
+        ...normalizeStringArray(raw.tags),
+        ...normalizeStringArray(raw.keywords),
+        ...normalizeStringArray(raw.technologies),
+        ...normalizeStringArray(raw.stack),
+        ...normalizeStringArray(raw.platforms),
+        ...normalizeStringArray(raw.frameworks)
+    ];
 
     return{
         title,
@@ -98,25 +196,60 @@ function normalizeProject(raw,context){
         category,
         href,
         portfolioHref:absoluteURL(
-            raw.portfolio_href||raw.portfolio_url||raw.portfolio||href,
-            context.url
+            raw.portfolio_href||
+            raw.portfolio_url||
+            raw.portfolio||
+            href,
+            context.manifestURL
         ),
         cover:absoluteURL(
-            raw.cover||raw.cover_image||raw.logo||raw.image||raw.thumbnail||raw.hero_image,
-            context.url
+            raw.cover||
+            raw.cover_image||
+            raw.logo||
+            raw.image||
+            raw.thumbnail||
+            raw.hero_image,
+            context.manifestURL
         ),
-        status:txt(raw.status||raw.state||raw.phase,"Active"),
+        github:absoluteURL(
+            raw.github||
+            raw.repository||
+            raw.repo,
+            context.manifestURL
+        ),
+        download:absoluteURL(
+            raw.download||
+            raw.download_url||
+            raw.release,
+            context.manifestURL
+        ),
+        status:txt(
+            raw.status||
+            raw.state||
+            raw.phase,
+            "Active"
+        ),
         summary:txt(
-            raw.summary||raw.description||raw.blurb||raw.abstract||raw.excerpt,
+            raw.summary||
+            raw.description||
+            raw.blurb||
+            raw.abstract||
+            raw.excerpt,
             "Project documentation is being prepared."
         ),
-        date:txt(raw.date||raw.updated||raw.modified||raw.created),
+        date:txt(
+            raw.date||
+            raw.updated||
+            raw.modified||
+            raw.created
+        ),
         version:txt(raw.version),
         license:txt(raw.license),
-        github:absoluteURL(raw.github,context.url),
-        download:absoluteURL(raw.download,context.url),
         note:txt(raw.note),
-        featured:Boolean(raw.featured||raw.is_featured),
+        featured:Boolean(
+            raw.featured||
+            raw.is_featured
+        ),
         tags:[...new Set(tags)]
     };
 }
@@ -133,8 +266,13 @@ function extractProjects(manifest,context){
     let source=candidates.find(Array.isArray);
 
     if(!source){
-        const objectSource=candidates.find(value=>value&&typeof value==="object");
-        source=objectSource?Object.values(objectSource):[];
+        const objectSource=candidates.find(
+            value=>value&&typeof value==="object"
+        );
+
+        source=objectSource
+            ?Object.values(objectSource)
+            :[];
     }
 
     return source
@@ -142,8 +280,9 @@ function extractProjects(manifest,context){
         .map(item=>normalizeProject(item,context));
 }
 
-function extractManifestLinks(manifest,base){
+function extractManifestLinks(manifest,baseURL){
     const links=[];
+
     const candidates=[
         ...arr(manifest.categories),
         ...arr(manifest.subcategories),
@@ -154,100 +293,180 @@ function extractManifestLinks(manifest,base){
 
     for(const item of candidates){
         if(typeof item==="string"){
-            links.push({name:"",url:absoluteURL(item,base)});
+            links.push({
+                category:"",
+                url:absoluteURL(item,baseURL)
+            });
             continue;
         }
 
         if(!item||typeof item!=="object")continue;
 
-        const value=item.manifest||item.manifest_url||item.url||item.href||item.path||item.src;
+        const value=
+            item.manifest||
+            item.manifest_url||
+            item.url||
+            item.href||
+            item.path||
+            item.src;
+
         if(!value)continue;
 
         links.push({
-            name:txt(item.name||item.title||item.label||item.slug),
-            url:absoluteURL(value,base)
+            category:normalizeCategory(
+                item.name||
+                item.category||
+                item.title||
+                item.label||
+                item.slug,
+                ""
+            ),
+            url:absoluteURL(value,baseURL)
         });
     }
 
     return links;
 }
 
+function projectIdentity(project){
+    return(
+        project.href||
+        project.github||
+        `${project.category}::${project.id}::${project.title}`
+    ).toLowerCase();
+}
+
 function addProjects(projects){
     for(const project of projects){
-        const key=project.href||`${project.category}::${project.id}::${project.title}`;
-        if(state.seen.has(key))continue;
-        state.seen.add(key);
+        const key=projectIdentity(project);
+
+        if(state.seenProjects.has(key))continue;
+
+        state.seenProjects.add(key);
         state.projects.push(project);
     }
 }
 
 async function walkManifest(url,category="",depth=0){
-    if(depth>3||state.visited.has(url))return;
-    state.visited.add(url);
+    if(depth>3)return;
+    if(state.visitedManifests.has(url))return;
+
+    state.visitedManifests.add(url);
 
     const manifest=await fetchJSON(url);
-    addProjects(extractProjects(manifest,{url,category}));
+
+    addProjects(
+        extractProjects(manifest,{
+            manifestURL:url,
+            category:normalizeCategory(category,"software")
+        })
+    );
 
     const children=extractManifestLinks(manifest,url);
+
     const results=await Promise.allSettled(
-        children.map(child=>walkManifest(child.url,child.name||category,depth+1))
+        children.map(child=>
+            walkManifest(
+                child.url,
+                child.category||category,
+                depth+1
+            )
+        )
     );
 
     for(const result of results){
-        if(result.status==="rejected")state.errors.push(result.reason);
+        if(result.status==="rejected"){
+            state.errors.push(result.reason);
+        }
+    }
+}
+
+async function loadCategoryManifests(){
+    const base=projectsBaseURL();
+
+    const results=await Promise.allSettled(
+        CATEGORY_DIRS.map(category=>{
+            const url=new URL(
+                `${category}/manifest.json`,
+                base
+            ).href;
+
+            return walkManifest(url,category,0);
+        })
+    );
+
+    for(const result of results){
+        if(result.status==="rejected"){
+            state.errors.push(result.reason);
+        }
     }
 }
 
 async function loadProjectManifests(){
     try{
-        await walkManifest(ROOT);
+        await walkManifest(ROOT,"",0);
     }catch(error){
         state.errors.push(error);
     }
 
     if(state.projects.length)return;
 
-    const base=rootBaseURL();
-    const results=await Promise.allSettled(
-        DEFAULT_CATEGORIES.map(category=>{
-            const url=new URL(`${category}/manifest.json`,base).href;
-            return walkManifest(url,category,0);
-        })
-    );
-
-    for(const result of results){
-        if(result.status==="rejected")state.errors.push(result.reason);
-    }
+    await loadCategoryManifests();
 
     if(!state.projects.length){
-        throw new Error("No valid project manifests could be loaded from the root manifest or category directories.");
+        throw new Error(
+            "No valid project records could be loaded from the master manifest or category manifests."
+        );
     }
 }
 
 function createTagList(tags){
     if(!tags.length)return"";
-    return `<ul class="tag-list">${tags.slice(0,8).map(tag=>`<li>${esc(tag)}</li>`).join("")}</ul>`;
+
+    return `<ul class="tag-list">${tags
+        .slice(0,8)
+        .map(tag=>`<li>${esc(tag)}</li>`)
+        .join("")}</ul>`;
 }
 
 function createMeta(project){
     const items=[];
-    if(project.version)items.push(`Version ${esc(project.version)}`);
-    if(project.license)items.push(esc(project.license));
-    if(project.date)items.push(esc(project.date));
-    return items.length?`<p class="project-meta">${items.join(" | ")}</p>`:"";
+
+    if(project.version){
+        items.push(`Version ${esc(project.version)}`);
+    }
+
+    if(project.license){
+        items.push(esc(project.license));
+    }
+
+    if(project.date){
+        items.push(esc(project.date));
+    }
+
+    return items.length
+        ?`<p class="project-meta">${items.join(" | ")}</p>`
+        :"";
 }
 
 function createLinks(project,mode){
     const links=[];
-    const primary=mode==="portfolio"?project.portfolioHref:project.href;
 
-    links.push(
-        `<a href="${esc(primary)}">${mode==="portfolio"?"View portfolio entry":"View project"}</a>`
-    );
+    const primary=mode==="portfolio"
+        ?project.portfolioHref
+        :project.href;
+
+    if(primary){
+        links.push(
+            `<a href="${esc(primary)}">${mode==="portfolio"
+                ?"View portfolio entry"
+                :"View project"}</a>`
+        );
+    }
 
     if(project.github){
         links.push(
-            `<a href="${esc(project.github)}" rel="noopener noreferrer">GitHub</a>`
+            `<a href="${esc(project.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>`
         );
     }
 
@@ -257,7 +476,9 @@ function createLinks(project,mode){
         );
     }
 
-    return `<div class="project-links">${links.join("")}</div>`;
+    return links.length
+        ?`<div class="project-links">${links.join("")}</div>`
+        :"";
 }
 
 function createCard(project,mode){
@@ -286,9 +507,30 @@ function createCard(project,mode){
 function updateCount(id,count){
     const element=document.getElementById(id);
 
-    if(element){
-        element.textContent=`${count} project${count===1?"":"s"} loaded`;
-    }
+    if(!element)return;
+
+    element.textContent=
+        `${count} project${count===1?"":"s"} loaded`;
+}
+
+function displayCategory(category){
+    const names={
+        adult:"Adult",
+        ai:"AI",
+        apps:"Applications",
+        bitcoin:"Bitcoin",
+        "cyber-investigation":"Cyber Investigation",
+        "cyber-security":"Cyber Security",
+        "cyber-warfare":"Cyber Warfare",
+        firmware:"Firmware",
+        hardware:"Hardware",
+        ml:"Machine Learning",
+        osint:"OSINT",
+        software:"Software",
+        web:"Web"
+    };
+
+    return names[category]||category;
 }
 
 function renderFilters(projects,target,grid){
@@ -297,33 +539,48 @@ function renderFilters(projects,target,grid){
     const categories=[...new Set(
         projects
             .map(project=>project.category)
-            .filter(Boolean)
-    )].sort((a,b)=>a.localeCompare(b));
+            .filter(category=>CATEGORY_DIRS.includes(category))
+    )].sort((a,b)=>
+        CATEGORY_DIRS.indexOf(a)-CATEGORY_DIRS.indexOf(b)
+    );
 
     target.innerHTML=
         `<button class="button project-filter is-active" type="button" data-project-filter="all">All</button>`+
         categories.map(category=>
-            `<button class="button secondary project-filter" type="button" data-project-filter="${esc(category)}">${esc(category)}</button>`
+            `<button class="button secondary project-filter" type="button" data-project-filter="${esc(category)}">${esc(displayCategory(category))}</button>`
         ).join("");
 
     target.addEventListener("click",event=>{
-        const button=event.target.closest("[data-project-filter]");
+        const button=event.target.closest(
+            "[data-project-filter]"
+        );
+
         if(!button)return;
 
         const filter=button.dataset.projectFilter;
 
-        target.querySelectorAll("[data-project-filter]").forEach(item=>{
-            item.classList.toggle("is-active",item===button);
-        });
+        target
+            .querySelectorAll("[data-project-filter]")
+            .forEach(item=>{
+                item.classList.toggle(
+                    "is-active",
+                    item===button
+                );
+            });
 
-        grid.querySelectorAll("[data-project-category]").forEach(card=>{
-            card.hidden=filter!=="all"&&card.dataset.projectCategory!==filter;
-        });
+        grid
+            .querySelectorAll("[data-project-category]")
+            .forEach(card=>{
+                card.hidden=
+                    filter!=="all"&&
+                    card.dataset.projectCategory!==filter;
+            });
     });
 }
 
 function renderPage(mode,projects){
     const isProjects=mode==="projects";
+
     const grid=document.getElementById(
         isProjects
             ?"manifest-project-grid"
@@ -412,12 +669,15 @@ document.addEventListener("DOMContentLoaded",async()=>{
                 return Number(b.featured)-Number(a.featured);
             }
 
-            const categoryCompare=
-                a.category.localeCompare(b.category);
+            const categoryOrder=
+                CATEGORY_DIRS.indexOf(a.category)-
+                CATEGORY_DIRS.indexOf(b.category);
 
-            return categoryCompare!==0
-                ?categoryCompare
-                :a.title.localeCompare(b.title);
+            if(categoryOrder!==0){
+                return categoryOrder;
+            }
+
+            return a.title.localeCompare(b.title);
         });
 
         renderPage("projects",state.projects);
@@ -433,7 +693,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
             setStatus(
                 true,
                 "Manifest synchronized",
-                `${state.projects.length} projects loaded from the ZZX-Labs project manifests.`
+                `${state.projects.length} projects loaded from the ZZX-Labs master manifest.`
             );
         }
     }catch(error){
@@ -445,7 +705,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
         setStatus(
             false,
             "Manifest unavailable",
-            `${error.message} Verify that zzx-labs.io permits cross-origin requests from https://0xdeadbeef.in.`
+            error.message
         );
 
         renderFailure(error);
