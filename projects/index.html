@@ -3,136 +3,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Explore innovative projects by [0xdeadbeef].">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Project archive of 0xdeadbeef covering software, firmware, hardware, Bitcoin, artificial intelligence, cybersecurity, OSINT, scientific systems, embedded devices, art, music, and long-term research.">
+    <meta name="author" content="0xdeadbeef">
+    <meta name="theme-color" content="#050705">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="0xdeadbeef.in">
+    <meta property="og:title" content="Projects | 0xdeadbeef">
+    <meta property="og:description" content="A multidisciplinary archive of active, experimental, completed, private, and long-term projects by 0xdeadbeef and ZZX-Labs R&D.">
+    <meta property="og:url" content="https://0xdeadbeef.in/projects/">
+    <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects | 0xdeadbeef">
+    <meta name="twitter:description" content="Software, hardware, firmware, Bitcoin, AI, cybersecurity, OSINT, scientific systems, and creative technology projects.">
+    <meta name="twitter:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
     <title>[:[0xdeadbeef]:] | Projects</title>
-    <link rel="stylesheet" href="../static/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        #header-banner {
-            position: relative;
-        }
-
-        #header-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .icon-wrapper {
-            position: absolute;
-            top: 20%; /* Adjust vertically from top */
-            right: 2%; /* Adjust horizontally from right */
-            transform: scale(0.35); /* Scale to 35% size */
-            transform-origin: top right;
-            z-index: 10;
-            pointer-events: none;
-            max-width: 300px;
-        }
-
-        #bull-icon {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
-
+    <link rel="canonical" href="https://0xdeadbeef.in/projects/">
+    <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
-    <div id="landing-container">
-        <header>
+<body class="projects-page">
+    <div data-include="/static/html/header.html"></div>
+
+    <main id="main-content">
+        <section class="home-banner" aria-labelledby="projects-title">
             <div id="header-banner">
-                <!-- Icon scaled and positioned inside the banner -->
-                <div class="icon-wrapper">
-                    <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Icon Logo" id="bull-icon">
+                <img id="header-image" src="/static/images/header-image.jpg" alt="0xdeadbeef projects banner" width="1920" height="640">
+                <div class="icon-wrapper"><img id="bull-icon" src="/static/images/0xdeadbeef-0.png" alt="" width="512" height="512"></div>
+                <div class="banner-overlay" aria-hidden="true"></div>
+
+                <div class="home-banner-copy">
+                    <p class="eyebrow">Projects</p>
+                    <h1 id="projects-title">Systems, prototypes, research platforms, tools, and long-term development programs.</h1>
+                    <p class="lead">A structured archive of active, completed, experimental, planned, private, public, and long-term projects developed by 0xdeadbeef and ZZX-Labs R&amp;D across software, firmware, hardware, Bitcoin, AI, cybersecurity, OSINT, science, embedded systems, creative technology, and institutional infrastructure.</p>
+
+                    <div class="button-row">
+                        <a class="button" href="#featured-projects">Featured Projects</a>
+                        <a class="button secondary" href="/portfolio/">Portfolio</a>
+                        <a class="button secondary" href="/research/">Research</a>
+                        <a class="button secondary" href="/writing/">Writing</a>
+                    </div>
                 </div>
-                <!-- Full-width banner -->
-                <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
             </div>
-            <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
-        </header>
-        <main>
-            <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-                <h2>Projects – [:[0xdeadbeef]:]</h2>
-                <h3>Innovating at the Intersection of Technology and Art</h3>
+        </section>
+
+        <section class="section" aria-labelledby="projects-overview-title">
+            <div class="section-header">
+                <p class="eyebrow">Overview</p>
+                <h2 id="projects-overview-title">A living archive of multidisciplinary work.</h2>
             </div>
-            <br><br>
-            <section class="projects-section">
-            <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-                <!-- Project 1 -->
-                <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-                    <article class="project">
-                        <img src="../static/projects/project_speciedex/images/speciedex-cover.jpg" alt="Speciedex Project Cover" class="project-cover" width="35%" height="35%">
-                        <h4 class="project-title">Speciedex Project</h4>
-                        <h5 class="project-subtitle">Revolutionizing Species Data Collection, Conservation, & Analysis of All Life on Earth</h5>
-                        <p class="project-meta">Date: 2024-12-10 | Time: 14:00 | By: [0xdeadbeef]</p>
-                        <p class="project-summary">A groundbreaking platform for advanced Bitcoin funding towards conservation, documentation, data collection, and analysis of all life on earth, combining AI, bitcoin, and P2P Decentralized Distributed blockchain technology for unmatched exploration.</p>
-                        <a href="../static/projects/project_speciedex/speciedex" class="read-more">Read More</a>
-                    </article>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>Projects range from compact utilities and embedded devices to scientific platforms, Bitcoin infrastructure, private AI systems, OSINT frameworks, hardware products, communications systems, simulation environments, and long-term institutional programs.</p>
+                    <p>Some projects are public and open source. Others are documented only at a high level because they remain private, experimental, security-sensitive, commercially restricted, or under active development.</p>
                 </div>
-                <br><br>
-                <!-- Project 2 -->
-                <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-                    <article class="project">
-                        <img src="../static/projects/project_speciedexcore/images/speciedexcore-cover.jpg" alt="SpeciedexCore Cover" class="project-cover">
-                        <h4 class="project-title">SpeciedexCore</h4>
-                        <h5 class="project-subtitle">The Full Node Client Backend for Speciedex to record, log, and sort All Life on Earth</h5>
-                        <p class="project-meta">Date: 2024-12-10 | Time: 14:00 | By: [0xdeadbeef]</p>
-                        <p class="project-summary">[PLACEHOLDER]</p>
-                        <a href="../static/projects/project_speciedexcore/speciedexcore" class="read-more">Read More</a>
-                    </article>
+
+                <div class="content-column">
+                    <p>Each project page may include a summary, status, architecture, design record, screenshots, photographs, source code, repository links, technical papers, datasets, hardware files, test results, release history, licensing, and known limitations.</p>
+                    <p>Planned work is identified as planned. Experimental work is identified as experimental. Public descriptions should not be interpreted as evidence that every proposed component or deployment has been completed.</p>
                 </div>
-                <br><br>
-                <!-- Project 3 -->
-                <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-                    <article class="project">
-                        <img src="../static/projects/project_speciedexexplorer/images/speciedexexplorer-cover.jpg" alt="SpeciedexExplorer Cover" class="project-cover">
-                        <h4 class="project-title">SpeciedexExplorer</h4>
-                        <h5 class="project-subtitle">The Block Explorer Front End for access & Analysis of All Life on Earth's Speciedex data stored on the various Speciedex blockchains.</h5>
-                        <p class="project-meta">Date: 2024-12-10 | Time: 14:00 | By: [0xdeadbeef]</p>
-                        <p class="project-summary">[PLACEHOLDER]</p>
-                        <a href="../static/projects/project_speciedexexplorer/speciedexexplorer" class="read-more">Read More</a>
-                    </article>
+            </div>
+        </section>
+
+        <section id="featured-projects" class="section" aria-labelledby="featured-projects-title">
+            <div class="section-header">
+                <p class="eyebrow">Featured Projects</p>
+                <h2 id="featured-projects-title">Principal systems under active or long-term development.</h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <img src="/static/projects/project_speciedex/images/speciedex-cover.jpg" alt="Speciedex project cover" class="project-cover" loading="lazy" decoding="async">
+                    <div class="project-card-header">
+                        <p class="project-status">Long-Term Scientific Platform</p>
+                        <h3>Speciedex</h3>
+                    </div>
+                    <p>A distributed platform for taxonomy, biodiversity, genetics, conservation, ecology, scientific records, mapping, public research, and Bitcoin-supported biological documentation.</p>
+                    <ul class="tag-list">
+                        <li>Biology</li>
+                        <li>Taxonomy</li>
+                        <li>Bitcoin</li>
+                        <li>Scientific Data</li>
+                    </ul>
+                    <a href="/projects/speciedex/">View Speciedex</a>
+                </article>
+
+                <article class="project-card">
+                    <img src="/static/projects/project_speciedexcore/images/speciedexcore-cover.jpg" alt="SpeciedexCore project cover" class="project-cover" loading="lazy" decoding="async">
+                    <div class="project-card-header">
+                        <p class="project-status">Backend Infrastructure</p>
+                        <h3>SpeciedexCore</h3>
+                    </div>
+                    <p>A full-node backend for validating, indexing, synchronizing, storing, querying, and exposing structured biological records across the Speciedex ecosystem.</p>
+                    <ul class="tag-list">
+                        <li>Node</li>
+                        <li>Database</li>
+                        <li>Validation</li>
+                        <li>API</li>
+                    </ul>
+                    <a href="/projects/speciedexcore/">View SpeciedexCore</a>
+                </article>
+
+                <article class="project-card">
+                    <img src="/static/projects/project_speciedexexplorer/images/speciedexexplorer-cover.jpg" alt="SpeciedexExplorer project cover" class="project-cover" loading="lazy" decoding="async">
+                    <div class="project-card-header">
+                        <p class="project-status">Explorer Interface</p>
+                        <h3>SpeciedexExplorer</h3>
+                    </div>
+                    <p>A public search, visualization, mapping, comparison, analytics, and exploration interface for structured Speciedex biological data.</p>
+                    <ul class="tag-list">
+                        <li>Explorer</li>
+                        <li>Maps</li>
+                        <li>Analytics</li>
+                        <li>Visualization</li>
+                    </ul>
+                    <a href="/projects/speciedexexplorer/">View SpeciedexExplorer</a>
+                </article>
+
+                <article class="project-card">
+                    <img src="/static/projects/project_gp/images/gp-cover.jpg" alt="GP personal assistant project cover" class="project-cover" loading="lazy" decoding="async">
+                    <div class="project-card-header">
+                        <p class="project-status">Private AI Platform</p>
+                        <h3>GP Personal Assistants</h3>
+                    </div>
+                    <p>Private local personal digital assistants integrating language models, encrypted memory, retrieval, automation, voice, tools, and portable hardware.</p>
+                    <ul class="tag-list">
+                        <li>Local AI</li>
+                        <li>LLM</li>
+                        <li>Automation</li>
+                        <li>Privacy</li>
+                    </ul>
+                    <a href="/projects/gp/">View GP</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">OSINT Platform</p>
+                        <h3>GWEN</h3>
+                    </div>
+                    <p>A modular OSINT and entity-analysis environment for public records, geospatial research, investigative workflows, risk assessment, professional analysis, and knowledge systems.</p>
+                    <ul class="tag-list">
+                        <li>OSINT</li>
+                        <li>Entities</li>
+                        <li>Geospatial</li>
+                        <li>Investigations</li>
+                    </ul>
+                    <a href="/projects/gwen/">View GWEN</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Bitcoin Platform</p>
+                        <h3>BitDroid</h3>
+                    </div>
+                    <p>An Android and desktop Bitcoin Core and Lightning system emphasizing privacy, Tor, removable storage, local operation, user control, and portable infrastructure.</p>
+                    <ul class="tag-list">
+                        <li>Bitcoin Core</li>
+                        <li>Lightning</li>
+                        <li>Android</li>
+                        <li>Tor</li>
+                    </ul>
+                    <a href="/projects/bitdroid/">View BitDroid</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Embedded Bitcoin Hardware</p>
+                        <h3>LinemanMoon</h3>
+                    </div>
+                    <p>A portable Bitcoin hardware platform combining secure storage, signing, controls, removable media, entropy tools, node integration, and field operation.</p>
+                    <ul class="tag-list">
+                        <li>ESP32</li>
+                        <li>Bitcoin</li>
+                        <li>Signing</li>
+                        <li>Hardware</li>
+                    </ul>
+                    <a href="/projects/linemanmoon/">View LinemanMoon</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Terminal Software</p>
+                        <h3>Zmatrix</h3>
+                    </div>
+                    <p>A modernization and multi-language expansion of matrix-style terminal visualization across C, C++, Python, JavaScript, Go, Rust, Lua, Perl, and other languages.</p>
+                    <ul class="tag-list">
+                        <li>Terminal</li>
+                        <li>Visualization</li>
+                        <li>Multi-Language</li>
+                        <li>Open Source</li>
+                    </ul>
+                    <a href="/projects/zmatrix/">View Zmatrix</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Swarm Simulation</p>
+                        <h3>Beetlee</h3>
+                    </div>
+                    <p>A multidimensional swarm, species, behavior, and artificial-life simulation environment with visualization, export, encryption, and machine-learning integration.</p>
+                    <ul class="tag-list">
+                        <li>Simulation</li>
+                        <li>Swarm</li>
+                        <li>Artificial Life</li>
+                        <li>ML</li>
+                    </ul>
+                    <a href="/projects/beetlee/">View Beetlee</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Artificial Life</p>
+                        <h3>Gameo</h3>
+                    </div>
+                    <p>A pixel-based life simulation with biomes, food webs, chemistry, pheromones, behavior, environmental systems, timelines, APIs, and interactive visualization.</p>
+                    <ul class="tag-list">
+                        <li>Simulation</li>
+                        <li>Biomes</li>
+                        <li>Ecology</li>
+                        <li>Visualization</li>
+                    </ul>
+                    <a href="/projects/gameo/">View Gameo</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Cannabis Research</p>
+                        <h3>Neville</h3>
+                    </div>
+                    <p>A genetics, breeding, lineage, phenotype, cultivation, Punnett-square, preservation, and botanical research platform.</p>
+                    <ul class="tag-list">
+                        <li>Genetics</li>
+                        <li>Breeding</li>
+                        <li>Botany</li>
+                        <li>Research</li>
+                    </ul>
+                    <a href="/projects/neville/">View Neville</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-status">Encrypted Media System</p>
+                        <h3>Field Recorder</h3>
+                    </div>
+                    <p>An Android field-recording system with Bluetooth control, segmented recording, removable storage, GPG encryption, verification, decryption, export, and backup workflows.</p>
+                    <ul class="tag-list">
+                        <li>Android</li>
+                        <li>Audio</li>
+                        <li>GPG</li>
+                        <li>Bluetooth</li>
+                    </ul>
+                    <a href="/projects/field-recorder/">View Field Recorder</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="software-projects-title">
+            <div class="section-header">
+                <p class="eyebrow">Software</p>
+                <h2 id="software-projects-title">Software, data, visualization, and automation projects.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>NPDquery</h3>
+                    <p>A streaming regex search and data-partition system for very large text datasets organized into state, country, and unmatched subvolumes.</p>
+                    <a href="/projects/npdquery/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Kollector</h3>
+                    <p>A comic-book collection, cataloging, metadata, cover, archive, checklist, and export platform supporting multiple digital formats.</p>
+                    <a href="/projects/kollector/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Dicelocks</h3>
+                    <p>A multilingual diceware and mnemonic-generation environment with reusable lists, GUI and CLI tools, and secure random selection.</p>
+                    <a href="/projects/dicelocks/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Greywave</h3>
+                    <p>A family of visualizers and generative control systems for high-resolution digital output, parameter mapping, and media export.</p>
+                    <a href="/projects/greywave/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Jurassic Systems</h3>
+                    <p>A filesystem-navigation interface and park-systems simulation inspired by historical cinematic computer interfaces and operational failures.</p>
+                    <a href="/projects/jurassic-systems/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Bitcoin Bitnodes Mirror</h3>
+                    <p>A Bitcoin network crawler, map, aggregation, enrichment, live node, ranking, country, city, ASN, and peer-health platform.</p>
+                    <a href="/projects/bitnodes/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Bitcoin BPI Platform</h3>
+                    <p>A real-time Bitcoin price, exchange, currency, commodity, ticker, API, and embedded display data system.</p>
+                    <a href="/projects/bpi/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Pizza Network</h3>
+                    <p>A Bitcoin-only food-ordering and delivery platform with merchant, driver, treasury, payment, dispatch, and customer interfaces.</p>
+                    <a href="/projects/pizza-network/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Address and Card Generator</h3>
+                    <p>A Bitcoin address-pool, mnemonic ID, UCID, barcode, card-layout, JSON record, and print-production system.</p>
+                    <a href="/projects/address-card-generator/">View project</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="hardware-projects-title">
+            <div class="section-header">
+                <p class="eyebrow">Hardware and Embedded Systems</p>
+                <h2 id="hardware-projects-title">Physical devices, controllers, communications, and field systems.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>RNG Handset</h3>
+                    <p>An ESP32-based random-number, dice, constants, prime, password, signing, microSD, input-control, and visualization device.</p>
+                    <a href="/projects/rng-handset/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>VLC Flag Controller</h3>
+                    <p>A compact ESP32 media controller with rotary encoders, thumbstick input, buttons, USB, and configurable VLC controls.</p>
+                    <a href="/projects/vlc-controller/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Bluetooth Recorder Switch</h3>
+                    <p>A wireless physical control for starting, stopping, and segmenting Android audio recordings in field conditions.</p>
+                    <a href="/projects/recorder-switch/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>PigeNet</h3>
+                    <p>A low-power LoRa mesh and relay communications research platform designed around mobile distributed nodes and long-range synchronization.</p>
+                    <a href="/projects/pigenet/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Greyrock Caches</h3>
+                    <p>A family of disguised, weather-resistant, scalable physical storage and beacon systems integrated into naturalistic enclosures.</p>
+                    <a href="/projects/greyrock/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Vial Storage System</h3>
+                    <p>A machined stainless-steel collapsible multi-tier container for secure access, retention, and transport of conical laboratory vials.</p>
+                    <a href="/projects/vial-storage/">View project</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="autonomous-projects-title">
+            <div class="section-header">
+                <p class="eyebrow">Autonomous and Field Systems</p>
+                <h2 id="autonomous-projects-title">Aerial, ground, marine, robotic, and communications platforms.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Midge4</h3>
+                    <p>A compact civilian micro-UAV platform for inspection, observation, mapping, training, and research.</p>
+                    <a href="/projects/midge4/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Falcon12</h3>
+                    <p>A medium civilian quadcopter platform designed for controlled fluid transport, agriculture, emergency response, and field testing.</p>
+                    <a href="/projects/falcon12/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Eagle16</h3>
+                    <p>A heavy-lift civilian UAV concept for larger fluid payloads, field logistics, agriculture, firefighting, and emergency support.</p>
+                    <a href="/projects/eagle16/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Vulture48</h3>
+                    <p>A long-endurance fixed-wing civilian platform with an internal expandable fluid bladder for conservation, logistics, and emergency applications.</p>
+                    <a href="/projects/vulture48/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>UMV and ROV Systems</h3>
+                    <p>A family of marine vehicles and tethered or untethered remotely operated systems across multiple hull sizes and construction methods.</p>
+                    <a href="/projects/umv-rov/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>UGV and Robotics Systems</h3>
+                    <p>Tracked, wheeled, demining, inspection, logistics, exoskeleton, robotic, and remote field platforms.</p>
+                    <a href="/projects/ugv-robotics/">View project</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="architecture-projects-title">
+            <div class="section-header">
+                <p class="eyebrow">Architecture and Infrastructure</p>
+                <h2 id="architecture-projects-title">Buildings, vehicles, laboratories, and off-grid systems.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Caldera Research Estate</h3>
+                    <p>A circular terraced off-grid research, residential, laboratory, energy, water, agriculture, archive, and secure-infrastructure complex.</p>
+                    <a href="/projects/caldera-estate/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>Mobile Camper Systems</h3>
+                    <p>F250, F350, E250, and E350 mobile living, laboratory, communications, power, water, storage, and expedition systems.</p>
+                    <a href="/projects/mobile-campers/">View project</a>
+                </article>
+
+                <article class="card">
+                    <h3>ZZX-Labs Research Facilities</h3>
+                    <p>Secure laboratories, workshops, server rooms, mining infrastructure, archives, studios, ranges, and distributed operational centers.</p>
+                    <a href="/projects/research-facilities/">View project</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="project-standards-title">
+            <div class="section-header">
+                <p class="eyebrow">Project Standards</p>
+                <h2 id="project-standards-title">Every project should disclose its real status and operating limits.</h2>
+            </div>
+
+            <div class="principle-list">
+                <article class="principle">
+                    <div>
+                        <h3>State whether the project is active, completed, planned, experimental, archived, private, or restricted</h3>
+                        <p>Future concepts should not be represented as completed deployments.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Identify the problem and intended user</h3>
+                        <p>The project should explain what it is designed to solve and under what conditions it is useful.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Document architecture and dependencies</h3>
+                        <p>Core components, interfaces, data flows, required hardware, software, services, and trust boundaries should be recorded.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Preserve revision history</h3>
+                        <p>Changes, deprecated approaches, failures, releases, and design decisions should remain traceable.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Publish limitations</h3>
+                        <p>Experimental status, missing features, security constraints, legal restrictions, and unresolved risks should be stated clearly.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Separate public documentation from sensitive implementation detail</h3>
+                        <p>Security-sensitive, privacy-sensitive, proprietary, controlled, or operationally dangerous details may require restricted disclosure.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="project-status-title">
+            <div class="section-header">
+                <p class="eyebrow">Status Definitions</p>
+                <h2 id="project-status-title">How project status should be interpreted.</h2>
+            </div>
+
+            <div class="content-grid three-column">
+                <article class="info-panel">
+                    <h3>Active</h3>
+                    <p>Currently receiving direct development, testing, documentation, research, or design work.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Ongoing</h3>
+                    <p>A long-term program progressing intermittently according to available resources and priorities.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Experimental</h3>
+                    <p>An early-stage system or method that has not reached stable or validated release status.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Planned</h3>
+                    <p>A defined concept awaiting funding, time, hardware, collaborators, data, facilities, or technical prerequisites.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Archived</h3>
+                    <p>Completed, inactive, superseded, deprecated, or historically significant work preserved for reference.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Restricted</h3>
+                    <p>Work whose source, data, implementation, or operational details cannot be released fully.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="funding-title">
+            <div class="section-header">
+                <p class="eyebrow">Project Funding</p>
+                <h2 id="funding-title">Support independent development and research.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>Bitcoin support helps fund software development, prototyping, hardware, embedded systems, research, servers, storage, power, publications, testing equipment, field work, laboratory materials, and long-term maintenance.</p>
+                    <p>General support may be allocated according to current development and infrastructure priorities.</p>
                 </div>
-                <br><br>
-                <!-- Project 4 -->
-                <div class="container" style="display: block; text-align: center; margin: 0 auto;">
-                    <article class="project">
-                        <img src="../static/projects/project_gp/images/gp-cover.jpg" alt="GP Cover" class="project-cover">
-                        <h4 class="project-title">GP (GPT PDAs)</h4>
-                        <h5 class="project-subtitle">An AI Personal Digital Assistant akin to Jarvis from Ironman</h5>
-                        <p class="project-meta">Date: 2024-12-10 | Time: 14:00 | By: [0xdeadbeef]</p>
-                        <p class="project-summary">[PLACEHOLDER]</p>
-                        <a href="../static/projects/project_gp/gp" class="read-more">Read More</a>
-                    </article>
+
+                <div class="content-column">
+                    <p>Restricted sponsorship, grants, procurement, equipment support, project-specific funding, and institutional collaboration require separate written terms.</p>
+                    <p>Support does not automatically create ownership, governance rights, intellectual-property rights, consulting time, or guaranteed deliverables.</p>
                 </div>
-                <br><br>
-                <!-- Add more projects as needed -->
             </div>
-            </section>
-            <br><br>
-            
-            <div id="cta-buttons">
-                <a href="../home" class="button" aria-label="[0xdeadbeef]">Home</a>
-                <a href="../about" class="button" aria-label="Learn more about [0xdeadbeef]">About [0xdeadbeef]</a>
-                <a href="../portfolio" class="button" aria-label="View [0xdeadbeef]'s Portfolio">View Portfolio</a>
-                <a href="../donate" class="button" aria-label="Donate Toward [0xdeadbeef]'s Funding">Donate Towards Funding</a>
-                <a href="../contact" class="button" aria-label="Contact [0xdeadbeef]">Contact</a>
+
+            <div class="button-row">
+                <a class="button" href="/donate/">Bitcoin Funding</a>
+                <a class="button secondary" href="/contact/">Discuss Project Support</a>
+                <a class="button secondary" href="/consulting/">Consulting</a>
             </div>
-            <br><br>
-            <div class="container">
-                <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">This page is currently under construction. We are working towards full launch.</p>
+        </section>
+
+        <section class="section call-to-action" aria-labelledby="projects-cta-title">
+            <div class="cta-box">
+                <p class="eyebrow">Continue</p>
+                <h2 id="projects-cta-title">Explore the projects through portfolio, research, writing, and professional engagement.</h2>
+                <p>Continue into the portfolio, research programs, writing archive, blog, ventures, consulting, Bitcoin funding, or official contact channels.</p>
+
+                <div class="button-row">
+                    <a class="button" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/research/">Research</a>
+                    <a class="button secondary" href="/writing/">Writing</a>
+                    <a class="button secondary" href="/blog/">Blog</a>
+                    <a class="button secondary" href="/ventures/">Ventures</a>
+                    <a class="button secondary" href="/consulting/">Consulting</a>
+                    <a class="button secondary" href="/donate/">Bitcoin Funding</a>
+                    <a class="button secondary" href="/contact/">Contact</a>
+                </div>
             </div>
-            <br><br>
-        </main>      
-        <footer class="footer">
-            <div class="container">
-                <hr>
-                <p>&copy; 2025 <strong>[0xdeadbeef]</strong>. All rights reserved. Licensed under the MIT Open Source Software License. Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&D</strong> & <strong>[0xdeadbeef] Consulting</strong>.</p>
-            </div>
-        </footer>
-    </div>
-    <script src="../static/script.js"></script>
+        </section>
+    </main>
+
+    <div data-include="/static/html/footer.html"></div>
+
+    <noscript>
+        <div class="noscript-notice">JavaScript is required to load the shared header, navigation, and footer components. The project archive remains available.</div>
+    </noscript>
+
+    <script src="/static/js/include.js" defer></script>
+    <script src="/static/script.js" defer></script>
 </body>
 </html>
