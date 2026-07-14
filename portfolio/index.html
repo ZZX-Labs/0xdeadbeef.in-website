@@ -43,7 +43,7 @@
                     <p class="lead">The portfolio of 0xdeadbeef spans software, firmware, hardware, web systems, applications, Bitcoin, artificial intelligence, machine learning, cryptography, OSINT, cybersecurity, investigations, design, music, art, photography, writing, botany, geopolitics, and institutional development.</p>
 
                     <div class="button-row">
-                        <a class="button" href="#portfolio-disciplines">Browse Disciplines</a>
+                        <a class="button" href="#portfolio-disciplines">Browse Portfolio</a>
                         <a class="button secondary" href="/projects/">Projects</a>
                         <a class="button secondary" href="/research/">Research</a>
                         <a class="button secondary" href="/writing/">Writing</a>
@@ -66,89 +66,28 @@
 
                 <div class="content-column">
                     <p>The common thread is the creation of technologies and solutions that are useful, inspectable, secure, maintainable, and aligned with user sovereignty.</p>
-                    <p>Each discipline may include source code, diagrams, screenshots, technical notes, photographs, audio, design studies, whitepapers, hardware specifications, research records, datasets, or external repositories.</p>
+                    <p>Each entry may include source code, diagrams, screenshots, technical notes, photographs, audio, design studies, whitepapers, hardware specifications, research records, datasets, or external repositories.</p>
                 </div>
             </div>
         </section>
+
         <section id="portfolio-disciplines" class="section" aria-labelledby="portfolio-disciplines-title">
             <div class="section-header">
                 <p class="eyebrow">Manifest Portfolio</p>
                 <h2 id="portfolio-disciplines-title">Portfolio entries synchronized from ZZX-Labs.</h2>
+                <p>The portfolio is populated automatically from the unified ZZX-Labs project manifest and its category manifests.</p>
                 <p id="manifest-portfolio-count">Loading project manifests...</p>
             </div>
+
             <div id="manifest-portfolio-status" aria-live="polite"></div>
+
             <div id="manifest-portfolio-filters" class="button-row" aria-label="Portfolio category filters"></div>
+
             <div id="manifest-portfolio-grid" class="project-grid" aria-live="polite" aria-busy="true">
-                <article class="info-panel"><h3>Loading portfolio</h3><p>Retrieving projects and subordinate category manifests from ZZX-Labs.</p></article>
-            </div>
-        </section>
-
-<section class="section" aria-labelledby="featured-work-title">
-            <div class="section-header">
-                <p class="eyebrow">Featured Work</p>
-                <h2 id="featured-work-title">Representative systems and projects.</h2>
-            </div>
-
-            <div class="card-grid">
-                <article class="card">
-                    <p class="project-status">Scientific Platform</p>
-                    <h3>Speciedex</h3>
-                    <p>A long-term biodiversity, taxonomy, conservation, genetics, ecology, and distributed biological-record platform.</p>
-                    <a href="/projects/speciedex/">View Speciedex</a>
+                <article class="info-panel">
+                    <h3>Loading portfolio</h3>
+                    <p>Retrieving the unified project catalog from ZZX-Labs.</p>
                 </article>
-
-                <article class="card">
-                    <p class="project-status">Private AI</p>
-                    <h3>GP Personal Assistants</h3>
-                    <p>Local, encrypted, user-controlled personal digital assistants integrating language models, retrieval, memory, automation, and portable hardware.</p>
-                    <a href="/projects/gp/">View GP</a>
-                </article>
-
-                <article class="card">
-                    <p class="project-status">OSINT Platform</p>
-                    <h3>GWEN</h3>
-                    <p>A modular entity-analysis and public-record system for geospatial research, investigations, risk assessment, and knowledge management.</p>
-                    <a href="/projects/gwen/">View GWEN</a>
-                </article>
-
-                <article class="card">
-                    <p class="project-status">Bitcoin Platform</p>
-                    <h3>BitDroid</h3>
-                    <p>An Android and desktop Bitcoin Core and Lightning environment emphasizing privacy, removable storage, local control, and user-owned infrastructure.</p>
-                    <a href="/projects/bitdroid/">View BitDroid</a>
-                </article>
-
-                <article class="card">
-                    <p class="project-status">Embedded Hardware</p>
-                    <h3>LinemanMoon</h3>
-                    <p>A portable Bitcoin hardware platform combining signing, secure storage, controls, removable media, entropy tools, and node integration.</p>
-                    <a href="/projects/linemanmoon/">View LinemanMoon</a>
-                </article>
-
-                <article class="card">
-                    <p class="project-status">Terminal Software</p>
-                    <h3>Zmatrix</h3>
-                    <p>A modernization and multi-language expansion of terminal-based matrix visualization across numerous programming languages.</p>
-                    <a href="/projects/zmatrix/">View Zmatrix</a>
-                </article>
-
-                <article class="card">
-                    <p class="project-status">Artificial Life</p>
-                    <h3>Beetlee</h3>
-                    <p>A multidimensional swarm, species, behavior, and artificial-life simulation environment with visualization and machine-learning integration.</p>
-                    <a href="/projects/beetlee/">View Beetlee</a>
-                </article>
-
-                <article class="card">
-                    <p class="project-status">Botanical Research</p>
-                    <h3>Neville</h3>
-                    <p>A cannabis genetics, breeding, lineage, phenotype, cultivation, Punnett-square, and preservation platform.</p>
-                    <a href="/projects/neville/">View Neville</a>
-                </article>
-            </div>
-
-            <div class="button-row">
-                <a class="button" href="/projects/">View Complete Project Archive</a>
             </div>
         </section>
 
@@ -256,12 +195,15 @@
                 <span>Local Language Models</span>
                 <span>Machine Learning</span>
                 <span>OSINT</span>
+                <span>Cyber Investigation</span>
                 <span>Cybersecurity</span>
                 <span>Malware Analysis</span>
                 <span>Cryptography</span>
                 <span>Embedded Systems</span>
                 <span>Firmware</span>
                 <span>Hardware</span>
+                <span>Applications</span>
+                <span>Web Systems</span>
                 <span>Research Software</span>
                 <span>Data Visualization</span>
                 <span>Photography</span>
@@ -363,7 +305,7 @@
     <div data-include="/static/html/footer.html"></div>
 
     <noscript>
-        <div class="noscript-notice">JavaScript is required to load the shared header, navigation, and footer components. The portfolio content remains available.</div>
+        <div class="noscript-notice">JavaScript is required to load the shared header, navigation, footer, and manifest-driven portfolio entries.</div>
     </noscript>
 
     <script src="/static/js/include.js" defer></script>
