@@ -474,12 +474,6 @@ async function loadCategoryManifests(){
 
 async function loadProjectManifests(){
     await loadMasterManifest();
-
-    /*
-     * Category manifests are loaded even when the master manifest succeeds.
-     * This ensures newly added category records appear immediately if the
-     * generated master manifest has not yet been rebuilt or deployed.
-     */
     await loadCategoryManifests();
 
     if(!state.projects.length){
@@ -597,10 +591,15 @@ function renderFilters(projects,target,grid){
                     CATEGORY_DIRS.includes(category)
                 )
         )
-    ].sort(
-        (a,b)=>
-            CATEGORY_DIRS.indexOf(a)-
-            CATEGORY_DIRS.indexOf(b)
+    ].sort((a,b)=>
+        displayCategory(a).localeCompare(
+            displayCategory(b),
+            undefined,
+            {
+                sensitivity:"base",
+                numeric:true
+            }
+        )
     );
 
     target.innerHTML=
@@ -737,24 +736,16 @@ document.addEventListener(
         try{
             await loadProjectManifests();
 
-            state.projects.sort((a,b)=>{
-                if(a.featured!==b.featured){
-                    return Number(b.featured)-
-                        Number(a.featured);
-                }
-
-                const categoryOrder=
-                    CATEGORY_DIRS.indexOf(a.category)-
-                    CATEGORY_DIRS.indexOf(b.category);
-
-                if(categoryOrder!==0){
-                    return categoryOrder;
-                }
-
-                return a.title.localeCompare(
-                    b.title
-                );
-            });
+            state.projects.sort((a,b)=>
+                a.title.localeCompare(
+                    b.title,
+                    undefined,
+                    {
+                        sensitivity:"base",
+                        numeric:true
+                    }
+                )
+            );
 
             renderPage(
                 "projects",
