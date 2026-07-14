@@ -1,2 +1,10 @@
+# robots.txt
+# 0xdeadbeef.in
+
 User-agent: *
-Disallow: /
+Allow: /
+
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /private/
+Disallow: /drafts/
