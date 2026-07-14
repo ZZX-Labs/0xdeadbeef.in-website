@@ -3,106 +3,720 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Contact [:[0xdeadbeef]:] for inquiries, collaborations, and support.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Support 0xdeadbeef and ZZX-Labs R&D through Bitcoin funding for independent research, open-source software, hardware, AI, cybersecurity, art, writing, and technical development.">
+    <meta name="author" content="0xdeadbeef">
+    <meta name="theme-color" content="#050705">
+    <meta name="color-scheme" content="dark">
     <title>[:[0xdeadbeef]:] | Donate</title>
-    <link rel="stylesheet" href="../static/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        #header-banner {
-            position: relative;
-        }
-
-        #header-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .icon-wrapper {
-            position: absolute;
-            top: 20%; /* Adjust vertically from top */
-            right: 2%; /* Adjust horizontally from right */
-            transform: scale(0.35); /* Scale to 35% size */
-            transform-origin: top right;
-            z-index: 10;
-            pointer-events: none;
-            max-width: 300px;
-        }
-
-        #bull-icon {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
-
+    <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
-    <div id="landing-container">
-        <header>
-            <div id="header-banner">
-                <!-- Icon scaled and positioned inside the banner -->
-                <div class="icon-wrapper">
-                    <img src="../static/images/0xdeadbeef-0.png" alt="Ox Bull Icon Logo" id="bull-icon">
-                </div>
-                <!-- Full-width banner -->
-                <img src="../static/images/header-image.jpg" alt="[0xdeadbeef] Banner" id="header-image">
-            </div>
-            <h1 id="site-title"><a href="https://0xdeadbeef.in/">[:[0xdeadbeef]:]</a></h1>
-        </header>
-        <main>
-            <div class="donations">
-                <div class="container">
-                    <h2>Donations – [0xdeadbeef]</h2>
-                    <p>Your support fuels our independent research, experimental builds, and creative innovation across cybersecurity, Bitcoin protocol engineering, artificial intelligence, digital art, open-source tools, hardware design, and decentralized systems development. Donations help sustain our efforts in advancing boundary-pushing projects and maintaining autonomy in an increasingly centralized world.</p>
-                    <br>
-                    <h3>Funding Channels & Addresses</h3>
-                    <p>All listed Bitcoin addresses are custodially managed by [0xdeadbeef] and exclusively designated for project development, public research contributions, and community-accessible toolsets.
-                    <br><br>
-                    We accept Bitcoin only — utilizing native SegWit (Bech32) and multisig-compatible P2SH formats to maximize efficiency, privacy, and futureproofing.</p>
-                </div>
-                <hr>
+<body class="donate-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-                
-                <div class="container">
-                    <h3>Bitcoin Donation Addresses</h3>
-                    <!-- Correct P2SH Address -->
-                    <p><strong>P2SH Address:</strong> <code>32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw</code></p>
-                    <img src="../static/images/addresses/32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw.png" alt="P2SH QR Code" style="display: block; margin: 0 auto;">
-                    <br>
-                    <!-- Correct Bech32 Address -->
-                    <p><strong>Bech32 Address:</strong> <code>bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z</code></p>
-                    <img src="../static/images/addresses/bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z.png" alt="Bech32 QR Code" style="display: block; margin: 0 auto;">
-                    <br>
-                </div>
-                <hr>
-                
-                <hr>
-            
-                <div id="cta-buttons">
-                    <a href="../home" class="button" aria-label="[0xdeadbeef]">Home</a>
-                    <a href="../about" class="button" aria-label="Learn more about [0xdeadbeef]">About [0xdeadbeef]</a>
-                    <a href="../portfolio" class="button" aria-label="View [0xdeadbeef]'s Portfolio">View Portfolio</a>
-                    <a href="../projects" class="button" aria-label="Explore [0xdeadbeef]'s Projects">View Projects</a>
-                    <a href="../contact" class="button" aria-label="Contact [0xdeadbeef]">Contact</a>
-                </div>
-                <br><br>
-        
-                <div class="container">
-                    <p id="tagline" style="display: block; text-align: center; margin: 0 auto;">This page is currently under construction. We are working towards full launch.</p><br><br>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="/home/" aria-label="0xdeadbeef home"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+                <a href="/home/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/bio/">Bio</a>
+                <a href="/portfolio/">Portfolio</a>
+                <a href="/projects/">Projects</a>
+                <a href="/research/">Research</a>
+                <a href="/blog/">Blog</a>
+                <a href="/writing/">Writing</a>
+                <a href="/donate/" aria-current="page">Donate</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="home-banner">
+            <div id="header-banner">
+                <img id="header-image" src="/static/images/header-image.jpg" alt="0xdeadbeef site banner">
+                <div class="icon-wrapper"><img id="bull-icon" src="/static/images/0xdeadbeef-0.png" alt=""></div>
+                <div class="banner-overlay" aria-hidden="true"></div>
+
+                <div class="home-banner-copy">
+                    <p class="eyebrow">Donate</p>
+                    <h1>Support independent research, engineering, art, and open technical development.</h1>
+                    <p class="lead">Bitcoin funding supports the continued development of software, firmware, hardware, AI, cybersecurity, scientific tools, open-source projects, technical writing, documentation, visual art, music, photography, laboratories, and long-term research infrastructure.</p>
+
+                    <div class="button-row">
+                        <a class="button" href="#bitcoin-addresses">Bitcoin Addresses</a>
+                        <a class="button secondary" href="#funding-use">Use of Funds</a>
+                        <a class="button secondary" href="/projects/">Projects</a>
+                        <a class="button secondary" href="/research/">Research</a>
+                    </div>
                 </div>
             </div>
-        </main>
-        
-        <footer class="footer">
-            <div class="container">
-                <hr>
-                <p>&copy; 2025 <strong>[0xdeadbeef]</strong>. All rights reserved. Licensed under the MIT Open Source Software License. Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&D</strong> & <strong>[0xdeadbeef] Consulting</strong>.</p>
+        </section>
+
+        <section class="section" aria-labelledby="funding-overview-title">
+            <div class="section-header">
+                <p class="eyebrow">Overview</p>
+                <h2 id="funding-overview-title">Independent work requires independent infrastructure.</h2>
             </div>
-        </footer>
-    </div>
-    <script src="../static/script.js"></script>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>0xdeadbeef and ZZX-Labs R&amp;D develop independent technical, creative, scientific, and research systems without relying on conventional venture-capital ownership structures.</p>
+                    <p>Funding helps sustain software development, hardware prototyping, embedded systems, Bitcoin infrastructure, artificial intelligence, cybersecurity, OSINT, technical research, documentation, publishing, art, photography, music, and field work.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Bitcoin is the preferred funding mechanism because it allows direct global settlement without requiring an intermediary to approve the transaction, define the permitted purpose, or control the recipient account.</p>
+                    <p>Support may be general or directed toward a specific public project, research program, laboratory need, equipment purchase, publication, dataset, prototype, or operational requirement.</p>
+                </div>
+            </div>
+
+            <div class="notice info margin-top-large">
+                <strong>Bitcoin only</strong>
+                <p>Public funding is accepted in Bitcoin. No altcoin, token, NFT, ICO, or speculative cryptocurrency funding is requested through this page.</p>
+            </div>
+        </section>
+
+        <section id="bitcoin-addresses" class="section" aria-labelledby="bitcoin-addresses-title">
+            <div class="section-header">
+                <p class="eyebrow">Funding Addresses</p>
+                <h2 id="bitcoin-addresses-title">Published Bitcoin destinations.</h2>
+                <p>Verify every character before sending. Bitcoin transactions are generally irreversible.</p>
+            </div>
+
+            <div class="content-grid two-column">
+                <article class="info-panel">
+                    <p class="project-status">P2SH</p>
+                    <h3>Compatibility Address</h3>
+                    <p><code id="p2sh-address">32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw</code></p>
+                    <img src="/static/images/addresses/32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw.png" alt="QR code for Bitcoin P2SH address 32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw" loading="eager" decoding="async">
+
+                    <div class="button-row">
+                        <button class="button small" type="button" data-copy-text="32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw">Copy Address</button>
+                        <a class="button small secondary" href="bitcoin:32PVdZTdDPFg6BwoKEGMBAvyGJzVJEhvtw">Open Wallet</a>
+                    </div>
+                </article>
+
+                <article class="info-panel">
+                    <p class="project-status">Native SegWit</p>
+                    <h3>Bech32 Address</h3>
+                    <p><code id="bech32-address">bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z</code></p>
+                    <img src="/static/images/addresses/bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z.png" alt="QR code for Bitcoin native SegWit address bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z" loading="eager" decoding="async">
+
+                    <div class="button-row">
+                        <button class="button small" type="button" data-copy-text="bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z">Copy Address</button>
+                        <a class="button small secondary" href="bitcoin:bc1qkgx0teyknprdvzvchxlgpx8ramm6sk23ckww2z">Open Wallet</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="notice danger margin-top-large">
+                <strong>Verify independently</strong>
+                <p>For substantial transfers, compare the complete address against this page, the contact page, and a separately verified communication channel. Do not trust an address received only through email, messaging, screenshots, social media, browser extensions, or copied third-party content.</p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="verification-title">
+            <div class="section-header">
+                <p class="eyebrow">Verification</p>
+                <h2 id="verification-title">Confirm before broadcasting a transaction.</h2>
+            </div>
+
+            <div class="principle-list">
+                <article class="principle">
+                    <div>
+                        <h3>Compare the full address</h3>
+                        <p>Verify the complete address, not only the first and last characters.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Check the Bitcoin network</h3>
+                        <p>These addresses are for Bitcoin mainnet. Do not send testnet coins, altcoins, tokens, or assets from incompatible networks.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Use a test transaction</h3>
+                        <p>For substantial funding, send a small test amount first and confirm the destination before sending the remainder.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Beware of clipboard replacement</h3>
+                        <p>Malware may alter copied addresses. Compare the destination shown by the signing device or wallet before approval.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Confirm unusual requests</h3>
+                        <p>Any unexpected request to change an address, payment method, key, domain, or funding destination should be treated as suspicious.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Protect your own wallet</h3>
+                        <p>Never disclose your seed phrase, private keys, wallet password, signing device PIN, or backup data to make a donation.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="funding-use" class="section" aria-labelledby="funding-use-title">
+            <div class="section-header">
+                <p class="eyebrow">Use of Funds</p>
+                <h2 id="funding-use-title">What support may fund.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Software Development</h3>
+                    <p>Applications, command-line tools, libraries, APIs, services, automation, data systems, visualization, testing, packaging, hosting, and maintenance.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Firmware Development</h3>
+                    <p>Embedded software, microcontroller platforms, device control, storage, sensors, displays, Bluetooth, USB, security, testing, and field deployment.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Hardware Prototyping</h3>
+                    <p>Components, microcontrollers, displays, sensors, secure elements, PCB fabrication, enclosures, tools, instrumentation, batteries, power systems, and revisions.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Bitcoin Infrastructure</h3>
+                    <p>Nodes, Lightning, mining, wallets, payment systems, storage, networking, hardware, monitoring, research, and Bitcoin-native applications.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Local models, GPU infrastructure, datasets, storage, private inference, retrieval systems, assistants, evaluation, computer vision, and multimodal tools.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Cybersecurity</h3>
+                    <p>Defensive tooling, malware analysis, secure development, hardening, isolated test systems, evidence storage, operational security, and documentation.</p>
+                </article>
+
+                <article class="card">
+                    <h3>OSINT and Research</h3>
+                    <p>Public records, archives, datasets, mapping, entity analysis, source verification, investigative software, field research, and research publications.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Scientific Tools</h3>
+                    <p>Botanical research, environmental sensors, microscopy, chemistry equipment, data collection, taxonomy, genetics, and laboratory documentation.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Creative Work</h3>
+                    <p>Art materials, photography equipment, audio systems, music production, visual design, 3D modeling, printing, archival work, and exhibitions.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Publishing</h3>
+                    <p>Technical papers, books, manuals, documentation, hosting, printing, editing, archiving, signatures, reproducibility, and long-term preservation.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Infrastructure</h3>
+                    <p>Servers, storage, networking, backups, power systems, laboratory equipment, workstations, test environments, and secure facilities.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Operations</h3>
+                    <p>Domains, hosting, equipment maintenance, replacement parts, travel, shipping, research subscriptions, legal review, accounting, and organizational overhead.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="funding-model-title">
+            <div class="section-header">
+                <p class="eyebrow">Funding Model</p>
+                <h2 id="funding-model-title">Direct support without equity dilution.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>General donations do not purchase equity, ownership, governance rights, profit participation, debt claims, tokens, securities, intellectual-property rights, access rights, consulting time, contractual deliverables, or guaranteed recognition.</p>
+                    <p>Unless expressly agreed in writing, a contribution is treated as voluntary support for independent work and may be allocated according to current technical, research, operational, and maintenance priorities.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Project-specific sponsorships, research grants, equipment gifts, contracts, consulting engagements, licensing arrangements, procurement, and institutional funding require a separate written agreement.</p>
+                    <p>No donation creates a partnership, agency relationship, fiduciary duty, employment relationship, client relationship, confidentiality obligation, or obligation to complete a particular project.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="directed-funding-title">
+            <div class="section-header">
+                <p class="eyebrow">Directed Funding</p>
+                <h2 id="directed-funding-title">Supporting a particular project or research program.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>A supporter may identify a preferred project, discipline, equipment need, publication, experiment, repository, prototype, or research area through the contact page.</p>
+                    <p>Include the transaction ID, amount, approximate broadcast time, intended project, and whether public acknowledgment is requested or prohibited.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Directed funding is not binding unless accepted in writing. A project may be delayed, revised, merged, suspended, discontinued, or redirected when technical, legal, ethical, financial, security, or operational conditions require it.</p>
+                    <p>Where a restriction cannot be accepted, the contributor may be informed before the contribution is treated as restricted funding, provided adequate contact information was supplied.</p>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <a class="button" href="/projects/">Project Archive</a>
+                <a class="button secondary" href="/research/">Research Programs</a>
+                <a class="button secondary" href="/contact/">Contact</a>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="priority-title">
+            <div class="section-header">
+                <p class="eyebrow">Current Priorities</p>
+                <h2 id="priority-title">High-value areas for support.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Bitcoin Nodes and Mining</h3>
+                    <p>Storage, networking, power, cooling, full nodes, Lightning, mining hardware, monitoring, repair, firmware, and distributed infrastructure.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Private AI Infrastructure</h3>
+                    <p>GPUs, storage, local models, datasets, retrieval systems, evaluation, secure deployment, portable AI devices, and offline assistants.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Embedded Systems Laboratory</h3>
+                    <p>Microcontrollers, oscilloscopes, logic analyzers, soldering equipment, PCB fabrication, secure elements, sensors, displays, and test fixtures.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Cybersecurity Research</h3>
+                    <p>Isolated analysis systems, malware laboratories, forensic storage, defensive tools, network instrumentation, evidence workflows, and reporting.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Technical Publishing</h3>
+                    <p>Whitepapers, manuals, documentation, diagrams, source archives, long-term hosting, PDF production, printing, signatures, and preservation.</p>
+                </article>
+
+                <article class="card">
+                    <p class="project-status">Priority</p>
+                    <h3>Scientific and Botanical Research</h3>
+                    <p>Environmental controls, sensors, microscopy, chemistry tools, genetics records, preservation systems, databases, and field documentation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="acknowledgment-title">
+            <div class="section-header">
+                <p class="eyebrow">Acknowledgment</p>
+                <h2 id="acknowledgment-title">Public, private, or anonymous support.</h2>
+            </div>
+
+            <div class="content-grid three-column">
+                <article class="info-panel">
+                    <h3>Anonymous</h3>
+                    <p>No identity, name, handle, organization, amount, or public acknowledgment is requested.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Private Record</h3>
+                    <p>Contact information may be retained for internal accounting or communication but not published.</p>
+                </article>
+
+                <article class="info-panel">
+                    <h3>Public Credit</h3>
+                    <p>A supporter may request acknowledgment, subject to verification, consent, editorial review, and applicable legal requirements.</p>
+                </article>
+            </div>
+
+            <div class="notice warning margin-top-large">
+                <strong>Blockchain privacy</strong>
+                <p>Bitcoin transactions are publicly visible. Reusing addresses, combining inputs, publishing transaction IDs, or associating a wallet with an identity may reduce financial privacy.</p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="tax-title">
+            <div class="section-header">
+                <p class="eyebrow">Tax and Legal Status</p>
+                <h2 id="tax-title">No automatic charitable deduction.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>Unless expressly stated in a separate written record, contributions made through this page should not be assumed to qualify as charitable donations, tax-deductible gifts, securities purchases, investments, loans, deposits, or payments for goods or services.</p>
+                    <p>Supporters are responsible for determining the legal, tax, reporting, sanctions, accounting, and regulatory consequences of sending Bitcoin from their jurisdiction.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>No tax receipt, valuation opinion, legal opinion, accounting advice, financial advice, or regulatory representation is provided through this page.</p>
+                    <p>Institutional, governmental, grant, procurement, sponsorship, or restricted funding should be discussed before transfer and documented through an appropriate written agreement.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="refund-title">
+            <div class="section-header">
+                <p class="eyebrow">Finality and Refunds</p>
+                <h2 id="refund-title">Bitcoin payments are generally final.</h2>
+            </div>
+
+            <div class="notice danger">
+                <strong>No guaranteed reversal</strong>
+                <p>Bitcoin transactions cannot be reversed by the website, a payment processor, a bank, or a card network. Verify the amount, network, address, and transaction fee before signing and broadcasting.</p>
+            </div>
+
+            <div class="content-grid two-column margin-top-large">
+                <div class="content-column">
+                    <p>General voluntary support is ordinarily nonrefundable once confirmed on the Bitcoin network.</p>
+                    <p>Sending funds to an incorrect address, wrong network, incompatible asset, fraudulent substitute address, or compromised clipboard may result in permanent loss.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Any exceptional return of funds is discretionary, may require identity and ownership verification, and may be reduced by network fees, legal costs, tax effects, compliance requirements, exchange-rate changes, or administrative expense.</p>
+                    <p>No refund request should include a seed phrase, private key, password, or wallet backup.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="security-title">
+            <div class="section-header">
+                <p class="eyebrow">Security</p>
+                <h2 id="security-title">Protect against impersonation and payment substitution.</h2>
+            </div>
+
+            <div class="principle-list">
+                <article class="principle">
+                    <div>
+                        <h3>Use only official domains</h3>
+                        <p>The canonical portfolio domain is <code>https://0xdeadbeef.in/</code>. Do not trust lookalike domains, added subdomains, alternate spelling, or a prefixed <code>www</code> host.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Do not trust social-media messages</h3>
+                        <p>A direct message, comment, advertisement, video description, or profile post is not sufficient proof of a funding address.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Verify OpenPGP where appropriate</h3>
+                        <p>For substantial institutional or restricted funding, verify identity through the fingerprints and public keys published on the contact page.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Inspect wallet output</h3>
+                        <p>Confirm the destination, amount, fee, and network on the final signing device rather than relying only on the computer clipboard.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Reject urgent substitutions</h3>
+                        <p>Pressure to send immediately, bypass verification, use a new address, or disclose wallet information is a strong indicator of fraud.</p>
+                    </div>
+                </article>
+
+                <article class="principle">
+                    <div>
+                        <h3>Report suspected impersonation</h3>
+                        <p>Use the contact page to report fraudulent domains, altered addresses, impersonation, phishing, fake fundraising, or compromised publication channels.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="button-row">
+                <a class="button secondary" href="/contact/#openpgp">OpenPGP Keys</a>
+                <a class="button secondary" href="/contact/#security-contact">Security Contact</a>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="transparency-title">
+            <div class="section-header">
+                <p class="eyebrow">Transparency</p>
+                <h2 id="transparency-title">Public reporting without sacrificing operational security.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>Project updates, release notes, development records, research findings, documentation, photographs, repository changes, and published artifacts may provide evidence of how funding supports continuing work.</p>
+                    <p>Not every expenditure, wallet movement, internal ledger entry, vendor relationship, address, security control, unpublished prototype, or private research program will be disclosed publicly.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Financial privacy, personal safety, contractual confidentiality, security, competitive risk, legal obligations, research integrity, and third-party privacy may require aggregation, delay, redaction, or nondisclosure.</p>
+                    <p>Publication of a Bitcoin address does not imply that all related wallet addresses, transaction flows, internal accounting, or organizational balances are public financial statements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="other-support-title">
+            <div class="section-header">
+                <p class="eyebrow">Other Support</p>
+                <h2 id="other-support-title">Contributions beyond Bitcoin.</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Code Contributions</h3>
+                    <p>Testing, patches, issue reports, documentation, packaging, reproducibility, integrations, build systems, and maintenance.</p>
+                    <a href="https://github.com/ZZX-Labs" rel="noopener noreferrer">View GitHub</a>
+                </article>
+
+                <article class="card">
+                    <h3>Equipment</h3>
+                    <p>Workstations, GPUs, storage, servers, networking, embedded hardware, laboratory instruments, cameras, audio equipment, and test tools.</p>
+                    <a href="/contact/">Discuss equipment support</a>
+                </article>
+
+                <article class="card">
+                    <h3>Research Collaboration</h3>
+                    <p>Datasets, source material, peer review, experiments, field access, technical expertise, archives, laboratories, and institutional cooperation.</p>
+                    <a href="/research/">Research programs</a>
+                </article>
+
+                <article class="card">
+                    <h3>Professional Services</h3>
+                    <p>Legal, accounting, tax, engineering, manufacturing, logistics, printing, translation, editing, security, and infrastructure assistance.</p>
+                    <a href="/contact/">Contact</a>
+                </article>
+
+                <article class="card">
+                    <h3>Publication and Distribution</h3>
+                    <p>Editing, review, printing, archiving, hosting, mirrors, libraries, translations, accessibility, and long-term preservation.</p>
+                    <a href="/writing/">Writing archive</a>
+                </article>
+
+                <article class="card">
+                    <h3>Introductions and Partnerships</h3>
+                    <p>Relevant laboratories, universities, companies, governments, NGOs, manufacturers, Bitcoin organizations, and technical communities.</p>
+                    <a href="/ventures/">Ventures</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="contact-title">
+            <div class="section-header">
+                <p class="eyebrow">Funding Inquiries</p>
+                <h2 id="contact-title">Discuss substantial, restricted, or institutional support before transfer.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>Contact is recommended before sending funding that is substantial, restricted, grant-based, institutional, governmental, tied to deliverables, intended for a named project, or subject to reporting requirements.</p>
+                    <p>Include the contributor identity, organization, jurisdiction, funding source, intended purpose, restrictions, reporting requirements, amount, timing, and preferred public acknowledgment status.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Do not send confidential contracts, private keys, banking credentials, seed phrases, access tokens, classified material, or restricted evidence in an initial message.</p>
+                    <p>Use OpenPGP for sensitive correspondence after independently verifying the published fingerprint.</p>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <a class="button" href="/contact/">Contact</a>
+                <a class="button secondary" href="/contact/#openpgp">OpenPGP Keys</a>
+                <a class="button secondary" href="/consulting/">Consulting</a>
+                <a class="button secondary" href="/contracting/">Contracting</a>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="legal-title">
+            <div class="section-header">
+                <p class="eyebrow">Legal Notice</p>
+                <h2 id="legal-title">Funding does not create a contractual relationship.</h2>
+            </div>
+
+            <div class="content-grid two-column">
+                <div class="content-column">
+                    <p>This page provides general information about voluntary Bitcoin support. It is not a securities offering, investment solicitation, loan request, deposit account, crowdfunding contract, charitable solicitation, promise of profit, or guarantee of project completion.</p>
+                    <p>No contributor receives control over research priorities, source code, intellectual property, operations, publications, staffing, treasury, governance, licensing, or organizational decisions unless separately agreed in writing.</p>
+                </div>
+
+                <div class="content-column">
+                    <p>Nothing on this page constitutes legal, tax, financial, investment, accounting, sanctions, regulatory, or compliance advice.</p>
+                    <p>Contributors are responsible for compliance with all laws and reporting obligations applicable to them, their organization, funding source, wallet provider, exchange, jurisdiction, and transaction.</p>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <a class="button secondary" href="/legal/">Legal Notices</a>
+                <a class="button secondary" href="/licenses/">Licenses</a>
+                <a class="button secondary" href="/credits/">Credits</a>
+            </div>
+        </section>
+
+        <section class="section call-to-action" aria-labelledby="donate-cta-title">
+            <div class="cta-box">
+                <p class="eyebrow">Support the Work</p>
+                <h2 id="donate-cta-title">Fund independent systems that can be inspected, maintained, documented, and preserved.</h2>
+                <p>Bitcoin support helps sustain research, development, testing, publishing, infrastructure, equipment, field work, maintenance, and long-term technical independence.</p>
+
+                <div class="button-row">
+                    <a class="button" href="#bitcoin-addresses">Bitcoin Addresses</a>
+                    <a class="button secondary" href="/projects/">Projects</a>
+                    <a class="button secondary" href="/research/">Research</a>
+                    <a class="button secondary" href="/writing/">Writing</a>
+                    <a class="button secondary" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/contact/">Contact</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <section>
+                <a class="brand" href="/home/"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
+                <p>Independent engineering, research, art, Bitcoin development, cybersecurity, and open-source systems.</p>
+            </section>
+
+            <section>
+                <h2>Identity</h2>
+                <ul>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/bio/">Biography</a></li>
+                    <li><a href="/history/">History</a></li>
+                    <li><a href="/cv/">Curriculum Vitae</a></li>
+                    <li><a href="/resume/">Résumé</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Direction</h2>
+                <ul>
+                    <li><a href="/mission/">Mission</a></li>
+                    <li><a href="/motto/">Motto</a></li>
+                    <li><a href="/philosophy/">Philosophy</a></li>
+                    <li><a href="/principles/">Principles</a></li>
+                    <li><a href="/ventures/">Ventures</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Connect</h2>
+                <ul>
+                    <li><a href="/consulting/">Consulting</a></li>
+                    <li><a href="/contracting/">Contracting</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/donate/" aria-current="page">Bitcoin Funding</a></li>
+                    <li><a href="https://github.com/ZZX-Labs" rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-legal">
+            <p>&copy; <span data-current-year>2026</span> <strong>[0xdeadbeef]</strong>. All rights reserved where applicable.</p>
+            <p>Website software is licensed under the MIT License unless otherwise stated. Writing, research, artwork, photography, music, data, trademarks, and individual projects may carry separate licenses.</p>
+            <p>Created by <i>[0xdeadbeef]</i> of <strong>ZZX-Labs R&amp;D</strong> and <strong>[0xdeadbeef] Consulting</strong>.</p>
+        </div>
+    </footer>
+
+    <div id="copy-status" class="copy-status" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+        <div class="noscript-notice">JavaScript is disabled. The Bitcoin addresses, QR codes, legal notices, and essential navigation remain available.</div>
+    </noscript>
+
+    <script src="/static/script.js" defer></script>
+    <script>
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const status = document.getElementById("copy-status");
+
+        function showStatus(message) {
+            if (!status) {
+                return;
+            }
+
+            status.textContent = message;
+            status.hidden = false;
+
+            window.clearTimeout(showStatus.timeoutId);
+            showStatus.timeoutId = window.setTimeout(function () {
+                status.hidden = true;
+                status.textContent = "";
+            }, 2500);
+        }
+
+        function copyText(value) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(value);
+            }
+
+            return new Promise(function (resolve, reject) {
+                const textarea = document.createElement("textarea");
+
+                textarea.value = value;
+                textarea.setAttribute("readonly", "");
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
+                textarea.style.pointerEvents = "none";
+
+                document.body.appendChild(textarea);
+                textarea.select();
+
+                try {
+                    const copied = document.execCommand("copy");
+                    textarea.remove();
+
+                    if (copied) {
+                        resolve();
+                    } else {
+                        reject(new Error("Copy command failed."));
+                    }
+                } catch (error) {
+                    textarea.remove();
+                    reject(error);
+                }
+            });
+        }
+
+        document.querySelectorAll("[data-copy-text]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const value = button.dataset.copyText || "";
+
+                copyText(value)
+                    .then(function () {
+                        showStatus("Bitcoin address copied.");
+                    })
+                    .catch(function () {
+                        showStatus("Copy failed. Select and copy the address manually.");
+                    });
+            });
+        });
+    });
+    </script>
 </body>
 </html>
