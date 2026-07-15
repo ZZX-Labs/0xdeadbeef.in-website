@@ -2,297 +2,762 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
     <meta name="referrer" content="no-referrer">
-    <meta name="description" content="Essays, technical writing, whitepapers, research notes, documentation, analysis, tutorials, and development journals by 0xdeadbeef.">
+    <meta name="description" content="Essays, technical papers, whitepapers, research reports, documentation, analysis, tutorials, development journals, and field notes by 0xdeadbeef.">
     <meta name="author" content="0xdeadbeef">
     <meta name="theme-color" content="#050705">
     <meta name="color-scheme" content="dark">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="0xdeadbeef.in">
+    <meta property="og:title" content="Writing | 0xdeadbeef">
+    <meta property="og:description" content="Essays, technical papers, research notes, documentation, analysis, tutorials, and development journals by 0xdeadbeef.">
+    <meta property="og:url" content="https://0xdeadbeef.in/writing/">
+    <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Writing | 0xdeadbeef">
+    <meta name="twitter:description" content="Technical writing, research, documentation, essays, whitepapers, development journals, and field notes.">
+    <meta name="twitter:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+
     <title>[:[0xdeadbeef]:] | Writing</title>
+
+    <link rel="canonical" href="https://0xdeadbeef.in/writing/">
     <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
+
 <body class="writing-page">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header">
-        <div class="nav-shell">
-            <a class="brand" href="/home/" aria-label="0xdeadbeef home"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-
-            <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-                <a href="/home/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/bio/">Bio</a>
-                <a href="/portfolio/">Portfolio</a>
-                <a href="/projects/">Projects</a>
-                <a href="/research/">Research</a>
-                <a href="/blog/">Blog</a>
-                <a href="/writing/" aria-current="page">Writing</a>
-                <a href="/donate/">Donate</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <div data-include="/static/html/header.html"></div>
 
     <main id="main-content">
-        <header class="page-hero">
-            <p class="eyebrow">Writing</p>
-            <h1>Essays, technical papers, research notes, and development records.</h1>
-            <p class="lead">This archive collects long-form writing by 0xdeadbeef across software, hardware, firmware, Bitcoin, artificial intelligence, machine learning, cybersecurity, OSINT, geopolitics, design, art, botany, business, field research, and independent technical development.</p>
+        <section class="home-banner" aria-labelledby="writing-title">
+            <div id="header-banner">
+                <img
+                    id="header-image"
+                    src="/static/images/header-image.jpg"
+                    alt="0xdeadbeef writing and publication archive banner"
+                    width="1920"
+                    height="640"
+                >
 
-            <div class="button-row">
-                <a class="button" href="/blog/">Read the Blog</a>
-                <a class="button secondary" href="/portfolio/papers/">Technical Papers</a>
-                <a class="button secondary" href="/research/">Research Programs</a>
-                <a class="button secondary" href="/contact/">Editorial Contact</a>
+                <div class="icon-wrapper">
+                    <img
+                        id="bull-icon"
+                        src="/static/images/0xdeadbeef-0.png"
+                        alt=""
+                        width="512"
+                        height="512"
+                    >
+                </div>
+
+                <div class="banner-overlay" aria-hidden="true"></div>
+
+                <div class="home-banner-copy">
+                    <p class="eyebrow">Writing</p>
+
+                    <h1 id="writing-title">
+                        Essays, technical papers, research notes, and development records.
+                    </h1>
+
+                    <p class="lead">
+                        A multidisciplinary archive of writing by 0xdeadbeef across software,
+                        hardware, firmware, Bitcoin, artificial intelligence, machine learning,
+                        cybersecurity, OSINT, geopolitics, design, art, botany, business,
+                        field research, and independent technical development.
+                    </p>
+
+                    <div class="button-row">
+                        <a class="button" href="#writing-categories">Browse Writing</a>
+                        <a class="button secondary" href="/blog/">Read the Blog</a>
+                        <a class="button secondary" href="/portfolio/papers/">Technical Papers</a>
+                        <a class="button secondary" href="/research/">Research Programs</a>
+                        <a class="button secondary" href="/contact/">Editorial Contact</a>
+                    </div>
+                </div>
             </div>
-        </header>
+        </section>
 
         <section class="section" aria-labelledby="purpose-title">
             <div class="section-header">
                 <p class="eyebrow">Purpose</p>
-                <h2 id="purpose-title">Writing preserves the reasoning behind the work.</h2>
+
+                <h2 id="purpose-title">
+                    Writing preserves the reasoning behind the work.
+                </h2>
             </div>
 
             <div class="content-grid two-column">
                 <div class="content-column">
-                    <p>A working system records what was built. Writing records why it was built, how the problem was understood, which alternatives were rejected, where uncertainty remains, and what changed during development.</p>
-                    <p>Technical documentation, essays, project journals, research reports, and whitepapers provide context that source code and finished artifacts cannot preserve by themselves.</p>
+                    <p>
+                        A working system records what was built. Writing records why it was
+                        built, how the problem was understood, which alternatives were rejected,
+                        where uncertainty remains, and what changed during development.
+                    </p>
+
+                    <p>
+                        Technical documentation, essays, project journals, research reports,
+                        and whitepapers preserve context that source code and finished artifacts
+                        cannot preserve by themselves.
+                    </p>
                 </div>
 
                 <div class="content-column">
-                    <p>The writing archive is therefore part of the engineering record rather than a separate publication activity.</p>
-                    <p>Articles may document confirmed findings, provisional research, open questions, failed approaches, historical analysis, technical methods, policy implications, field observations, or personal interpretation. Each work should identify its own evidentiary status.</p>
+                    <p>
+                        The writing archive is therefore part of the engineering record rather
+                        than a separate publication activity.
+                    </p>
+
+                    <p>
+                        Publications may document confirmed findings, provisional research,
+                        open questions, failed approaches, historical analysis, technical
+                        methods, policy implications, field observations, or personal
+                        interpretation. Each work should identify its own evidentiary status.
+                    </p>
                 </div>
+            </div>
+
+            <div class="notice info margin-top-large">
+                <strong>Plaintext-first publication</strong>
+
+                <p>
+                    Blog entries use a plaintext-first structure built from
+                    <code>post.txt</code>, <code>metadata.json</code>, and the shared
+                    publication renderer. Additional formats are linked only when the files
+                    actually exist.
+                </p>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="categories-title">
+        <section
+            id="writing-categories"
+            class="section"
+            aria-labelledby="categories-title"
+        >
             <div class="section-header">
                 <p class="eyebrow">Categories</p>
-                <h2 id="categories-title">Writing by discipline</h2>
-                <p>Articles, papers, notes, reports, manuals, and development records are organized by subject so the archive can expand without becoming a single undifferentiated stream.</p>
+
+                <h2 id="categories-title">Writing by discipline.</h2>
+
+                <p>
+                    Articles, papers, notes, reports, manuals, and development records are
+                    organized by subject so the archive can expand without becoming a single
+                    undifferentiated stream.
+                </p>
             </div>
 
-            <div class="filter-toolbar" data-filter-group data-filter-target="[data-writing-item]">
-                <button class="filter-button is-active" type="button" data-filter-button="all" aria-pressed="true">All</button>
-                <button class="filter-button" type="button" data-filter-button="bitcoin" aria-pressed="false">Bitcoin</button>
-                <button class="filter-button" type="button" data-filter-button="engineering" aria-pressed="false">Engineering</button>
-                <button class="filter-button" type="button" data-filter-button="ai" aria-pressed="false">AI and ML</button>
-                <button class="filter-button" type="button" data-filter-button="security" aria-pressed="false">Security</button>
-                <button class="filter-button" type="button" data-filter-button="osint" aria-pressed="false">OSINT</button>
-                <button class="filter-button" type="button" data-filter-button="geopolitics" aria-pressed="false">Geopolitics</button>
-                <button class="filter-button" type="button" data-filter-button="creative" aria-pressed="false">Creative</button>
-                <button class="filter-button" type="button" data-filter-button="botany" aria-pressed="false">Botany</button>
-                <button class="filter-button" type="button" data-filter-button="business" aria-pressed="false">Business</button>
-                <button class="filter-button" type="button" data-filter-button="field" aria-pressed="false">Field Notes</button>
+            <div
+                class="filter-toolbar"
+                data-filter-group
+                data-filter-target="[data-writing-item]"
+                data-filter-status="#writing-status"
+            >
+                <div class="button-row" aria-label="Writing category filters">
+                    <button
+                        class="filter-button is-active"
+                        type="button"
+                        data-filter-button="all"
+                        aria-pressed="true"
+                    >
+                        All
+                    </button>
 
-                <div class="search-field">
-                    <label class="visually-hidden" for="writing-search">Search writing</label>
-                    <input id="writing-search" type="search" placeholder="Search writing..." autocomplete="off" spellcheck="false" data-search-input data-search-target="[data-writing-item]" data-search-status="#writing-search-status">
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="bitcoin"
+                        aria-pressed="false"
+                    >
+                        Bitcoin
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="engineering"
+                        aria-pressed="false"
+                    >
+                        Engineering
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="ai"
+                        aria-pressed="false"
+                    >
+                        AI and ML
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="security"
+                        aria-pressed="false"
+                    >
+                        Security
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="osint"
+                        aria-pressed="false"
+                    >
+                        OSINT
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="geopolitics"
+                        aria-pressed="false"
+                    >
+                        Geopolitics
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="creative"
+                        aria-pressed="false"
+                    >
+                        Creative
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="botany"
+                        aria-pressed="false"
+                    >
+                        Botany
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="business"
+                        aria-pressed="false"
+                    >
+                        Business
+                    </button>
+
+                    <button
+                        class="filter-button"
+                        type="button"
+                        data-filter-button="field"
+                        aria-pressed="false"
+                    >
+                        Field Notes
+                    </button>
                 </div>
             </div>
 
-            <p id="writing-search-status" class="page-meta" data-search-status data-filter-status aria-live="polite">All writing displayed.</p>
+            <div class="search-field margin-top-medium">
+                <label class="visually-hidden" for="writing-search">
+                    Search writing categories
+                </label>
+
+                <input
+                    id="writing-search"
+                    type="search"
+                    placeholder="Search writing..."
+                    autocomplete="off"
+                    spellcheck="false"
+                    data-search-input
+                    data-search-target="[data-writing-item]"
+                    data-search-status="#writing-status"
+                >
+            </div>
+
+            <p
+                id="writing-status"
+                class="page-meta"
+                data-filter-status
+                data-search-status
+                aria-live="polite"
+            >
+                All writing categories displayed.
+            </p>
 
             <div class="article-grid margin-top-medium">
-                <article class="article-card" data-writing-item data-filter-item data-category="bitcoin engineering" data-search-text="bitcoin core nodes wallets lightning mining payments custody infrastructure analytics forensics protocol">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="bitcoin engineering"
+                    data-search-text="bitcoin core nodes wallets lightning mining payments custody infrastructure analytics protocol network"
+                >
                     <p class="project-status">Bitcoin</p>
                     <h3>Bitcoin Infrastructure</h3>
-                    <p>Essays and technical notes concerning Bitcoin Core, full-node operation, wallets, Lightning, mining, payment architecture, custody, analytics, forensics, protocol behavior, and network resilience.</p>
-                    <a href="/portfolio/bitcoin-development/">Browse Bitcoin writing</a>
+
+                    <p>
+                        Essays and technical notes concerning Bitcoin Core, full-node
+                        operation, wallets, Lightning, mining, payment architecture,
+                        custody, analytics, protocol behavior, and network resilience.
+                    </p>
+
+                    <a href="/portfolio/bitcoin-development/">
+                        Browse Bitcoin writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="engineering software" data-search-text="software architecture python c c++ go rust web servers applications command line databases automation">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="engineering software"
+                    data-search-text="software architecture python c c++ go rust web servers applications command line databases automation api"
+                >
                     <p class="project-status">Engineering</p>
                     <h3>Software and Systems Engineering</h3>
-                    <p>Architecture notes, implementation guides, source-code commentary, deployment records, development journals, testing strategies, automation systems, databases, services, and systems analysis.</p>
-                    <a href="/portfolio/software-development/">Browse software writing</a>
+
+                    <p>
+                        Architecture notes, implementation guides, source-code commentary,
+                        deployment records, development journals, testing strategies,
+                        automation systems, databases, services, and systems analysis.
+                    </p>
+
+                    <a href="/portfolio/software-development/">
+                        Browse software writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="engineering hardware firmware" data-search-text="hardware firmware embedded esp32 microcontrollers electronics pcb sensors power enclosures instrumentation">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="engineering hardware firmware"
+                    data-search-text="hardware firmware embedded esp32 microcontrollers electronics pcb sensors power enclosures instrumentation"
+                >
                     <p class="project-status">Engineering</p>
                     <h3>Hardware and Firmware</h3>
-                    <p>Embedded systems, electronics, microcontrollers, firmware architecture, PCB design, secure elements, power systems, prototypes, instruments, interfaces, sensors, and field devices.</p>
-                    <a href="/portfolio/hardware-development/">Browse hardware writing</a>
+
+                    <p>
+                        Embedded systems, electronics, microcontrollers, firmware architecture,
+                        PCB design, secure elements, power systems, prototypes, instruments,
+                        interfaces, sensors, and field devices.
+                    </p>
+
+                    <a href="/portfolio/hardware-development/">
+                        Browse hardware writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="engineering web" data-search-text="web development html css javascript php nginx accessibility static sites servers privacy frontend backend">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="engineering web"
+                    data-search-text="web development html css javascript php nginx accessibility static sites servers privacy frontend backend"
+                >
                     <p class="project-status">Engineering</p>
                     <h3>Web Development</h3>
-                    <p>Static websites, frontend systems, backend services, HTML, CSS, JavaScript, PHP, nginx, accessibility, responsive design, deployment, privacy, security, and long-term web maintenance.</p>
-                    <a href="/portfolio/web-development/">Browse web-development writing</a>
+
+                    <p>
+                        Static websites, frontend systems, backend services, HTML, CSS,
+                        JavaScript, PHP, nginx, accessibility, responsive design, deployment,
+                        privacy, security, and long-term web maintenance.
+                    </p>
+
+                    <a href="/portfolio/web-development/">
+                        Browse web-development writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="ai engineering" data-search-text="artificial intelligence generative ai local llm agents retrieval computer vision multimodal offline inference">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="ai engineering"
+                    data-search-text="artificial intelligence generative ai local llm agents retrieval computer vision multimodal offline inference"
+                >
                     <p class="project-status">Artificial Intelligence</p>
                     <h3>Artificial Intelligence</h3>
-                    <p>Local inference, autonomous agents, retrieval systems, multimodal interfaces, generative systems, computer vision, model evaluation, privacy, offline operation, and AI-assisted engineering.</p>
-                    <a href="/portfolio/ai-development/">Browse AI writing</a>
+
+                    <p>
+                        Local inference, autonomous agents, retrieval systems, multimodal
+                        interfaces, generative systems, computer vision, model evaluation,
+                        privacy, offline operation, and AI-assisted engineering.
+                    </p>
+
+                    <a href="/portfolio/ai-development/">
+                        Browse AI writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="ai engineering" data-search-text="machine learning datasets classification clustering forecasting anomaly detection neural networks reinforcement learning">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="ai engineering"
+                    data-search-text="machine learning datasets classification clustering forecasting anomaly detection neural networks reinforcement learning"
+                >
                     <p class="project-status">Machine Learning</p>
                     <h3>Machine Learning</h3>
-                    <p>Dataset engineering, classification, clustering, forecasting, anomaly detection, neural networks, reinforcement learning, feature design, evaluation, simulation, visualization, and reproducibility.</p>
-                    <a href="/portfolio/ml-development/">Browse machine-learning writing</a>
+
+                    <p>
+                        Dataset engineering, classification, clustering, forecasting,
+                        anomaly detection, neural networks, reinforcement learning,
+                        feature design, evaluation, simulation, visualization, and reproducibility.
+                    </p>
+
+                    <a href="/portfolio/ml-development/">
+                        Browse machine-learning writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="security engineering" data-search-text="cybersecurity malware defensive engineering hardening cryptography authentication incident response vulnerability">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="security engineering"
+                    data-search-text="cybersecurity malware defensive engineering hardening cryptography authentication incident response vulnerability"
+                >
                     <p class="project-status">Cybersecurity</p>
                     <h3>Cybersecurity</h3>
-                    <p>Defensive architecture, malware analysis, secure engineering, threat modeling, authentication, cryptography, vulnerability research, incident response, operational security, and infrastructure resilience.</p>
-                    <a href="/portfolio/cyber-security/">Browse cybersecurity writing</a>
+
+                    <p>
+                        Defensive architecture, malware analysis, secure engineering,
+                        threat modeling, authentication, cryptography, vulnerability
+                        research, incident response, operational security, and resilience.
+                    </p>
+
+                    <a href="/portfolio/cyber-security/">
+                        Browse cybersecurity writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="security osint geopolitics" data-search-text="osint investigations public records entity resolution attribution evidence geospatial intelligence timelines archives">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="security osint geopolitics"
+                    data-search-text="osint investigations public records entity resolution attribution evidence geospatial intelligence timelines archives"
+                >
                     <p class="project-status">OSINT and Investigation</p>
                     <h3>OSINT and Cyber Investigations</h3>
-                    <p>Public records, entity resolution, evidence handling, archive research, attribution, timelines, geospatial analysis, source verification, investigative methodology, and lawful analytical systems.</p>
-                    <a href="/portfolio/osint-development/">Browse OSINT writing</a>
+
+                    <p>
+                        Public records, entity resolution, evidence handling, archive
+                        research, attribution, timelines, geospatial analysis, source
+                        verification, investigative methodology, and lawful analytical systems.
+                    </p>
+
+                    <a href="/portfolio/osint-development/">
+                        Browse OSINT writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="security geopolitics" data-search-text="cyber warfare cyber conflict strategy doctrine critical infrastructure resilience national security deterrence">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="security geopolitics"
+                    data-search-text="cyber warfare cyber conflict strategy doctrine critical infrastructure resilience national security deterrence"
+                >
                     <p class="project-status">Strategy</p>
                     <h3>Cyber Conflict and National Resilience</h3>
-                    <p>Strategic studies, defensive doctrine, infrastructure protection, alliance capability, cyber conflict, deterrence, historical analysis, public policy, and national resilience.</p>
-                    <a href="/portfolio/cyber-warfare/">Browse cyber-conflict writing</a>
+
+                    <p>
+                        Strategic studies, defensive doctrine, infrastructure protection,
+                        alliance capability, cyber conflict, deterrence, historical analysis,
+                        public policy, and national resilience.
+                    </p>
+
+                    <a href="/portfolio/cyber-warfare/">
+                        Browse cyber-conflict writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="geopolitics" data-search-text="geopolitics international relations india united states south asia policy technology economics infrastructure">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="geopolitics"
+                    data-search-text="geopolitics international relations india united states south asia policy technology economics infrastructure"
+                >
                     <p class="project-status">Geopolitics</p>
                     <h3>Geopolitics and International Affairs</h3>
-                    <p>International relations, strategic competition, India, the United States, South Asia, technology policy, industrial capacity, energy, infrastructure, trade, diplomacy, alliances, and regional security.</p>
-                    <a href="/portfolio/geopolitics/">Browse geopolitical writing</a>
+
+                    <p>
+                        International relations, strategic competition, India, the United States,
+                        South Asia, technology policy, industrial capacity, energy, infrastructure,
+                        trade, diplomacy, alliances, and regional security.
+                    </p>
+
+                    <a href="/portfolio/geopolitics/">
+                        Browse geopolitical writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="creative" data-search-text="art design photography music visual identity typography studio creative fine art painting drawing">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="creative"
+                    data-search-text="art design photography music visual identity typography studio creative fine art painting drawing"
+                >
                     <p class="project-status">Creative Practice</p>
                     <h3>Art, Design, Music, and Photography</h3>
-                    <p>Visual practice, drawing, painting, composition, typography, identity systems, photography, sound, production, studio methods, creative technology, and interdisciplinary design.</p>
-                    <a href="/portfolio/art/">Browse creative writing</a>
+
+                    <p>
+                        Visual practice, drawing, painting, composition, typography,
+                        identity systems, photography, sound, production, studio methods,
+                        creative technology, and interdisciplinary design.
+                    </p>
+
+                    <a href="/portfolio/art/">
+                        Browse creative writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="botany research" data-search-text="cannabis botany genetics breeding cultivation extraction morphology preservation chemistry environment">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="botany research"
+                    data-search-text="cannabis botany genetics breeding cultivation extraction morphology preservation chemistry environment"
+                >
                     <p class="project-status">Botany</p>
                     <h3>Cannabis Botany</h3>
-                    <p>Genetics, breeding, cultivation, morphology, preservation, extraction chemistry, environmental systems, lineage tracking, laboratory methods, and technical documentation.</p>
-                    <a href="/portfolio/cannabis-botany/">Browse botany writing</a>
+
+                    <p>
+                        Genetics, breeding, cultivation, morphology, preservation,
+                        extraction chemistry, environmental systems, lineage tracking,
+                        laboratory methods, and technical documentation.
+                    </p>
+
+                    <a href="/portfolio/cannabis-botany/">
+                        Browse botany writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="business bitcoin engineering" data-search-text="business ventures consulting startups companies laboratories bitcoin organization strategy partnerships">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="business bitcoin engineering"
+                    data-search-text="business ventures consulting startups companies laboratories bitcoin organization strategy partnerships"
+                >
                     <p class="project-status">Business</p>
                     <h3>Business and Venture Development</h3>
-                    <p>Company formation, laboratories, consulting, organizational design, Bitcoin-native business models, product strategy, partnerships, ownership, logistics, operations, and long-term ventures.</p>
-                    <a href="/ventures/">Browse venture writing</a>
+
+                    <p>
+                        Company formation, laboratories, consulting, organizational design,
+                        Bitcoin-native business models, product strategy, partnerships,
+                        ownership, logistics, operations, and long-term ventures.
+                    </p>
+
+                    <a href="/ventures/">
+                        Browse venture writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="engineering creative research" data-search-text="documentation tutorials manuals development journal changelog architecture api operations methods">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="engineering creative research"
+                    data-search-text="documentation tutorials manuals development journal changelog architecture api operations methods"
+                >
                     <p class="project-status">Documentation</p>
                     <h3>Technical Documentation</h3>
-                    <p>Manuals, setup guides, architecture documents, API references, developer notes, deployment instructions, release records, operating procedures, troubleshooting, and maintenance records.</p>
-                    <a href="/projects/">Browse project documentation</a>
+
+                    <p>
+                        Manuals, setup guides, architecture documents, API references,
+                        developer notes, deployment instructions, release records,
+                        operating procedures, troubleshooting, and maintenance records.
+                    </p>
+
+                    <a href="/projects/">
+                        Browse project documentation
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="field creative geopolitics research" data-search-text="field notes travel india hiking photography environmental observation equipment testing site visits">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="field creative geopolitics research"
+                    data-search-text="field notes travel india hiking photography environmental observation equipment testing site visits"
+                >
                     <p class="project-status">Field Notes</p>
                     <h3>Travel, Observation, and Field Research</h3>
-                    <p>Travel journals, site visits, photography, hiking, environmental observation, equipment tests, geographic research, infrastructure studies, and direct records from work conducted in the field.</p>
-                    <a href="/portfolio/adventures/">Browse field writing</a>
+
+                    <p>
+                        Travel journals, site visits, photography, hiking, environmental
+                        observation, equipment tests, geographic research, infrastructure
+                        studies, and direct records from work conducted in the field.
+                    </p>
+
+                    <a href="/portfolio/adventures/">
+                        Browse field writing
+                    </a>
                 </article>
 
-                <article class="article-card" data-writing-item data-filter-item data-category="research geopolitics creative" data-search-text="philosophy buddhism ethics history political economy systems power sovereignty technology">
+                <article
+                    class="article-card"
+                    data-writing-item
+                    data-filter-item
+                    data-category="research geopolitics creative"
+                    data-search-text="philosophy buddhism ethics history political economy systems power sovereignty technology"
+                >
                     <p class="project-status">Ideas and History</p>
                     <h3>Philosophy, Buddhism, History, and Systems</h3>
-                    <p>Technical sovereignty, ethics, Buddhist philosophy, history, political economy, institutional power, information systems, social organization, and the long-term consequences of technology.</p>
-                    <a href="/philosophy/">Browse philosophical writing</a>
+
+                    <p>
+                        Technical sovereignty, ethics, Buddhist philosophy, history,
+                        political economy, institutional power, information systems,
+                        social organization, and the long-term consequences of technology.
+                    </p>
+
+                    <a href="/philosophy/">
+                        Browse philosophical writing
+                    </a>
                 </article>
             </div>
         </section>
 
-                <section class="section" aria-labelledby="formats-title">
+        <section class="section" aria-labelledby="formats-title">
             <div class="section-header">
                 <p class="eyebrow">Formats</p>
-                <h2 id="formats-title">Types of publication</h2>
-                <p>The archive supports multiple forms of writing, each with a different purpose, level of evidence, and publication standard.</p>
+                <h2 id="formats-title">Types of publication.</h2>
+
+                <p>
+                    The archive supports multiple forms of writing, each with a different
+                    purpose, evidentiary standard, and publication structure.
+                </p>
             </div>
 
             <div class="card-grid">
                 <article class="card">
                     <p class="card-index">01</p>
                     <h3>Essays</h3>
-                    <p>Long-form arguments, interpretation, commentary, analysis, and interdisciplinary writing intended to develop a position, frame a problem, or examine a system.</p>
+
+                    <p>
+                        Long-form argument, interpretation, commentary, and interdisciplinary
+                        analysis intended to develop a position, frame a problem, or examine a system.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">02</p>
                     <h3>Technical Articles</h3>
-                    <p>Focused explanations of engineering methods, architecture, implementation, testing, debugging, deployment, operation, and system behavior.</p>
+
+                    <p>
+                        Focused explanations of engineering methods, architecture,
+                        implementation, testing, debugging, deployment, operation,
+                        and system behavior.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">03</p>
                     <h3>Whitepapers</h3>
-                    <p>Formal technical documents presenting a system, research program, architecture, methodology, findings, limitations, deployment model, and roadmap.</p>
+
+                    <p>
+                        Formal documents presenting a system, research program,
+                        architecture, methodology, findings, limitations, deployment
+                        model, and roadmap.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">04</p>
                     <h3>Research Reports</h3>
-                    <p>Evidence-based reports preserving source material, methods, observations, analysis, uncertainty, conclusions, and recommendations.</p>
+
+                    <p>
+                        Evidence-based reports preserving source material, methods,
+                        observations, analysis, uncertainty, conclusions, and recommendations.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">05</p>
                     <h3>Tutorials</h3>
-                    <p>Reproducible instructions for building, configuring, operating, testing, maintaining, or understanding a technical system.</p>
+
+                    <p>
+                        Reproducible instructions for building, configuring, operating,
+                        testing, maintaining, or understanding a technical system.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">06</p>
                     <h3>Development Journals</h3>
-                    <p>Chronological records of design decisions, experiments, failures, revisions, milestones, technical debt, and practical findings.</p>
+
+                    <p>
+                        Chronological records of design decisions, experiments, failures,
+                        revisions, milestones, technical debt, and practical findings.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">07</p>
                     <h3>Field Notes</h3>
-                    <p>Observations from travel, site visits, equipment tests, environmental work, photography, infrastructure study, and physical research.</p>
+
+                    <p>
+                        Observations from travel, site visits, equipment tests,
+                        environmental work, photography, infrastructure study,
+                        and physical research.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">08</p>
                     <h3>Reviews and Critiques</h3>
-                    <p>Evaluation of systems, policies, technologies, publications, institutions, artistic works, design decisions, and strategic claims.</p>
+
+                    <p>
+                        Evaluation of systems, policies, technologies, publications,
+                        institutions, artistic works, design decisions, and strategic claims.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">09</p>
                     <h3>Reference Documents</h3>
-                    <p>Indexes, glossaries, bibliographies, checklists, catalogs, technical tables, taxonomies, inventories, and structured reference material.</p>
+
+                    <p>
+                        Indexes, glossaries, bibliographies, checklists, catalogs,
+                        technical tables, taxonomies, inventories, and structured reference material.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">10</p>
                     <h3>Architecture Documents</h3>
-                    <p>System diagrams, interface definitions, component responsibilities, threat models, data flows, deployment structures, and dependency records.</p>
+
+                    <p>
+                        System diagrams, interface definitions, component responsibilities,
+                        threat models, data flows, deployment structures, and dependency records.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">11</p>
                     <h3>Policy Analysis</h3>
-                    <p>Research concerning governance, technology policy, public institutions, critical infrastructure, international relations, and legal or economic systems.</p>
+
+                    <p>
+                        Research concerning governance, technology policy, public institutions,
+                        critical infrastructure, international relations, and legal or economic systems.
+                    </p>
                 </article>
 
                 <article class="card">
                     <p class="card-index">12</p>
                     <h3>Creative Notes</h3>
-                    <p>Studio records, visual studies, composition notes, photography journals, sound-design records, artist statements, and process documentation.</p>
+
+                    <p>
+                        Studio records, visual studies, composition notes, photography journals,
+                        sound-design records, artist statements, and process documentation.
+                    </p>
                 </article>
             </div>
         </section>
@@ -300,92 +765,156 @@
         <section class="section" aria-labelledby="standards-title">
             <div class="section-header">
                 <p class="eyebrow">Editorial Standards</p>
-                <h2 id="standards-title">Standards for publication</h2>
-                <p>Published work should preserve evidence, uncertainty, authorship, limitations, revision history, and the distinction between fact and interpretation.</p>
+                <h2 id="standards-title">Standards for publication.</h2>
+
+                <p>
+                    Published work should preserve evidence, uncertainty, authorship,
+                    limitations, revision history, and the distinction between fact and interpretation.
+                </p>
             </div>
 
             <div class="principle-list">
                 <article class="principle">
                     <div>
                         <h3>Distinguish evidence from interpretation</h3>
-                        <p>Observed facts, cited sources, derived values, model output, assumptions, inference, speculation, and opinion should remain clearly distinguishable.</p>
+
+                        <p>
+                            Observed facts, cited sources, derived values, model output,
+                            assumptions, inference, speculation, and opinion should remain
+                            clearly distinguishable.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Cite primary sources where possible</h3>
-                        <p>Original documents, source code, datasets, court records, technical specifications, transcripts, measurements, direct records, and first-party materials should be preferred over repeated secondary claims.</p>
+
+                        <p>
+                            Original documents, source code, datasets, court records,
+                            technical specifications, transcripts, measurements, direct
+                            records, and first-party materials should be preferred over
+                            repeated secondary claims.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Preserve uncertainty</h3>
-                        <p>Do not manufacture confidence where the available evidence remains incomplete, ambiguous, disputed, contradictory, provisional, or methodologically limited.</p>
+
+                        <p>
+                            Do not manufacture confidence where available evidence remains
+                            incomplete, ambiguous, disputed, contradictory, provisional,
+                            or methodologically limited.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Correct errors visibly</h3>
-                        <p>Material corrections should be dated and recorded rather than silently altering the publication history. Significant revisions should preserve prior versions where practical.</p>
+
+                        <p>
+                            Material corrections should be dated and recorded rather than
+                            silently altering publication history. Significant revisions
+                            should preserve prior versions where practical.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Preserve authorship and attribution</h3>
-                        <p>Quotations, images, datasets, code, fonts, diagrams, prior research, performances, recordings, and third-party materials should retain appropriate credit and licensing information.</p>
+
+                        <p>
+                            Quotations, images, datasets, code, fonts, diagrams, prior research,
+                            performances, recordings, and third-party materials should retain
+                            appropriate credit and licensing information.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Publish limitations</h3>
-                        <p>Scope, missing data, unresolved questions, methodological constraints, conflicts of interest, sample limitations, tool limitations, and known weaknesses should be stated directly.</p>
+
+                        <p>
+                            Scope, missing data, unresolved questions, methodological constraints,
+                            conflicts of interest, sample limitations, tool limitations, and known
+                            weaknesses should be stated directly.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Separate research from advocacy</h3>
-                        <p>Where a publication argues for a specific policy, strategy, design, or political position, the advocacy should remain distinct from the evidentiary record supporting it.</p>
+
+                        <p>
+                            Where a publication argues for a policy, strategy, design, or political
+                            position, the advocacy should remain distinct from the evidentiary record.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Document reproducibility</h3>
-                        <p>Technical publications should identify software versions, dependencies, configuration, hardware, inputs, outputs, datasets, build methods, and checksums where practical.</p>
+
+                        <p>
+                            Technical publications should identify software versions,
+                            dependencies, configuration, hardware, inputs, outputs, datasets,
+                            build methods, and checksums where practical.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Respect confidentiality and privacy</h3>
-                        <p>Protected sources, private records, sensitive personal information, client material, responsible disclosures, and controlled technical information require explicit handling rules.</p>
+
+                        <p>
+                            Protected sources, private records, sensitive personal information,
+                            client material, responsible disclosures, and controlled technical
+                            information require explicit handling rules.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Review potential harm</h3>
-                        <p>Before publication, review whether operational details, personal data, exploit-enabling material, surveillance capability, or infrastructure information could create disproportionate risk.</p>
+
+                        <p>
+                            Before publication, review whether operational details, personal data,
+                            exploit-enabling material, surveillance capability, or infrastructure
+                            information could create disproportionate risk.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Use precise language</h3>
-                        <p>Avoid inflated claims, unnecessary jargon, unsupported certainty, vague attribution, false universality, and language that obscures who did what, when, and under which conditions.</p>
+
+                        <p>
+                            Avoid inflated claims, unnecessary jargon, unsupported certainty,
+                            vague attribution, false universality, and language that obscures
+                            who did what, when, and under which conditions.
+                        </p>
                     </div>
                 </article>
 
                 <article class="principle">
                     <div>
                         <h3>Preserve the archival record</h3>
-                        <p>Final publications should retain stable URLs, publication dates, version identifiers, authorship, license, references, and enough context for later readers to understand the work.</p>
+
+                        <p>
+                            Final publications should retain stable URLs, publication dates,
+                            version identifiers, authorship, licensing, references, and enough
+                            context for later readers to understand the work.
+                        </p>
                     </div>
                 </article>
             </div>
@@ -394,76 +923,133 @@
         <section class="section" aria-labelledby="featured-title">
             <div class="section-header">
                 <p class="eyebrow">Featured Writing</p>
-                <h2 id="featured-title">Selected publications and archives</h2>
-                <p>This section highlights published articles, technical papers, project documentation, and major research collections.</p>
+                <h2 id="featured-title">Selected publications and archives.</h2>
+
+                <p>
+                    Published articles, technical papers, project documentation,
+                    and major research collections.
+                </p>
             </div>
 
             <div class="article-grid">
                 <article class="article-card">
                     <p class="project-status">Published</p>
                     <h3>Post 0001 — Initializing the Broadcast</h3>
-                    <p>The first public dispatch in the writing archive establishes the blog as a long-form field manual for systems architecture, Bitcoin infrastructure, software, firmware, AI, cybersecurity, OSINT, research, and development.</p>
+
+                    <p>
+                        The first public dispatch establishes the blog as a long-form
+                        field manual for systems architecture, Bitcoin infrastructure,
+                        software, firmware, AI, cybersecurity, OSINT, research, and development.
+                    </p>
+
                     <div class="article-meta">
                         <span><strong>Type:</strong> Field Log</span>
                         <span><strong>Date:</strong> June 1, 2025</span>
                         <span><strong>Status:</strong> Published</span>
                     </div>
-                    <a href="/blog/blog_posts/post_0001/">Read article</a>
+
+                    <a href="/blog/blog_posts/post_0001/">
+                        Read article
+                    </a>
                 </article>
 
                 <article class="article-card">
                     <p class="project-status">Collection</p>
                     <h3>Technical Papers</h3>
-                    <p>Whitepapers, research documents, architecture studies, engineering notes, technical reports, formal specifications, and long-form project analysis.</p>
+
+                    <p>
+                        Whitepapers, research documents, architecture studies,
+                        engineering notes, technical reports, formal specifications,
+                        and long-form project analysis.
+                    </p>
+
                     <div class="article-meta">
                         <span><strong>Type:</strong> Papers</span>
                         <span><strong>Status:</strong> Expanding</span>
                     </div>
-                    <a href="/portfolio/papers/">Browse papers</a>
+
+                    <a href="/portfolio/papers/">
+                        Browse papers
+                    </a>
                 </article>
 
                 <article class="article-card">
                     <p class="project-status">Archive</p>
                     <h3>Project Documentation</h3>
-                    <p>System designs, implementation notes, setup instructions, release history, screenshots, testing records, architecture diagrams, and development roadmaps.</p>
+
+                    <p>
+                        System designs, implementation notes, setup instructions,
+                        release history, screenshots, testing records, architecture
+                        diagrams, and development roadmaps.
+                    </p>
+
                     <div class="article-meta">
                         <span><strong>Type:</strong> Documentation</span>
                         <span><strong>Status:</strong> Ongoing</span>
                     </div>
-                    <a href="/projects/">Browse projects</a>
+
+                    <a href="/projects/">
+                        Browse projects
+                    </a>
                 </article>
 
                 <article class="article-card">
                     <p class="project-status">Research</p>
                     <h3>Bitcoin Systems Writing</h3>
-                    <p>Research and technical analysis concerning Bitcoin Core, Lightning, mining, payment systems, nodes, wallets, analytics, forensics, and network infrastructure.</p>
+
+                    <p>
+                        Research and analysis concerning Bitcoin Core, Lightning,
+                        mining, payment systems, nodes, wallets, analytics, and network infrastructure.
+                    </p>
+
                     <div class="article-meta">
                         <span><strong>Type:</strong> Technical Research</span>
                         <span><strong>Status:</strong> Ongoing</span>
                     </div>
-                    <a href="/portfolio/bitcoin-development/">Browse Bitcoin work</a>
+
+                    <a href="/portfolio/bitcoin-development/">
+                        Browse Bitcoin work
+                    </a>
                 </article>
 
                 <article class="article-card">
                     <p class="project-status">Research</p>
                     <h3>Cybersecurity and OSINT Writing</h3>
-                    <p>Defensive engineering, malware analysis, evidence handling, public-record research, operational security, investigations, and cyber-conflict analysis.</p>
+
+                    <p>
+                        Defensive engineering, malware analysis, evidence handling,
+                        public-record research, operational security, investigations,
+                        and cyber-conflict analysis.
+                    </p>
+
                     <div class="article-meta">
                         <span><strong>Type:</strong> Security Research</span>
                         <span><strong>Status:</strong> Ongoing</span>
                     </div>
-                    <a href="/portfolio/cyber-security/">Browse security work</a>
+
+                    <a href="/portfolio/cyber-security/">
+                        Browse security work
+                    </a>
                 </article>
 
                 <article class="article-card">
                     <p class="project-status">Research</p>
                     <h3>Geopolitics and International Affairs</h3>
-                    <p>Long-form analysis involving India, the United States, South Asia, technology policy, infrastructure, alliances, strategic competition, regional security, and political economy.</p>
+
+                    <p>
+                        Analysis involving India, the United States, South Asia,
+                        technology policy, infrastructure, alliances, strategic
+                        competition, regional security, and political economy.
+                    </p>
+
                     <div class="article-meta">
                         <span><strong>Type:</strong> Analysis</span>
                         <span><strong>Status:</strong> Ongoing</span>
                     </div>
-                    <a href="/portfolio/geopolitics/">Browse geopolitical work</a>
+
+                    <a href="/portfolio/geopolitics/">
+                        Browse geopolitical work
+                    </a>
                 </article>
             </div>
         </section>
@@ -471,80 +1057,134 @@
         <section class="section" aria-labelledby="publication-process-title">
             <div class="section-header">
                 <p class="eyebrow">Publication Process</p>
-                <h2 id="publication-process-title">From research note to public document</h2>
-                <p>Publication is treated as a controlled engineering process rather than an informal final step.</p>
+                <h2 id="publication-process-title">From research note to public document.</h2>
+
+                <p>
+                    Publication is treated as a controlled engineering process
+                    rather than an informal final step.
+                </p>
             </div>
 
             <div class="timeline">
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 01</p>
+
                     <div class="timeline-content">
                         <h3>Collection</h3>
-                        <p>Gather source material, field notes, code, measurements, references, images, records, correspondence, project evidence, and prior research.</p>
+
+                        <p>
+                            Gather source material, field notes, code, measurements,
+                            references, images, records, correspondence, project evidence,
+                            and prior research.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 02</p>
+
                     <div class="timeline-content">
                         <h3>Scoping</h3>
-                        <p>Define the research question, intended audience, scope, exclusions, assumptions, evidentiary standard, and publication objective.</p>
+
+                        <p>
+                            Define the research question, intended audience, scope,
+                            exclusions, assumptions, evidentiary standard, and publication objective.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 03</p>
+
                     <div class="timeline-content">
                         <h3>Drafting</h3>
-                        <p>Develop the argument, structure, methods, technical explanation, supporting evidence, limitations, figures, references, and appendices.</p>
+
+                        <p>
+                            Develop the argument, structure, methods, technical explanation,
+                            supporting evidence, limitations, figures, references, and appendices.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 04</p>
+
                     <div class="timeline-content">
                         <h3>Verification</h3>
-                        <p>Check factual claims, quotations, citations, code examples, figures, datasets, names, dates, licenses, calculations, and technical reproducibility.</p>
+
+                        <p>
+                            Check factual claims, quotations, citations, code examples,
+                            figures, datasets, names, dates, licenses, calculations,
+                            and technical reproducibility.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 05</p>
+
                     <div class="timeline-content">
                         <h3>Security and Privacy Review</h3>
-                        <p>Review sensitive details, personal data, infrastructure information, disclosure obligations, source protection, downstream harm, and operational risk.</p>
+
+                        <p>
+                            Review sensitive details, personal data, infrastructure information,
+                            disclosure obligations, source protection, downstream harm,
+                            and operational risk.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 06</p>
+
                     <div class="timeline-content">
                         <h3>Editorial Review</h3>
-                        <p>Review clarity, structure, precision, accessibility, duplication, unsupported claims, citation quality, typography, and consistency with the wider archive.</p>
+
+                        <p>
+                            Review clarity, structure, precision, accessibility, duplication,
+                            unsupported claims, citation quality, typography, and consistency.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 07</p>
+
                     <div class="timeline-content">
                         <h3>Publication</h3>
-                        <p>Publish the document with date, version, authorship, license, references, metadata, stable URL, downloadable formats, and verification material where available.</p>
+
+                        <p>
+                            Publish the document with date, version, authorship, license,
+                            references, metadata, stable URL, downloadable formats,
+                            and verification material where available.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 08</p>
+
                     <div class="timeline-content">
                         <h3>Revision</h3>
-                        <p>Record corrections, updates, changed conclusions, new evidence, retired methods, superseded recommendations, and later editions.</p>
+
+                        <p>
+                            Record corrections, updates, changed conclusions, new evidence,
+                            retired methods, superseded recommendations, and later editions.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Stage 09</p>
+
                     <div class="timeline-content">
                         <h3>Archival Preservation</h3>
-                        <p>Preserve source files, earlier versions, citations, images, datasets, signatures, checksums, publication manifests, and offline copies.</p>
+
+                        <p>
+                            Preserve source files, earlier versions, citations, images,
+                            datasets, signatures, checksums, publication manifests,
+                            and offline copies.
+                        </p>
                     </div>
                 </article>
             </div>
@@ -553,79 +1193,117 @@
         <section class="section" aria-labelledby="verification-title">
             <div class="section-header">
                 <p class="eyebrow">Verification</p>
-                <h2 id="verification-title">Publication integrity and authenticity</h2>
-                <p>Selected documents may include cryptographic verification, reproducibility records, and archival metadata.</p>
+                <h2 id="verification-title">Publication integrity and authenticity.</h2>
+
+                <p>
+                    Selected documents may include cryptographic verification,
+                    reproducibility records, and archival metadata.
+                </p>
             </div>
 
             <div class="content-grid three-column">
                 <article class="info-panel">
                     <h3>Checksums</h3>
-                    <p>SHA-256, SHA3-256, or other published digests may be supplied for downloadable files, source archives, datasets, and document editions.</p>
+
+                    <p>
+                        SHA-256, SHA3-256, or other published digests may be supplied
+                        for downloadable files, source archives, datasets, and document editions.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>OpenPGP Signatures</h3>
-                    <p>Detached signatures may be published for important reports, formal papers, manifests, and release archives using a verified public key.</p>
+
+                    <p>
+                        Detached signatures may be published for important reports,
+                        formal papers, manifests, and release archives using a verified public key.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Bitcoin Timestamping</h3>
-                    <p>Selected publication hashes may be anchored or timestamped using Bitcoin-based systems where long-term proof of existence is useful.</p>
+
+                    <p>
+                        Selected publication hashes may be anchored or timestamped
+                        using Bitcoin-based systems where durable proof of existence is useful.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Version Records</h3>
-                    <p>Material revisions should include a version identifier, revision date, change summary, and relationship to earlier editions.</p>
+
+                    <p>
+                        Material revisions should include a version identifier,
+                        revision date, change summary, and relationship to earlier editions.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Source Archives</h3>
-                    <p>Source Markdown, plain text, diagrams, data files, code, references, and build instructions may accompany final documents.</p>
+
+                    <p>
+                        Source Markdown, plain text, diagrams, data files, code,
+                        references, and build instructions may accompany final documents.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Reproducibility Notes</h3>
-                    <p>Technical publications should state the environment, dependencies, inputs, commands, expected outputs, and known sources of variation.</p>
+
+                    <p>
+                        Technical publications should state the environment,
+                        dependencies, inputs, commands, expected outputs,
+                        and known sources of variation.
+                    </p>
                 </article>
             </div>
 
             <div class="notice info margin-top-large">
                 <strong>Verification status</strong>
-                <p>No article should claim to be signed, hashed, timestamped, peer reviewed, independently reproduced, or externally verified unless the corresponding evidence is actually published.</p>
+
+                <p>
+                    No article should claim to be signed, hashed, timestamped,
+                    peer reviewed, independently reproduced, or externally verified
+                    unless the corresponding evidence is actually published.
+                </p>
             </div>
         </section>
 
-                <section class="section" aria-labelledby="resources-title">
+        <section class="section" aria-labelledby="resources-title">
             <div class="section-header">
                 <p class="eyebrow">Resources</p>
-                <h2 id="resources-title">Download formats</h2>
-                <p>Where appropriate, publications may be distributed in multiple archival and editing formats.</p>
+                <h2 id="resources-title">Publication and archival formats.</h2>
+
+                <p>
+                    Publications may be distributed in multiple formats where the
+                    corresponding files have actually been generated.
+                </p>
             </div>
 
             <div class="content-grid four-column">
                 <article class="info-panel">
                     <h3>HTML</h3>
-                    <p>Primary web publication with semantic markup and responsive formatting.</p>
+                    <p>Semantic web publication with responsive formatting.</p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Markdown</h3>
-                    <p>Plain text source intended for long-term portability and version control.</p>
+                    <p>Portable source suitable for editing and version control.</p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Plain Text</h3>
-                    <p>Minimal archival format suitable for preservation and offline reading.</p>
+                    <p>Minimal archival format for preservation and offline reading.</p>
                 </article>
 
                 <article class="info-panel">
                     <h3>PDF</h3>
-                    <p>Printable publication preserving layout, figures, references, and typography.</p>
+                    <p>Printable publication preserving layout, figures, and references.</p>
                 </article>
 
                 <article class="info-panel">
                     <h3>EPUB</h3>
-                    <p>Electronic publication format optimized for portable reading devices.</p>
+                    <p>Electronic publication optimized for portable reading devices.</p>
                 </article>
 
                 <article class="info-panel">
@@ -635,12 +1313,12 @@
 
                 <article class="info-panel">
                     <h3>JSON Metadata</h3>
-                    <p>Machine-readable publication metadata including authorship, version, identifiers, and licensing.</p>
+                    <p>Machine-readable authorship, version, identifiers, and licensing.</p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Source Archive</h3>
-                    <p>Optional package containing figures, references, source files, diagrams, datasets, and supplementary material.</p>
+                    <p>Figures, references, source files, datasets, and supplementary material.</p>
                 </article>
             </div>
         </section>
@@ -648,8 +1326,12 @@
         <section class="section" aria-labelledby="subjects-title">
             <div class="section-header">
                 <p class="eyebrow">Research Domains</p>
-                <h2 id="subjects-title">Primary subject areas</h2>
-                <p>The writing archive spans technical engineering, scientific research, design, public policy, and interdisciplinary systems analysis.</p>
+                <h2 id="subjects-title">Primary subject areas.</h2>
+
+                <p>
+                    The writing archive spans technical engineering, scientific research,
+                    design, public policy, and interdisciplinary systems analysis.
+                </p>
             </div>
 
             <div class="tag-cloud">
@@ -670,7 +1352,7 @@
                 <span>Networking</span>
                 <span>Distributed Systems</span>
                 <span>Privacy Engineering</span>
-                <span>Blockchain Analytics</span>
+                <span>Bitcoin Analytics</span>
                 <span>Automation</span>
                 <span>Visualization</span>
                 <span>Data Engineering</span>
@@ -699,130 +1381,210 @@
         <section class="section" aria-labelledby="submission-title">
             <div class="section-header">
                 <p class="eyebrow">Collaboration</p>
-                <h2 id="submission-title">External contributions</h2>
-                <p>Guest submissions are not generally accepted. Collaborative publications are considered individually where technical contribution, evidence, and editorial standards align with the objectives of the archive.</p>
+                <h2 id="submission-title">External contributions.</h2>
+
+                <p>
+                    Guest submissions are not generally accepted. Collaborative
+                    publications are considered individually where technical contribution,
+                    evidence, and editorial standards align with the archive.
+                </p>
             </div>
 
             <div class="content-grid two-column">
                 <article class="info-panel">
                     <h3>Technical Collaboration</h3>
-                    <p>Joint engineering papers, implementation reports, architecture documents, protocol proposals, and research notes may be considered when all contributors are clearly identified.</p>
+
+                    <p>
+                        Joint engineering papers, implementation reports, architecture
+                        documents, protocol proposals, and research notes may be considered
+                        when all contributors are clearly identified.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Academic Collaboration</h3>
-                    <p>Independent researchers, laboratories, universities, museums, archives, and nonprofit organizations may collaborate on documentation or research where appropriate.</p>
+
+                    <p>
+                        Independent researchers, laboratories, universities, museums,
+                        archives, and nonprofit organizations may collaborate on
+                        documentation or research where appropriate.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Editorial Policy</h3>
-                    <p>Editorial control remains with the publication author unless explicitly stated otherwise within the document.</p>
+
+                    <p>
+                        Editorial control remains with the publication author unless
+                        explicitly stated otherwise within the document.
+                    </p>
                 </article>
 
                 <article class="info-panel">
                     <h3>Licensing</h3>
-                    <p>Individual publications may use different licenses depending upon third-party material, software, datasets, or collaborative agreements.</p>
+
+                    <p>
+                        Individual publications may use different licenses depending
+                        upon third-party material, software, datasets, or collaborative agreements.
+                    </p>
                 </article>
+            </div>
+
+            <div class="button-row">
+                <a class="button" href="/contact/">Propose Collaboration</a>
+                <a class="button secondary" href="/credits/">Credits</a>
+                <a class="button secondary" href="/licenses/">Licenses</a>
+                <a class="button secondary" href="/legal/">Legal Notices</a>
             </div>
         </section>
 
         <section class="section" aria-labelledby="future-title">
             <div class="section-header">
                 <p class="eyebrow">Roadmap</p>
-                <h2 id="future-title">Planned additions</h2>
-                <p>The archive is intended to grow into a comprehensive technical publishing platform spanning decades of research and engineering work.</p>
+                <h2 id="future-title">Planned additions.</h2>
+
+                <p>
+                    The archive is intended to become a comprehensive technical
+                    publishing platform spanning decades of research and engineering work.
+                </p>
             </div>
 
             <div class="timeline compact">
                 <article class="timeline-entry">
                     <p class="timeline-date">Planned</p>
+
                     <div class="timeline-content">
                         <h3>Complete publication index</h3>
-                        <p>Chronological and subject-based navigation across every released article, paper, report, tutorial, essay, and technical document.</p>
+
+                        <p>
+                            Chronological and subject-based navigation across every
+                            released article, paper, report, tutorial, essay, and document.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Planned</p>
+
                     <div class="timeline-content">
-                        <h3>Search engine</h3>
-                        <p>Offline-capable full-text indexing with subject filtering, tags, authors, publication dates, and version history.</p>
+                        <h3>Local full-text search</h3>
+
+                        <p>
+                            Offline-capable indexing with subject filtering, tags,
+                            authors, publication dates, and version history.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Planned</p>
+
                     <div class="timeline-content">
                         <h3>Citation export</h3>
-                        <p>BibTeX, CSL JSON, RIS, and structured citation formats for research and academic reference.</p>
+
+                        <p>
+                            BibTeX, CSL JSON, RIS, and structured citation formats
+                            for research and academic reference.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Planned</p>
+
                     <div class="timeline-content">
                         <h3>Permanent identifiers</h3>
-                        <p>Stable publication identifiers, revision history, archival manifests, and long-term preservation records.</p>
+
+                        <p>
+                            Stable publication identifiers, revision histories,
+                            archival manifests, and preservation records.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Planned</p>
+
                     <div class="timeline-content">
                         <h3>Offline archive</h3>
-                        <p>Periodic downloadable snapshots of the complete writing collection for long-term offline preservation.</p>
+
+                        <p>
+                            Periodic downloadable snapshots of the complete writing
+                            collection for long-term offline preservation.
+                        </p>
                     </div>
                 </article>
 
                 <article class="timeline-entry">
                     <p class="timeline-date">Planned</p>
+
                     <div class="timeline-content">
                         <h3>Cross-reference system</h3>
-                        <p>Automatic linking between projects, software, whitepapers, research notes, blog posts, publications, and portfolio entries.</p>
+
+                        <p>
+                            Automatic linking between projects, software, whitepapers,
+                            research notes, blog posts, publications, and portfolio entries.
+                        </p>
                     </div>
                 </article>
             </div>
         </section>
 
-                <section class="section" aria-labelledby="navigation-title">
+        <section class="section" aria-labelledby="archive-status-title">
             <div class="section-header">
-                <p class="eyebrow">Navigation</p>
-                <h2 id="navigation-title">Continue exploring</h2>
-                <p>Writing forms only one component of the broader archive documenting projects, research, engineering, consulting, and long-term development.</p>
+                <p class="eyebrow">Archive Status</p>
+                <h2 id="archive-status-title">An active and revisable publication system.</h2>
             </div>
 
-            <div id="cta-buttons">
-                <a href="../home/" class="button" aria-label="Home">Home</a>
-                <a href="../about/" class="button" aria-label="About">About</a>
-                <a href="../bio/" class="button" aria-label="Biography">Biography</a>
-                <a href="../history/" class="button" aria-label="History">History</a>
-                <a href="../research/" class="button" aria-label="Research">Research</a>
-                <a href="../blog/" class="button" aria-label="Blog">Blog</a>
-                <a href="../portfolio/" class="button" aria-label="Portfolio">Portfolio</a>
-                <a href="../projects/" class="button" aria-label="Projects">Projects</a>
-                <a href="../contact/" class="button" aria-label="Contact">Contact</a>
-            </div>
-        </section>
-
-        <section class="section">
             <div class="notice info">
-                <strong>Archive Status</strong>
-                <p>This writing archive remains under active development. Existing publications may continue receiving revisions, expanded references, additional appendices, improved figures, updated implementation details, reproducibility improvements, and editorial refinement as projects mature.</p>
+                <strong>Active development</strong>
+
+                <p>
+                    Existing publications may receive revisions, expanded references,
+                    additional appendices, improved figures, updated implementation details,
+                    reproducibility improvements, corrections, and editorial refinement
+                    as projects mature.
+                </p>
             </div>
         </section>
 
+        <section class="section call-to-action" aria-labelledby="writing-cta-title">
+            <div class="cta-box">
+                <p class="eyebrow">Continue Exploring</p>
+
+                <h2 id="writing-cta-title">
+                    Follow the work from research note to implemented system.
+                </h2>
+
+                <p>
+                    Writing forms one component of the broader archive documenting
+                    projects, research, engineering, consulting, and long-term development.
+                </p>
+
+                <div class="button-row">
+                    <a class="button" href="/blog/">Blog</a>
+                    <a class="button secondary" href="/portfolio/papers/">Technical Papers</a>
+                    <a class="button secondary" href="/research/">Research</a>
+                    <a class="button secondary" href="/projects/">Projects</a>
+                    <a class="button secondary" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/consulting/">Consulting</a>
+                    <a class="button secondary" href="/contact/">Contact</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <hr>
-            <p>&copy; 2025 <strong>[0xdeadbeef]</strong>. All rights reserved.</p>
-            <p>Licensed under the MIT License unless otherwise noted.</p>
-            <p>Designed, engineered, and maintained by <strong>[0xdeadbeef]</strong> of <strong>ZZX-Labs R&amp;D</strong> and <strong>[0xdeadbeef] Consulting</strong>.</p>
-        </div>
-    </footer>
-</div>
+    <div data-include="/static/html/footer.html"></div>
 
-<script src="../static/script.js"></script>
+    <noscript>
+        <div class="noscript-notice">
+            JavaScript is required to load the shared navigation and footer and
+            to operate the writing filters and search controls. All category links,
+            publication information, and direct archive links remain available.
+        </div>
+    </noscript>
+
+    <script src="/static/js/include.js" defer></script>
+    <script src="/static/script.js" defer></script>
 </body>
 </html>
