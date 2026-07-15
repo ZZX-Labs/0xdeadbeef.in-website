@@ -1,21 +1,23 @@
 {
-    "number": "0000",
-    "title": "Post 0000 — Post Title",
-    "subtitle": "Post subtitle",
-    "summary": "A concise summary used by the blog index and post page.",
-    "published": "2026-01-01T00:00:00-05:00",
-    "updated": "2026-01-01T00:00:00-05:00",
-    "author": "0xdeadbeef",
-    "category": "Development",
-    "tags": [
-        "Development",
-        "Research"
-    ],
-    "status": "Draft",
-    "license": "All rights reserved unless otherwise stated.",
-    "hash_algorithm": "",
-    "hash": "",
-    "signature_url": "",
-    "source_url": "",
-    "revision": "1.0"
+  "number": "0000",
+  "title": "Post 0000 — Post Title",
+  "subtitle": "Post subtitle",
+  "summary": "A concise summary used by the blog index and post page.",
+  "published": "2026-01-01T00:00:00-05:00",
+  "updated": "2026-01-01T00:00:00-05:00",
+  "author": "0xdeadbeef",
+  "category": "Development",
+  "tags": [
+    "Development",
+    "Research"
+  ],
+  "status": "Draft",
+  "license": "All rights reserved unless otherwise stated.",
+  "hash_algorithm": "",
+  "hash": "",
+  "signature_url": "",
+  "source_url": "",
+  "revision": "1.0",
+  "text_url": "./post.txt",
+  "metadata_url": "./metadata.json"
 }
