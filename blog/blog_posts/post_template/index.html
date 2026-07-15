@@ -2,79 +2,182 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,notranslate">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
     <meta name="referrer" content="no-referrer">
     <meta name="description" content="Blog post by 0xdeadbeef.">
     <meta name="author" content="0xdeadbeef">
     <meta name="theme-color" content="#050705">
     <meta name="color-scheme" content="dark">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="0xdeadbeef.in">
+    <meta property="og:title" content="Loading Post | 0xdeadbeef">
+    <meta property="og:description" content="Blog post by 0xdeadbeef.">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loading Post | 0xdeadbeef">
+    <meta name="twitter:description" content="Blog post by 0xdeadbeef.">
+    <meta name="twitter:image" content="https://0xdeadbeef.in/static/images/header-image.jpg">
+
     <title>Loading Post | 0xdeadbeef</title>
+
+    <link id="post-canonical" rel="canonical" href="">
     <link rel="icon" href="/static/images/0xdeadbeef-0.png" type="image/png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 
 <body class="blog-post-page">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header">
-        <div class="nav-shell">
-            <a class="brand" href="/home/" aria-label="0xdeadbeef home"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-
-            <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-                <a href="/home/">Home</a>
-                <a href="/about/">About</a>
-                <a href="/portfolio/">Portfolio</a>
-                <a href="/projects/">Projects</a>
-                <a href="/research/">Research</a>
-                <a href="/blog/" aria-current="page">Blog</a>
-                <a href="/writing/">Writing</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <div data-include="/static/html/header.html"></div>
 
     <main id="main-content">
-        <header class="page-hero blog-post-hero">
-            <p id="post-category" class="eyebrow">Loading</p>
-            <h1 id="post-title">Loading post...</h1>
-            <p id="post-subtitle" class="lead"></p>
+        <section class="home-banner blog-post-banner" aria-labelledby="post-title">
+            <div id="header-banner">
+                <img
+                    id="header-image"
+                    src="/static/images/header-image.jpg"
+                    alt="0xdeadbeef blog post banner"
+                    width="1920"
+                    height="640"
+                >
 
-            <div class="article-meta">
-                <span><strong>Post:</strong> <span id="post-number">—</span></span>
-                <span><strong>Published:</strong> <time id="post-published">—</time></span>
-                <span><strong>Updated:</strong> <time id="post-updated">—</time></span>
-                <span><strong>Author:</strong> <span id="post-author">0xdeadbeef</span></span>
-                <span><strong>Revision:</strong> <span id="post-revision">—</span></span>
+                <div class="icon-wrapper">
+                    <img
+                        id="bull-icon"
+                        src="/static/images/0xdeadbeef-0.png"
+                        alt=""
+                        width="512"
+                        height="512"
+                    >
+                </div>
+
+                <div class="banner-overlay" aria-hidden="true"></div>
+
+                <div class="home-banner-copy">
+                    <p id="post-category" class="eyebrow">Loading</p>
+                    <h1 id="post-title">Loading post...</h1>
+                    <p id="post-subtitle" class="lead"></p>
+
+                    <div class="article-meta">
+                        <span>
+                            <strong>Post:</strong>
+                            <span id="post-number">—</span>
+                        </span>
+
+                        <span>
+                            <strong>Published:</strong>
+                            <time id="post-published">—</time>
+                        </span>
+
+                        <span>
+                            <strong>Updated:</strong>
+                            <time id="post-updated">—</time>
+                        </span>
+
+                        <span>
+                            <strong>Author:</strong>
+                            <span id="post-author">0xdeadbeef</span>
+                        </span>
+
+                        <span>
+                            <strong>Revision:</strong>
+                            <span id="post-revision">—</span>
+                        </span>
+                    </div>
+
+                    <ul id="post-tags" class="tag-list"></ul>
+
+                    <div class="button-row">
+                        <a class="button" href="/blog/">Back to Blog</a>
+
+                        <a
+                            id="post-text-link"
+                            class="button secondary"
+                            href="./post.txt"
+                            type="text/plain"
+                        >
+                            Plain Text
+                        </a>
+
+                        <a
+                            id="post-metadata-link"
+                            class="button secondary"
+                            href="./metadata.json"
+                            type="application/json"
+                        >
+                            Metadata
+                        </a>
+
+                        <a
+                            id="post-source-link"
+                            class="button secondary"
+                            href=""
+                            hidden
+                        >
+                            Source
+                        </a>
+
+                        <a
+                            id="post-signature-link"
+                            class="button secondary"
+                            href=""
+                            type="application/pgp-signature"
+                            hidden
+                        >
+                            Signature
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <ul id="post-tags" class="tag-list"></ul>
-
-            <div class="button-row">
-                <a class="button" href="/blog/">Back to Blog</a>
-                <a class="button secondary" href="./post.txt">Plain Text</a>
-                <a id="post-source-link" class="button secondary" href="#" hidden>Source</a>
-                <a id="post-signature-link" class="button secondary" href="#" hidden>Signature</a>
-            </div>
-        </header>
+        </section>
 
         <section class="section" aria-labelledby="article-title">
             <div class="article-layout">
-                <article id="post-content" class="article-content" aria-labelledby="article-title">
+                <article
+                    id="post-content"
+                    class="article-content"
+                    aria-labelledby="article-title"
+                    aria-busy="true"
+                >
                     <h2 id="article-title" class="visually-hidden">Article</h2>
-                    <p>Loading article text...</p>
+
+                    <div class="notice info">
+                        <strong>Loading article</strong>
+                        <p>Retrieving <code>metadata.json</code> and <code>post.txt</code>.</p>
+                    </div>
                 </article>
 
                 <aside class="article-sidebar">
                     <section class="sidebar-panel">
                         <h2>Publication Record</h2>
+
                         <dl>
                             <dt>Status</dt>
                             <dd id="post-status">—</dd>
+
+                            <dt>Revision</dt>
+                            <dd id="post-sidebar-revision">—</dd>
+
+                            <dt>Published</dt>
+                            <dd>
+                                <time id="post-sidebar-published">—</time>
+                            </dd>
+
+                            <dt>Updated</dt>
+                            <dd>
+                                <time id="post-sidebar-updated">—</time>
+                            </dd>
+
+                            <dt>Category</dt>
+                            <dd id="post-sidebar-category">—</dd>
+
+                            <dt>Author</dt>
+                            <dd id="post-sidebar-author">—</dd>
 
                             <dt>License</dt>
                             <dd id="post-license">—</dd>
@@ -83,19 +186,99 @@
                             <dd id="post-hash-algorithm">Not published</dd>
 
                             <dt>Hash</dt>
-                            <dd><code id="post-hash">Not published</code></dd>
+                            <dd>
+                                <code id="post-hash">Not published</code>
+                            </dd>
                         </dl>
                     </section>
 
                     <section class="sidebar-panel">
                         <h2>Files</h2>
+
                         <ul>
-                            <li><a href="./post.txt">post.txt</a></li>
-                            <li><a href="./metadata.json">metadata.json</a></li>
-                            <li><a href="./">index.html</a></li>
+                            <li>
+                                <a
+                                    id="post-file-text"
+                                    href="./post.txt"
+                                    type="text/plain"
+                                >
+                                    post.txt
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    id="post-file-metadata"
+                                    href="./metadata.json"
+                                    type="application/json"
+                                >
+                                    metadata.json
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="./">index.html</a>
+                            </li>
+
+                            <li id="post-file-source-item" hidden>
+                                <a id="post-file-source" href="">source</a>
+                            </li>
+
+                            <li id="post-file-signature-item" hidden>
+                                <a
+                                    id="post-file-signature"
+                                    href=""
+                                    type="application/pgp-signature"
+                                >
+                                    signature.asc
+                                </a>
+                            </li>
                         </ul>
                     </section>
+
+                    <section class="sidebar-panel">
+                        <h2>Verification</h2>
+
+                        <p>
+                            Compare the published hash and signature against the
+                            downloaded plaintext source when verification records exist.
+                        </p>
+                    </section>
                 </aside>
+            </div>
+        </section>
+
+        <section
+            id="post-navigation"
+            class="section"
+            aria-labelledby="post-navigation-title"
+            hidden
+        >
+            <div class="section-header">
+                <p class="eyebrow">Archive Navigation</p>
+                <h2 id="post-navigation-title">Continue through the publication record.</h2>
+            </div>
+
+            <div class="button-row">
+                <a
+                    id="previous-post-link"
+                    class="button secondary"
+                    href=""
+                    hidden
+                >
+                    ← Previous Post
+                </a>
+
+                <a class="button" href="/blog/">Blog Archive</a>
+
+                <a
+                    id="next-post-link"
+                    class="button secondary"
+                    href=""
+                    hidden
+                >
+                    Next Post →
+                </a>
             </div>
         </section>
 
@@ -104,328 +287,35 @@
                 <p class="eyebrow">Continue</p>
                 <h2 id="post-cta-title">Explore the wider archive.</h2>
 
+                <p>
+                    Continue into the blog archive, writing, research,
+                    projects, portfolio, or professional work.
+                </p>
+
                 <div class="button-row">
                     <a class="button" href="/blog/">Blog Archive</a>
                     <a class="button secondary" href="/writing/">Writing</a>
                     <a class="button secondary" href="/research/">Research</a>
                     <a class="button secondary" href="/projects/">Projects</a>
                     <a class="button secondary" href="/portfolio/">Portfolio</a>
+                    <a class="button secondary" href="/contact/">Contact</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <section>
-                <a class="brand" href="/home/"><span class="brand-bracket" aria-hidden="true">[:[</span><span class="brand-mark">0x</span>deadbeef<span class="brand-bracket" aria-hidden="true">]:]</span></a>
-                <p>Independent engineering, research, art, Bitcoin development, cybersecurity, and open-source systems.</p>
-            </section>
+    <div data-include="/static/html/footer.html"></div>
 
-            <section>
-                <h2>Publications</h2>
-                <ul>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/writing/">Writing</a></li>
-                    <li><a href="/portfolio/papers/">Papers</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Work</h2>
-                <ul>
-                    <li><a href="/research/">Research</a></li>
-                    <li><a href="/projects/">Projects</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Connect</h2>
-                <ul>
-                    <li><a href="/contact/">Contact</a></li>
-                    <li><a href="/consulting/">Consulting</a></li>
-                    <li><a href="/donate/">Bitcoin Funding</a></li>
-                </ul>
-            </section>
+    <noscript>
+        <div class="noscript-notice">
+            JavaScript is required to load and render the post metadata and
+            plaintext article. The raw article remains available at
+            <a href="./post.txt">post.txt</a>.
         </div>
+    </noscript>
 
-        <div class="footer-legal">
-            <p>&copy; <span data-current-year>2026</span> <strong>[0xdeadbeef]</strong>. All rights reserved where applicable.</p>
-            <p>Website software is licensed under the MIT License unless otherwise stated. Individual publications may carry separate licenses.</p>
-        </div>
-    </footer>
-
+    <script src="/static/js/include.js" defer></script>
     <script src="/static/script.js" defer></script>
-
-    <script>
-    "use strict";
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const content = document.getElementById("post-content");
-
-        function escapeHTML(value) {
-            return String(value || "")
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-
-        function formatInline(value) {
-            let output = escapeHTML(value);
-
-            output = output.replace(/`([^`]+)`/g, "<code>$1</code>");
-            output = output.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" rel="noopener noreferrer">$1</a>');
-
-            return output;
-        }
-
-        function renderPlainText(source) {
-            const lines = String(source || "").replace(/\r\n?/g, "\n").split("\n");
-            const html = [];
-
-            let paragraph = [];
-            let unorderedList = false;
-            let orderedList = false;
-            let codeBlock = false;
-            let codeLanguage = "";
-            let codeLines = [];
-
-            function flushParagraph() {
-                if (paragraph.length > 0) {
-                    html.push("<p>" + formatInline(paragraph.join(" ")) + "</p>");
-                    paragraph = [];
-                }
-            }
-
-            function closeLists() {
-                if (unorderedList) {
-                    html.push("</ul>");
-                    unorderedList = false;
-                }
-
-                if (orderedList) {
-                    html.push("</ol>");
-                    orderedList = false;
-                }
-            }
-
-            lines.forEach(function (line) {
-                if (line.startsWith("```")) {
-                    flushParagraph();
-                    closeLists();
-
-                    if (!codeBlock) {
-                        codeBlock = true;
-                        codeLanguage = line.slice(3).trim();
-                        codeLines = [];
-                    } else {
-                        const languageClass = codeLanguage ? ' class="language-' + escapeHTML(codeLanguage) + '"' : "";
-                        html.push("<pre><code" + languageClass + ">" + escapeHTML(codeLines.join("\n")) + "</code></pre>");
-                        codeBlock = false;
-                        codeLanguage = "";
-                        codeLines = [];
-                    }
-
-                    return;
-                }
-
-                if (codeBlock) {
-                    codeLines.push(line);
-                    return;
-                }
-
-                if (/^###\s+/.test(line)) {
-                    flushParagraph();
-                    closeLists();
-                    html.push("<h3>" + formatInline(line.replace(/^###\s+/, "")) + "</h3>");
-                    return;
-                }
-
-                if (/^##\s+/.test(line)) {
-                    flushParagraph();
-                    closeLists();
-                    html.push("<h2>" + formatInline(line.replace(/^##\s+/, "")) + "</h2>");
-                    return;
-                }
-
-                if (/^#\s+/.test(line)) {
-                    flushParagraph();
-                    closeLists();
-                    html.push("<h2>" + formatInline(line.replace(/^#\s+/, "")) + "</h2>");
-                    return;
-                }
-
-                if (/^>\s?/.test(line)) {
-                    flushParagraph();
-                    closeLists();
-                    html.push("<blockquote><p>" + formatInline(line.replace(/^>\s?/, "")) + "</p></blockquote>");
-                    return;
-                }
-
-                if (/^[-*]\s+/.test(line)) {
-                    flushParagraph();
-
-                    if (orderedList) {
-                        html.push("</ol>");
-                        orderedList = false;
-                    }
-
-                    if (!unorderedList) {
-                        html.push("<ul>");
-                        unorderedList = true;
-                    }
-
-                    html.push("<li>" + formatInline(line.replace(/^[-*]\s+/, "")) + "</li>");
-                    return;
-                }
-
-                if (/^\d+\.\s+/.test(line)) {
-                    flushParagraph();
-
-                    if (unorderedList) {
-                        html.push("</ul>");
-                        unorderedList = false;
-                    }
-
-                    if (!orderedList) {
-                        html.push("<ol>");
-                        orderedList = true;
-                    }
-
-                    html.push("<li>" + formatInline(line.replace(/^\d+\.\s+/, "")) + "</li>");
-                    return;
-                }
-
-                if (line.trim() === "") {
-                    flushParagraph();
-                    closeLists();
-                    return;
-                }
-
-                closeLists();
-                paragraph.push(line.trim());
-            });
-
-            if (codeBlock) {
-                const languageClass = codeLanguage ? ' class="language-' + escapeHTML(codeLanguage) + '"' : "";
-                html.push("<pre><code" + languageClass + ">" + escapeHTML(codeLines.join("\n")) + "</code></pre>");
-            }
-
-            flushParagraph();
-            closeLists();
-
-            return html.join("\n");
-        }
-
-        function formatDate(value) {
-            const date = new Date(value);
-
-            if (Number.isNaN(date.getTime())) {
-                return value || "—";
-            }
-
-            return new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                timeZoneName: "short"
-            }).format(date);
-        }
-
-        function setText(id, value, fallback) {
-            const element = document.getElementById(id);
-
-            if (element) {
-                element.textContent = value || fallback || "—";
-            }
-        }
-
-        function setLink(id, url) {
-            const element = document.getElementById(id);
-
-            if (!element || !url) {
-                return;
-            }
-
-            element.href = url;
-            element.hidden = false;
-        }
-
-        Promise.all([
-            fetch("./metadata.json", { cache: "no-store" }).then(function (response) {
-                if (!response.ok) {
-                    throw new Error("Unable to load metadata.json: HTTP " + response.status);
-                }
-
-                return response.json();
-            }),
-
-            fetch("./post.txt", { cache: "no-store" }).then(function (response) {
-                if (!response.ok) {
-                    throw new Error("Unable to load post.txt: HTTP " + response.status);
-                }
-
-                return response.text();
-            })
-        ])
-            .then(function (results) {
-                const metadata = results[0];
-                const source = results[1];
-
-                document.title = metadata.title + " | 0xdeadbeef";
-
-                const description = document.querySelector('meta[name="description"]');
-
-                if (description && metadata.summary) {
-                    description.content = metadata.summary;
-                }
-
-                setText("post-category", metadata.category, "Blog");
-                setText("post-title", metadata.title, "Untitled Post");
-                setText("post-subtitle", metadata.subtitle, "");
-                setText("post-number", metadata.number, "—");
-                setText("post-author", metadata.author, "0xdeadbeef");
-                setText("post-revision", metadata.revision, "1.0");
-                setText("post-status", metadata.status, "Published");
-                setText("post-license", metadata.license, "All rights reserved unless otherwise stated.");
-                setText("post-hash-algorithm", metadata.hash_algorithm, "Not published");
-                setText("post-hash", metadata.hash, "Not published");
-
-                const published = document.getElementById("post-published");
-                const updated = document.getElementById("post-updated");
-
-                published.textContent = formatDate(metadata.published);
-                published.dateTime = metadata.published || "";
-
-                updated.textContent = formatDate(metadata.updated || metadata.published);
-                updated.dateTime = metadata.updated || metadata.published || "";
-
-                const tags = document.getElementById("post-tags");
-
-                if (Array.isArray(metadata.tags)) {
-                    metadata.tags.forEach(function (tag) {
-                        const item = document.createElement("li");
-                        item.textContent = tag;
-                        tags.appendChild(item);
-                    });
-                }
-
-                setLink("post-source-link", metadata.source_url);
-                setLink("post-signature-link", metadata.signature_url);
-
-                content.innerHTML = renderPlainText(source);
-            })
-            .catch(function (error) {
-                console.error(error);
-
-                content.innerHTML = '<div class="notice danger"><strong>Post unavailable</strong><p>The article could not be loaded. Verify that <code>metadata.json</code> and <code>post.txt</code> exist and that the site is being served over HTTP or HTTPS.</p></div>';
-            });
-    });
-    </script>
+    <script src="/static/js/blog-post.js" defer></script>
 </body>
 </html>
