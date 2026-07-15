@@ -12,31 +12,83 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-This license applies only to software source code contained within this
-repository unless otherwise specified.
-
-Creative works including, but not limited to:
-
-- Articles
-- Essays
-- Whitepapers
-- Photography
-- Music
-- Artwork
-- Logos
-- Branding
-- Illustrations
-- Audio recordings
-- Videos
-
-may be licensed separately. Refer to the individual work for its governing
-license.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
-OR OTHER DEALINGS IN THE SOFTWARE.
+-------------------------------------------------------------------------------
+
+Repository Content Notice
+
+The MIT License applies to source code within this repository unless a more
+specific license is provided within an individual project or directory.
+
+The following materials are NOT automatically covered by the MIT License unless
+explicitly stated otherwise:
+
+- Documentation
+- Articles
+- Blog posts
+- White papers
+- Photography
+- Artwork
+- Logos
+- Icons
+- Graphics
+- Audio
+- Video
+- Branding
+- Project names
+- Trademarks
+
+These materials remain under their respective licenses or copyright notices as
+identified within the repository.
+
+-------------------------------------------------------------------------------
+
+Third-Party Components
+
+This repository incorporates or references third-party software, libraries,
+fonts, specifications, standards, and other works.
+
+Their licenses remain the property of their respective authors.
+
+See:
+
+    ATTRIBUTION.md
+
+for repository-wide acknowledgements and licensing references.
+
+-------------------------------------------------------------------------------
+
+Open Source Philosophy
+
+This repository exists to encourage learning, experimentation, independent
+research, reproducible engineering, and responsible open-source collaboration.
+
+Contributions are welcomed under the terms described in:
+
+    CONTRIBUTING.md
+
+Potential security issues should be reported according to:
+
+    SECURITY.md
+
+-------------------------------------------------------------------------------
+
+Repository
+
+    https://github.com/ZZX-Labs/0xdeadbeef.in
+
+Website
+
+    https://0xdeadbeef.in/
+
+Copyright (c) 2026 0xdeadbeef
+
+All rights reserved except where rights are granted under the licenses
+contained within this repository.
