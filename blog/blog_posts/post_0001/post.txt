@@ -1,71 +1,141 @@
 # Initializing the Broadcast
 
-This blog serves as the living field manual and chronological record of ongoing work, research, design, and development by 0xdeadbeef.
+Welcome to the public development record.
 
-It documents work associated with ZZX-Labs R&D, 0xdeadbeef Consulting, independent research programs, public projects, technical experiments, and long-term development.
+This blog serves as the long-form technical journal, engineering notebook, field log, research archive, and publication platform for work undertaken by 0xdeadbeef. It exists to document projects as they evolve rather than only presenting finished results.
 
-## Subjects
+The archive accompanies work produced independently and through ZZX-Labs R&D, 0xdeadbeef Consulting, and associated open-source initiatives. Rather than functioning as a traditional news feed, each entry serves as a permanent record of design decisions, implementation details, experiments, revisions, successes, failures, and future directions.
 
-Future dispatches may examine:
+## What This Archive Covers
+
+Future dispatches may include work relating to:
 
 - Systems architecture
-- Bitcoin infrastructure
-- Bitcoin Core
-- Lightning applications
-- Wallets and payment systems
-- Python and PyQt software
-- Web applications
-- Embedded systems
-- Firmware
-- Hardware
+- Software engineering
+- Web engineering
+- Desktop application development
+- Python
+- C
+- C++
+- Go
+- Rust
+- Embedded software
+- Firmware engineering
+- Hardware engineering
+- Electronics
+- Mechanical design
+- Computer engineering
 - Artificial intelligence
 - Machine learning
-- Cybersecurity
+- Large language models
+- Bitcoin
+- Bitcoin Core
+- Lightning Network
+- Wallet development
+- Bitcoin infrastructure
+- Mining infrastructure
+- Cryptography
 - Operational security
+- Cybersecurity
+- Cyber investigations
 - Malware analysis
-- OSINT
-- Digital investigations
-- Geopolitics
-- Art
-- Music
+- Reverse engineering
+- Digital forensics
+- Open Source Intelligence (OSINT)
+- Geographic information systems
+- Data visualization
+- Research methodology
+- Scientific experimentation
+- Biology
+- Botany
+- Cannabis research
 - Photography
-- Cannabis botany
-- Field research
+- Graphic design
+- Illustration
+- Digital art
+- Music production
 - Organizational development
+- Entrepreneurship
+- Public infrastructure
+- Geopolitics
+- Field research
+- Open-source software
 
-## Publication Format
+## Publication Philosophy
 
-The publication format is plaintext-first.
+This archive follows a plaintext-first publishing model.
 
-Each post is stored as a `post.txt` file and rendered into a shared HTML layout by the post page.
+Every article is authored as a simple UTF-8 plaintext document stored as:
 
-Posts may also be distributed in additional formats, including:
+```text
+post.txt
+```
+
+The surrounding HTML page simply loads the metadata and renders the plaintext into the common website layout.
+
+Keeping the canonical publication in plaintext provides several advantages:
+
+- Long-term preservation
+- Human readability
+- Version-control friendliness
+- Minimal dependencies
+- Easy cryptographic verification
+- Portability across operating systems
+- Simple archival
+- Future-proof storage
+
+When additional publication formats exist they may include:
 
 - Markdown
+- HTML
 - PDF
 - EPUB
-- JSON
+- DOCX
+- JSON metadata
 - Source archives
-- Checksums
+- SHA-256
+- SHA3-256
 - OpenPGP signatures
 - Bitcoin timestamp records
 
-Those formats should only be advertised when the corresponding files actually exist.
+These artifacts should only be linked when they actually exist alongside the post.
 
-## Purpose
+## Why Keep a Development Journal?
 
-The purpose of this archive is to preserve more than final products.
+Completed software rarely explains itself.
 
-It records the reasoning, failures, revisions, experiments, architecture decisions, constraints, and discoveries behind the work.
+Repositories show commits.
 
-A finished system may show what was built.
+Releases show features.
 
-A development record shows why it was built, how it changed, what failed, and what remains unresolved.
+Neither adequately documents the reasoning behind architectural decisions, discarded approaches, experimental branches, failed ideas, implementation constraints, or changing objectives.
 
-You are reading dispatch 0001.
+This archive exists to preserve that context.
 
-More will follow.
+The intention is to leave behind a complete engineering record rather than only finished software.
 
-Signed:
+Over time these entries should demonstrate not only what was built, but how ideas evolved from initial concepts through research, implementation, testing, revision, and eventual deployment.
+
+Some projects will succeed.
+
+Others will fail.
+
+Both outcomes have educational value.
+
+## Looking Forward
+
+The work documented here is expected to span many years.
+
+As additional projects mature, this archive will expand alongside them, providing technical notes, engineering reports, research journals, implementation walkthroughs, release announcements, architectural discussions, and occasional observations from work conducted in the field.
+
+The goal is not merely to publish software, but to preserve the complete history surrounding its creation.
+
+This is Dispatch 0001.
+
+The broadcast has begun.
+
+---
+
+Signed,
 
 0xdeadbeef
