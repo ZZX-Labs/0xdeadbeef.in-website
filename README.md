@@ -1,809 +1,400 @@
 
 
-# 0xdeadbeef.in
+# https://0xdeadbeef.in
 
+## Repository Architecture
 
-> Personal portfolio, research laboratory, engineering notebook, creative archive,
-> and open-source development hub.
-
-
----
-
-## Overview
-
-0xdeadbeef.in serves as the primary public portfolio for independent research,
-engineering, software development, hardware design, creative work, technical
-writing, and long-term experimental projects.
-
-Rather than functioning as a traditional résumé, this website documents an
-evolving body of work spanning numerous technical and creative disciplines.
-
-The objective is to provide a permanent, publicly accessible archive of projects,
-research, publications, artwork, software, and engineering efforts while
-maintaining a lightweight, privacy-respecting, static website.
-
-
----
-
-## Primary Disciplines
-
-The portfolio currently encompasses the following areas:
-
-- Music
-- Art
-- Graphic Design
-- 3D Modeling
-- Photography
-- Writing
-- Cannabis Botany
-- Web Development
-- Software Development
-- Firmware Development
-- Hardware Development
-- Mobile Application Development
-- Adult Technology Development
-- Bitcoin Development
-- Artificial Intelligence
-- Machine Learning
-- Open Source Intelligence (OSINT)
-- Cyber Investigation
-- Cybersecurity
-- Cyber Warfare Research
-- Geopolitics
-- Adventures
-- Business Ventures
-
-
----
-
-## Design Goals
-
-The site intentionally emphasizes simplicity.
-
-Objectives include:
-
-- Static deployment
-- No external frameworks
-- Minimal JavaScript
-- Local assets only
-- Fast loading
-- Search-engine friendly
-- Accessible
-- Mobile-first
-- Keyboard navigable
-- Long-term maintainable
-- Git-friendly
-
-
----
-
-## Technology Stack
-
-Frontend
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-
-Infrastructure
-
-- nginx
-- Git
-- GitHub Pages
-- Static Hosting
-- Onion Service compatible
-
-Media
-
-- PNG
-- JPG
-- WebP
-- MP4
-- MP3
-- Markdown
-
-Typography
-
-- IBM Plex Mono
-- Adult Swim Font
-- Realtime Test Font Family
-
-
----
-
-## Repository Layout
+The repository is intentionally organized as a static website rather than a
+dynamic application. Every page can be opened independently while still sharing
+a common visual language through reusable HTML components, JavaScript modules,
+stylesheets, and design assets.
 
 ```
-.
+0xdeadbeef.in/
 ├── about/
+├── bio/
 ├── blog/
+├── consulting/
 ├── contact/
-├── donate/
+├── contracting/
+├── coversheet/
+├── credits/
+├── cv/
 ├── home/
 ├── landing-page/
+├── legal/
+├── licenses/
+├── mission/
+├── motto/
+├── philosophy/
 ├── portfolio/
+├── principles/
 ├── projects/
+├── research/
+├── resume/
 ├── static/
-├── README.md
-├── LICENSE
+├── tools/
+├── ventures/
+├── writing/
+├── 404.html
+├── index.html
 ├── nginx.conf
-├── sitemap.xml
 ├── robots.txt
-└── site.webmanifest
+├── site.webmanifest
+└── README.md
 ```
 
+The majority of pages are ordinary static HTML documents. Dynamic behavior is
+provided through small JavaScript modules rather than server-side rendering or
+large frontend frameworks.
 
 ---
 
-## Portfolio Structure
+# Static Design Philosophy
 
-Each discipline receives its own dedicated section containing:
+Several architectural decisions guide the development of the repository.
 
-- Overview
-- Featured projects
-- Gallery
-- Research
-- Downloads
-- External repositories
-- Publications
-- Development status
-
-This organization allows each subject area to grow independently while remaining
-part of a unified portfolio.
-
-
----
-
-## Projects
-
-Projects range from small experiments through complete software systems.
-
-Typical project pages include:
-
-- Description
-- Screenshots
-- Architecture
-- Technologies
-- Documentation
-- Repository links
-- License
-- Development roadmap
-- Changelog
-- Future work
-
-
----
-
-## Writing
-
-The writing section contains:
-
-- Essays
-- Technical articles
-- Whitepapers
-- Research journals
-- Notes
-- Development logs
-- Tutorials
-- Documentation
-
-Articles are written in Markdown before publication.
-
-
----
-
-## Portfolio Categories
-
-### Music
-
-Music production, composition, sound design, recording, synthesis,
-mastering, performance systems, and studio engineering.
-
-Topics include:
-
-- Ableton Live
-- Hardware synthesizers
-- MIDI systems
-- Audio DSP
-- Modular workflows
-- Recording infrastructure
-
-
----
-
-### Art
-
-Traditional and digital artwork.
-
-Includes:
-
-- Drawing
-- Painting
-- Illustration
-- Concept Art
-- Digital Painting
-- Experimental media
-
-
----
-
-### Graphic Design
-
-Professional design work including:
-
-- Identity systems
-- Branding
-- Typography
-- Print
-- Publication
-- Interface Design
-- Iconography
-
-
----
-
-### 3D Modeling
-
-Research and production involving:
-
-- Mechanical CAD
-- Product Design
-- Rendering
-- Animation
-- Simulation
-- Manufacturing preparation
-- Parametric modeling
-
-
----
-
-### Photography
-
-Photography archive including:
-
-- Landscape
-- Urban
-- Documentary
-- Nature
-- Architecture
-- Travel
-- Macro
-- Technical documentation
-
-
----
-
-### Cannabis Botany
-
-Research covering:
-
-- Genetics
-- Breeding
-- Cultivation
-- Extraction
-- Preservation
-- Plant morphology
-- Laboratory workflows
-
-
----
-
-### Web Development
-
-Topics include:
-
-- HTML5
-- CSS
-- JavaScript
-- PHP
-- nginx
-- Accessibility
-- Static websites
+- Static HTML first
 - Progressive enhancement
+- Minimal JavaScript
+- No database
+- No CMS
+- No build framework
+- No unnecessary dependencies
+- Long-term maintainability
+- Plaintext-first publishing
+- Git-friendly organization
+- Portable deployment
+- Local assets whenever practical
 
-
----
-
-### Software Development
-
-Projects developed in:
-
-- Python
-- C
-- C++
-- Go
-- Rust
-- Java
-- Kotlin
-- JavaScript
-- Bash
-- Perl
-
-Areas include:
-
-- Desktop applications
-- CLI tools
-- Servers
-- Automation
-- APIs
-- Visualization
-- Utilities
-
+The repository is designed so that decades from now it should still be possible
+to clone the repository and immediately understand how everything works.
 
 ---
 
-### Firmware Development
+# Shared Components
 
-Embedded development involving:
+Every page loads the same shared navigation and footer.
 
-- ESP32
-- ESP8266
-- STM32
-- AVR
-- RP2040
-- Arduino
-- FreeRTOS
-- USB devices
-- Sensors
-- Wireless systems
+```
+static/html/
 
+    header.html
 
----
+    footer.html
+```
 
-### Hardware Development
+These components are loaded dynamically by
 
-Hardware engineering including:
+```
+static/js/include.js
+```
 
-- PCB design
-- Enclosures
-- Embedded electronics
-- Test equipment
-- Power systems
-- RF
-- IoT devices
-- Laboratory tools
+allowing navigation updates to propagate across the entire website without
+editing every page individually.
 
+Every page therefore follows approximately the same structure:
 
----
+```html
+<body>
 
-### Application Development
+<div data-include="/static/html/header.html"></div>
 
-Cross-platform application development for:
+<main>
 
-- Windows
-- Linux
-- Android
-- Web
+    ...
 
-Primary focus:
+</main>
 
-- PyQt
-- Qt
-- Native interfaces
-- Responsive design
-- Offline-first applications
+<div data-include="/static/html/footer.html"></div>
 
+<script src="/static/js/include.js" defer></script>
+<script src="/static/script.js" defer></script>
+
+</body>
+```
+
+This dramatically reduces maintenance as the website grows.
 
 ---
 
-### Adult Technology Development
+# Static Assets
 
-Research and engineering focused on lawful, consent-based adult technology,
-privacy-preserving platforms, secure communications, hardware interfaces,
-payment systems, and creator infrastructure.
+The shared asset hierarchy is intentionally centralized.
 
-Research areas include:
+```
+static/
 
-- Payment infrastructure
-- Identity protection
-- Privacy engineering
-- Hardware devices
-- Secure communications
-- Media delivery
-- Digital rights
-- Platform architecture
+    audio/
+    fonts/
+    html/
+    images/
+    js/
 
+    colors.json
 
----
+    styles.css
 
-### Bitcoin Development
+    script.js
+```
 
-Bitcoin serves as the primary financial and technical ecosystem throughout
-many projects published here.
+Each directory serves a specific purpose.
 
-Areas of development include:
+## audio/
 
-- Bitcoin Core
-- Lightning Network
-- Wallet development
-- Payment infrastructure
-- Mining
-- Node operations
-- Block explorers
-- Open-source tooling
-- Hardware wallets
-- Educational software
+Background music, ambience, narration, and other sound assets.
 
+## fonts/
 
----
+Typography used throughout the site.
 
-### Artificial Intelligence
+IBM Plex Mono serves as the primary typeface.
 
-Artificial intelligence research spans practical engineering, experimentation,
-and applied software development.
+Additional locally hosted fonts may be included when appropriate.
 
-Current interests include:
+## html/
 
-- Generative AI
-- Natural language processing
-- Autonomous agents
-- Image generation
-- Retrieval systems
-- Knowledge management
-- Local inference
-- AI-assisted development
+Reusable HTML fragments.
 
+These currently include:
 
----
+- header.html
+- footer.html
 
-### Machine Learning
+Future reusable fragments may include:
 
-Machine learning projects include:
+- notices
+- dialogs
+- publication metadata
+- project cards
 
-- Computer vision
-- Classification
-- Clustering
-- Recommendation systems
-- Reinforcement learning
-- Forecasting
-- Data visualization
-- Model evaluation
-- Dataset engineering
+## images/
 
+Site graphics including:
 
----
+- branding
+- photography
+- artwork
+- icons
+- banners
+- project imagery
 
-### Open Source Intelligence (OSINT)
+## js/
 
-Development of lawful OSINT tooling and research including:
+Site JavaScript modules.
 
-- Public record analysis
-- Entity resolution
-- Geospatial intelligence
-- Timeline analysis
-- Archive collection
-- Visualization
-- Automation
-- Research tooling
+Examples include:
 
+```
+include.js
+
+projects-manifest.js
+
+blog.js
+
+blog-post.js
+```
+
+Each module performs one specific task.
 
 ---
 
-### Cyber Investigation
+# Design System
 
-Engineering tools for:
+The visual design is centralized into
 
-- Digital investigations
-- Malware analysis
-- Attribution research
-- Evidence management
-- Case organization
-- Timeline reconstruction
-- Network analysis
-- Artifact collection
+```
+static/colors.json
+```
 
-Projects are intended for defensive, research, educational, incident response,
-and authorized investigative environments.
+rather than scattering color values throughout CSS.
 
+This allows the website to maintain one canonical color system for:
 
----
+- backgrounds
+- typography
+- buttons
+- borders
+- charts
+- status indicators
+- Bitcoin colors
+- cyber colors
+- navigation
+- code blocks
+- focus outlines
+- gradients
+- shadows
 
-### Cybersecurity
+The stylesheet references these values to ensure visual consistency across every
+page.
 
-Research topics include:
-
-- Secure software engineering
-- Network security
-- Operating system security
-- Cryptography
-- Authentication
-- Vulnerability research
-- Threat modeling
-- Infrastructure hardening
-
-
----
-
-### Cyber Warfare Research
-
-Research into the technical, historical, strategic, and defensive aspects of
-cyber conflict.
-
-Content is published for educational, historical, policy, defensive, and
-research purposes.
-
-Topics include:
-
-- Strategic doctrine
-- Defensive architecture
-- Historical analysis
-- National resilience
-- Critical infrastructure
-- Threat intelligence
-- Operational history
-
+Future themes may be generated directly from the color system without modifying
+individual page layouts.
 
 ---
 
-### Geopolitics
+# CSS
 
-Long-form research covering:
+The repository uses one primary stylesheet.
 
-- International relations
-- Strategic competition
-- Economics
-- Technology policy
-- Regional security
-- Diplomacy
-- Energy
-- Infrastructure
+```
+static/styles.css
+```
 
+The stylesheet provides:
 
----
+- layout
+- typography
+- grids
+- navigation
+- cards
+- buttons
+- forms
+- publication layouts
+- project layouts
+- responsive design
+- accessibility styling
+- print styling
 
-### Writing
-
-The writing archive contains:
-
-- Essays
-- Whitepapers
-- Research reports
-- Tutorials
-- Technical documentation
-- Design notes
-- Engineering journals
-- Personal observations
-
+Additional stylesheets may be introduced only when they substantially reduce
+complexity.
 
 ---
 
-## Adventures
+# JavaScript
 
-Beyond engineering and software development, the portfolio documents personal
-expeditions, field work, and technical travel.
+JavaScript is intentionally modular.
 
-Subjects include:
+The current architecture consists of:
 
-- Hiking
-- Backpacking
-- Mountaineering
-- Surfing
-- Camping
-- Motorcycle travel
-- Photography expeditions
-- Technical conferences
-- Research travel
-- International field studies
+```
+include.js
+```
 
-Where appropriate, trips include maps, equipment lists, technical notes,
-photographs, route planning, and post-expedition reports.
+Loads shared HTML fragments.
 
+```
+script.js
+```
 
----
+Provides common website behavior.
 
-## Business Ventures
+```
+projects-manifest.js
+```
 
-The business section documents both active and experimental ventures.
+Builds the Projects and Portfolio pages from manifest data.
 
-Typical entries include:
+```
+blog.js
+```
 
-- Company overview
-- Mission
-- Timeline
-- Technology
-- Products
-- Services
-- Research
-- Open-source contributions
-- Publications
-- Current status
+Builds the blog archive from blog.json.
 
-Business ventures remain separated from personal work while sharing a common
-design language throughout the site.
+```
+blog-post.js
+```
 
+Loads metadata.json and post.txt for each blog article and renders supported
+plaintext formatting.
+
+Each module has one clearly defined responsibility.
+
+No frontend framework is required.
 
 ---
 
-## Performance
+# Project Architecture
 
-Design priorities include:
+Projects are no longer hardcoded into HTML.
 
-- Extremely fast loading
-- Minimal network requests
-- Local assets
-- Zero tracking scripts
-- No external analytics
-- Long browser cache lifetimes
-- Progressive enhancement
-- Graceful degradation
+Instead they are generated from manifest files maintained by the companion
+ZZX-Labs repository.
 
-The website should remain usable with JavaScript disabled.
+Each project category maintains its own manifest.
 
+Example:
 
----
+```
+projects/
 
-## Accessibility
+    ai/
+        manifest.json
 
-Accessibility goals include:
+    bitcoin/
+        manifest.json
 
-- Semantic HTML
-- Keyboard navigation
-- Skip links
-- High contrast
-- Proper heading hierarchy
-- Visible focus indicators
-- Screen-reader friendly markup
-- Responsive typography
-- Reduced-motion support
+    engineering/
+        manifest.json
 
-Accessibility is treated as a first-class engineering requirement rather than
-an afterthought.
+    hardware/
+        manifest.json
 
----
+    software/
+        manifest.json
 
-## Privacy
+    web/
+        manifest.json
+```
 
-No advertising networks.
+Each manifest contains structured project records.
 
-No tracking pixels.
+The website loads these manifests dynamically.
 
-No third-party analytics.
-
-No fingerprinting scripts.
-
-No hidden telemetry.
-
-Visitors should be able to browse the site with minimal disclosure of personal
-information.
-
+This architecture greatly reduces maintenance while making it possible to add,
+remove, or modify projects without editing HTML pages.
 
 ---
 
-## Security
+# Master Project Manifest
 
-Recommended deployment includes:
+The individual category manifests are combined into a single master file.
 
-- HTTPS only
-- HTTP Strict Transport Security (HSTS)
-- Content Security Policy (CSP)
-- X-Content-Type-Options
-- Referrer-Policy
-- Permissions-Policy
-- X-Frame-Options
+```
+projects/
 
-Static hosting significantly reduces attack surface compared to dynamic content
-management systems.
+    manifest.json
+```
 
+The master manifest contains:
 
----
+- schema version
+- generation timestamp
+- category listing
+- project count
+- complete project records
 
-## Deployment
+Pages such as
 
-Example deployment targets include:
+```
+/projects/
 
-- nginx
-- GitHub Pages
-- Cloudflare Pages
-- Netlify
-- Self-hosted Linux servers
-- Tor Onion Services
-- Local archival mirrors
+/portfolio/
+```
 
-The site is intentionally portable and does not require a database.
+consume this master manifest rather than reading each category individually.
 
+This minimizes network requests while simplifying client-side rendering.
 
 ---
 
-## Contributing
+# Project Tooling
 
-Bug reports and constructive feedback are welcome.
+Repository tooling automates project management.
 
-Large contributions should be discussed before implementation to preserve the
-overall architectural direction and visual consistency.
+Current tools include:
 
-Unless explicitly stated, contributions are submitted under the same license as
-the repository.
+```
+tools/
 
+    add-featured-projects.py
 
----
+    build-projects-manifest.py
+```
 
-## Roadmap
+These scripts provide automated workflows for creating project entries and
+rebuilding the master manifest.
 
-The portfolio is intended to remain active for many years.
-
-Current priorities include:
-
-- Expanding technical documentation
-- Publishing additional whitepapers
-- Completing project galleries
-- Improving search capabilities
-- Building richer project timelines
-- Expanding interactive demonstrations
-- Increasing accessibility testing
-- Continuing open-source releases
-
-The repository is treated as a living document rather than a finished product.
-
-
----
-
-## Contact
-
-For professional enquiries, responsible disclosure, collaboration, consulting,
-or research opportunities, visit:
-
-https://0xdeadbeef.in/contact/
-
-For project-specific repositories and source code, see the public GitHub
-organization referenced throughout the website.
-
-
----
-
-## Funding
-
-Independent research is supported through voluntary Bitcoin contributions.
-
-Information is available on:
-
-/donate/
-
-Funding directly supports:
-
-- Open-source software
-- Independent engineering
-- Hardware development
-- Research publications
-- Technical infrastructure
-- Educational resources
-- Long-term archival efforts
-
-
----
-
-## License
-
-Source code contained within this repository is licensed under the MIT License.
-
-Documentation, essays, photographs, artwork, music, and other creative works
-may be licensed independently. Refer to each work for its governing license.
-
-
----
-
-## Philosophy
-
-Technology should empower individuals, encourage curiosity, preserve knowledge,
-and remain understandable.
-
-Good engineering favors simplicity, transparency, portability, reproducibility,
-and long-term maintainability over unnecessary complexity.
-
-This website reflects those principles by serving as both a public portfolio
-and a long-lived archive of ongoing work.
-
-
----
-
-**Website**
-
-https://0xdeadbeef.in
-
-**Repository**
-
-https://github.com/ZZX-Labs/0xdeadbeef.in
-
-**Copyright**
-
-© 2026 0xdeadbeef. All rights reserved where applicable.
+Future tooling will expand this automation further while maintaining compatibility
+with existing manifest formats.
 
