@@ -8,7 +8,7 @@ Use one blank line between paragraphs.
 
 This is another paragraph.
 
-Plain-text formatting supported by the post renderer:
+## Supported Plaintext Formatting
 
 # Heading level 1
 ## Heading level 2
@@ -26,3 +26,16 @@ Plain-text formatting supported by the post renderer:
 
 ```text
 Preformatted code or text block.
+```
+
+---
+
+Links may be written as:
+
+[0xdeadbeef.in](https://0xdeadbeef.in/)
+
+Bold text may be written as **bold text**.
+
+Italic text may be written as *italic text*.
+
+Strikethrough text may be written as ~~strikethrough text~~.
